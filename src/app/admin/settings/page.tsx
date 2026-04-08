@@ -18,7 +18,7 @@ export default function AdminSettings() {
   useEffect(() => {
     async function loadConfig() {
       try {
-        const docRef = doc(db, "app_config", "main_settings");
+        const docRef = doc(db, "config", "app_config");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           const data = docSnap.data() as AppConfig;
@@ -45,7 +45,7 @@ export default function AdminSettings() {
       // Ensure specific nested numbering parses back to integers effectively.
       // Normally RHF tracks them as strict numbers using valueAsNumber on inputs, 
       // but double check for cleanliness if needed.
-      const docRef = doc(db, "app_config", "main_settings");
+      const docRef = doc(db, "config", "app_config");
       await setDoc(docRef, data, { merge: true });
       setMessage({ type: 'success', text: 'Settings saved successfully! Changes apply immediately.' });
       window.scrollTo({ top: 0, behavior: 'smooth' });

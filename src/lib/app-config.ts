@@ -1,57 +1,90 @@
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "./firebase";
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+
+export interface SubscriptionPlan {
+  label: string;
+  price: number;
+  duration_months: number;
+}
 
 export interface AppConfig {
-  primary_color: string;
+  // Core economy
   free_credits: number;
   credits_per_question: number;
   free_questions_per_test: number;
+
+  // Timing
+  pause_window_minutes: number;
   pause_between_tests_minutes: number;
+  exam_time_minutes: number;
+
+  // Per-exam-body time limits (minutes)
   jamb_time_minutes: number;
   waec_time_minutes: number;
   neco_time_minutes: number;
   nabteb_time_minutes: number;
+
+  // Content
+  questions_per_exam: number;
+  passing_percentage: number;
+  subjects_available: number;
+  institutions_available: number;
+
+  // Institutions
   max_institution_students: number;
+
+  // Appearance
+  primary_color: string;
+
+  // Subscription plans
+  subscription_plans: Record<string, SubscriptionPlan>;
+
+  // Feature flags
   maintenance_mode: boolean;
   ai_generation_enabled: boolean;
-  subscription_plans: {
-    [key: string]: {
-      price: number;
-      duration_months: number | null;
-      label: string;
-    };
-  };
 }
 
-let cachedConfig: AppConfig | null = null;
-let lastFetchTime: number = 0;
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes in milliseconds
+const DEFAULT_CONFIG: AppConfig = {
+  free_credits: 100,
+  credits_per_question: 1,
+  free_questions_per_test: 10,
+  pause_window_minutes: 30,
+  pause_between_tests_minutes: 30,
+  exam_time_minutes: 120,
+  jamb_time_minutes: 120,
+  waec_time_minutes: 90,
+  neco_time_minutes: 90,
+  nabteb_time_minutes: 90,
+  questions_per_exam: 40,
+  passing_percentage: 50,
+  subjects_available: 25,
+  institutions_available: 182,
+  max_institution_students: 500,
+  primary_color: '#45a257',
+  subscription_plans: {
+    scholar_6m: { label: 'Scholar', price: 5000, duration_months: 6 },
+    academy_6m: { label: 'Academy', price: 20000, duration_months: 6 },
+  },
+  maintenance_mode: false,
+  ai_generation_enabled: true,
+};
 
-/**
- * Fetches application configuration from Firestore with in-memory caching.
- * Re-fetches every 5 minutes.
- */
 export async function getAppConfig(): Promise<AppConfig> {
-  const now = Date.now();
-
-  if (cachedConfig && now - lastFetchTime < CACHE_TTL) {
-    return cachedConfig;
-  }
-
   try {
-    const configDoc = await getDoc(doc(db, "app_config", "main_settings"));
-    
+    // Try primary path first, then fallback path for backward compat
+    let configDoc = await getDoc(doc(db, 'config', 'app_config'));
+
     if (!configDoc.exists()) {
-      throw new Error("Configuration not found in Firestore.");
+      configDoc = await getDoc(doc(db, 'app_config', 'main_settings'));
     }
 
-    cachedConfig = configDoc.data() as AppConfig;
-    lastFetchTime = now;
-    
-    return cachedConfig;
+    if (configDoc.exists()) {
+      return { ...DEFAULT_CONFIG, ...configDoc.data() } as AppConfig;
+    }
+
+    return DEFAULT_CONFIG;
   } catch (error) {
-    console.error("Error fetching app config:", error);
-    if (cachedConfig) return cachedConfig; // Fallback to stale cache on error
-    throw error;
+    console.error('Error fetching app config:', error);
+    return DEFAULT_CONFIG;
   }
 }

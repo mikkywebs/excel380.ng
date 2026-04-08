@@ -1,13 +1,15 @@
 {
   "hosting": {
-    "public": ".next/static",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "cleanUrls": true,
-    "trailingSlash": false,
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
       {
         "source": "**",
-        "function": "nextjsFunc"
+        "destination": "/index.html"
       }
     ]
   },
@@ -17,12 +19,5 @@
   },
   "storage": {
     "rules": "storage.rules"
-  },
-  "functions": [
-    {
-      "source": "functions",
-      "codebase": "default",
-      "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log"]
-    }
-  ]
+  }
 }
