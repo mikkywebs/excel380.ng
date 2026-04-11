@@ -7,7 +7,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { setDoc, doc, serverTimestamp, getDoc } from "firebase/firestore";
+import { auth, db } from "@/lib/firebase";
 import { Mail, Lock, Eye, EyeOff, ArrowRight, Loader2, AlertCircle } from "lucide-react";
 
 const loginSchema = z.object({
@@ -52,7 +53,22 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
     try {
-      await signInWithPopup(auth, new GoogleAuthProvider());
+      const cred = await signInWithPopup(auth, new GoogleAuthProvider());
+      const userDocRef = doc(db, "users", cred.user.uid);
+      const userDocSnap = await getDoc(userDocRef);
+      if (!userDocSnap.exists()) {
+        await setDoc(userDocRef, {
+          email: cred.user.email || "",
+          displayName: cred.user.displayName || "Student",
+          role: "student",
+          subscription_tier: "explorer",
+          subscription_expiry: null,
+          credits: 100,
+          institution_id: null,
+          last_test_at: null,
+          created_at: serverTimestamp(),
+        });
+      }
       router.push("/dashboard");
     } catch (err: any) {
       if (err?.code !== "auth/popup-closed-by-user") {

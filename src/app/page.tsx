@@ -9,6 +9,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { SubjectsGrid } from "@/components/landing/SubjectsGrid";
+import { CutoffsSearch } from "@/components/landing/CutoffsSearch";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { DownloadSection } from "@/components/landing/DownloadSection";
 import { Testimonials } from "@/components/landing/Testimonials";
@@ -69,7 +70,17 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionVariants}
         >
-          <SubjectsGrid />
+          <SubjectsGrid limit={12} />
+        </motion.div>
+
+        {/* Institution Cutoffs Search Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+        >
+          <CutoffsSearch />
         </motion.div>
 
         {/* Pricing Section */}

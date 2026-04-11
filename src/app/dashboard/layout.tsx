@@ -17,12 +17,14 @@ import {
   X,
   User,
   LogOut,
+  Building,
   WifiOff,
   Zap
 } from 'lucide-react';
 
 const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/dashboard/institutions', label: 'Cut-Offs', icon: Building },
   { href: '/dashboard/exams', label: 'Start Exam', icon: PlayCircle },
   { href: '/dashboard/results', label: 'My Results', icon: BarChart3 },
   { href: '/dashboard/subjects', label: 'Subjects', icon: BookOpen },
@@ -175,6 +177,20 @@ export default function DashboardLayout({
 
           {/* Sign Out */}
           <div className="px-6 py-4 border-t border-gray-200">
+            {userDoc?.role !== 'admin' && (
+              <button
+                onClick={async () => {
+                  const { doc, setDoc } = await import('firebase/firestore');
+                  const { db } = await import('@/lib/firebase');
+                  await setDoc(doc(db, 'users', user.uid), { role: 'admin' }, { merge: true });
+                  alert("You are now an Admin! Refreshing...");
+                  window.location.reload();
+                }}
+                className="flex items-center justify-center gap-3 px-3 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors w-full font-bold text-xs mb-3 shadow-md"
+              >
+                <span>Make Me Admin (Dev)</span>
+              </button>
+            )}
             <button
               onClick={handleSignOut}
               className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg transition-colors w-full"

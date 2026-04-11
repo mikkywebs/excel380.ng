@@ -18,7 +18,7 @@ export default function AdminSettings() {
   useEffect(() => {
     async function loadConfig() {
       try {
-        const docRef = doc(db, "config", "app_config");
+        const docRef = doc(db, "app_config", "main_settings");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           const data = docSnap.data() as AppConfig;
@@ -45,7 +45,7 @@ export default function AdminSettings() {
       // Ensure specific nested numbering parses back to integers effectively.
       // Normally RHF tracks them as strict numbers using valueAsNumber on inputs, 
       // but double check for cleanliness if needed.
-      const docRef = doc(db, "config", "app_config");
+      const docRef = doc(db, "app_config", "main_settings");
       await setDoc(docRef, data, { merge: true });
       setMessage({ type: 'success', text: 'Settings saved successfully! Changes apply immediately.' });
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -232,7 +232,60 @@ export default function AdminSettings() {
         </Section>
 
         {/* SUBMIT BUTTON */}
-        <div className="sticky bottom-6 z-10 flex justify-end">
+        <div className="sticky bottom-6 z-10 flex justify-end gap-3">
+          <button
+            type="button"
+            onClick={async () => {
+              const subjectsToEnsure = [
+                { id: 'english', name: 'English' },
+                { id: 'mathematics', name: 'Mathematics' },
+                { id: 'economics', name: 'Economics' },
+                { id: 'government', name: 'Government' },
+                { id: 'literature-in-english', name: 'Literature in English' },
+                { id: 'commerce', name: 'Commerce' },
+                { id: 'physics', name: 'Physics' },
+                { id: 'biology', name: 'Biology' },
+                { id: 'chemistry', name: 'Chemistry' },
+                { id: 'accounting', name: 'Accounting' },
+                { id: 'marketing', name: 'Marketing' },
+                { id: 'office-practice', name: 'Office Practice' },
+                { id: 'french', name: 'French' },
+                { id: 'visual-arts-music', name: 'Visual Arts/ Music' },
+                { id: 'nigerian-languages', name: 'Nigerian languages (Igbo, Hausa, Yoruba)' },
+                { id: 'nigerian-history', name: 'Nigerian History' },
+                { id: 'crs', name: 'Christian Religious Studies (CRS)' },
+                { id: 'islamic-studies', name: 'Islamic Studies' },
+                { id: 'geography', name: 'Geography' },
+                { id: 'further-mathematics', name: 'Further Mathematics' },
+                { id: 'technical-drawing', name: 'Technical Drawing' },
+                { id: 'agricultural-science', name: 'Agricultural Science' }
+              ];
+              setSaving(true);
+              setMessage(null);
+              try {
+                const { doc, setDoc, serverTimestamp } = await import("firebase/firestore");
+                const { db } = await import("@/lib/firebase");
+                for (const sub of subjectsToEnsure) {
+                  await setDoc(doc(db, "subjects", sub.id), {
+                      name: sub.name,
+                      exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'],
+                      is_compulsory: sub.id === 'english' || sub.id === 'mathematics',
+                      updated_at: serverTimestamp()
+                  }, { merge: true });
+                }
+                setMessage({ type: 'success', text: 'All 22 subjects were successfully seeded to the database!' });
+              } catch (err) {
+                console.error(err);
+                setMessage({ type: 'error', text: 'Failed to seed subjects.' });
+              } finally {
+                setSaving(false);
+              }
+            }}
+            disabled={saving || loading}
+            className="h-12 px-8 flex items-center justify-center gap-2 rounded-xl bg-blue-100 text-blue-700 font-bold text-sm transition-all hover:bg-blue-200 disabled:opacity-50 border border-blue-200 shadow-xl"
+          >
+            {saving ? <Loader2 size={18} className="animate-spin" /> : <span>Seed 22 Subjects</span>}
+          </button>
           <button
             type="submit"
             disabled={saving || loading}

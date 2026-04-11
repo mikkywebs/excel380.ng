@@ -15,7 +15,7 @@ export function HowItWorks() {
     {
       icon: <BookOpen className="h-8 w-8 text-white" />,
       title: "Select Subjects",
-      desc: "Choose from 20+ subjects tailored for JAMB, WAEC, NECO, and NABTEB syllabuses.",
+      desc: "Choose from 22 subjects tailored for JAMB, WAEC, NECO, and NABTEB syllabuses.",
       color: "bg-[var(--brand)]",
     },
     {

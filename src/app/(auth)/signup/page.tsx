@@ -8,7 +8,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createUserWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { httpsCallable } from "firebase/functions";
-import { auth, functions } from "@/lib/firebase";
+import { setDoc, doc, serverTimestamp, getDoc } from "firebase/firestore";
+import { auth, functions, db } from "@/lib/firebase";
 import { Mail, Lock, Eye, EyeOff, User, Ticket, ArrowRight, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 
 const signupSchema = z.object({
@@ -59,6 +60,19 @@ export default function SignupPage() {
       const cred = await createUserWithEmailAndPassword(auth, data.email, data.password);
       await updateProfile(cred.user, { displayName: data.fullName.trim() });
 
+      // Ensure user document is created with 100 credits synchronously
+      await setDoc(doc(db, "users", cred.user.uid), {
+        email: data.email,
+        displayName: data.fullName.trim(),
+        role: "student",
+        subscription_tier: "explorer",
+        subscription_expiry: null,
+        credits: 100,
+        institution_id: null,
+        last_test_at: null,
+        created_at: serverTimestamp(),
+      });
+
       // If invite code provided, join institution
       if (data.inviteCode && data.inviteCode.trim().length > 0) {
         try {
@@ -84,7 +98,22 @@ export default function SignupPage() {
     setLoading(true);
     setError("");
     try {
-      await signInWithPopup(auth, new GoogleAuthProvider());
+      const cred = await signInWithPopup(auth, new GoogleAuthProvider());
+      const userDocRef = doc(db, "users", cred.user.uid);
+      const userDocSnap = await getDoc(userDocRef);
+      if (!userDocSnap.exists()) {
+        await setDoc(userDocRef, {
+          email: cred.user.email || "",
+          displayName: cred.user.displayName || "Student",
+          role: "student",
+          subscription_tier: "explorer",
+          subscription_expiry: null,
+          credits: 100,
+          institution_id: null,
+          last_test_at: null,
+          created_at: serverTimestamp(),
+        });
+      }
       router.push("/dashboard");
     } catch (err: any) {
       if (err?.code !== "auth/popup-closed-by-user") {

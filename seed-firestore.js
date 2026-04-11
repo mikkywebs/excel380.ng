@@ -51,15 +51,28 @@ async function seedData() {
 
     // 2. Create Subjects
     const subjects = [
-      { id: 'english-language', name: 'English Language', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: true },
-      { id: 'mathematics', name: 'Mathematics', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
-      { id: 'physics', name: 'Physics', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
-      { id: 'chemistry', name: 'Chemistry', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
-      { id: 'biology', name: 'Biology', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
-      { id: 'government', name: 'Government', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'english', name: 'English', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: true },
+      { id: 'mathematics', name: 'Mathematics', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: true },
       { id: 'economics', name: 'Economics', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
-      { id: 'commerce', name: 'Commerce', exam_bodies: ['WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
-      { id: 'literature-in-english', name: 'Literature in English', exam_bodies: ['WAEC', 'NECO', 'NABTEB'], is_compulsory: false }
+      { id: 'government', name: 'Government', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'literature-in-english', name: 'Literature in English', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'commerce', name: 'Commerce', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'physics', name: 'Physics', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'biology', name: 'Biology', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'chemistry', name: 'Chemistry', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'accounting', name: 'Accounting', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'marketing', name: 'Marketing', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'office-practice', name: 'Office Practice', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'french', name: 'French', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'visual-arts-music', name: 'Visual Arts/ Music', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'nigerian-languages', name: 'Nigerian languages (Igbo, Hausa, Yoruba)', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'nigerian-history', name: 'Nigerian History', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'crs', name: 'Christian Religious Studies (CRS)', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'islamic-studies', name: 'Islamic Studies', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'geography', name: 'Geography', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'further-mathematics', name: 'Further Mathematics', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'technical-drawing', name: 'Technical Drawing', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false },
+      { id: 'agricultural-science', name: 'Agricultural Science', exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'], is_compulsory: false }
     ];
 
     for (const subject of subjects) {
@@ -74,7 +87,7 @@ async function seedData() {
     // 3. Seed 5 Sample Questions for English Language (JAMB)
     const sampleQuestions = [
       {
-        subject_id: 'english-language',
+        subject_id: 'english',
         exam_body: 'JAMB',
         question_text: 'Choose the option opposite in meaning to the underlined word: The manager was **versatile** in his approach to the problem.',
         options: {
@@ -90,7 +103,7 @@ async function seedData() {
         created_at: admin.firestore.FieldValue.serverTimestamp()
       },
       {
-        subject_id: 'english-language',
+        subject_id: 'english',
         exam_body: 'JAMB',
         question_text: 'Choose the word that has the same vowel sound as the one represented by the underlined letter: B**oo**t',
         options: {
@@ -106,7 +119,7 @@ async function seedData() {
         created_at: admin.firestore.FieldValue.serverTimestamp()
       },
       {
-        subject_id: 'english-language',
+        subject_id: 'english',
         exam_body: 'JAMB',
         question_text: 'Choose the most appropriate option to fill the gap: Neither the teachers nor the principal ___ present at the meeting.',
         options: {
@@ -122,7 +135,7 @@ async function seedData() {
         created_at: admin.firestore.FieldValue.serverTimestamp()
       },
       {
-        subject_id: 'english-language',
+        subject_id: 'english',
         exam_body: 'JAMB',
         question_text: 'Choose the option nearest in meaning to the underlined word: The lecture was **pedagogical** in nature.',
         options: {
@@ -138,7 +151,7 @@ async function seedData() {
         created_at: admin.firestore.FieldValue.serverTimestamp()
       },
       {
-        subject_id: 'english-language',
+        subject_id: 'english',
         exam_body: 'JAMB',
         question_text: 'Identify the word with a different stress pattern:',
         options: {

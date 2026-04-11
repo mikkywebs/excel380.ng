@@ -13,7 +13,7 @@ interface Subject {
   is_compulsory: boolean;
 }
 
-export function SubjectsGrid() {
+export function SubjectsGrid({ limit }: { limit?: number }) {
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,13 +49,15 @@ export function SubjectsGrid() {
               Select from our wide range of practice subjects, optimized for Nigerian exam standards.
             </p>
           </div>
-          <a
-            href="/subjects"
-            className="inline-flex items-center text-[var(--brand)] font-bold hover:gap-2 transition-all group"
-          >
-            View All Subjects
-            <ArrowRight size={20} className="ml-1 transition-transform group-hover:translate-x-1" />
-          </a>
+          {limit && (
+            <a
+              href="/subjects"
+              className="inline-flex items-center text-[var(--brand)] font-bold hover:gap-2 transition-all group"
+            >
+              View All Subjects
+              <ArrowRight size={20} className="ml-1 transition-transform group-hover:translate-x-1" />
+            </a>
+          )}
         </div>
 
         {loading ? (
@@ -66,7 +68,7 @@ export function SubjectsGrid() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {subjects.map((subject, idx) => (
+            {subjects.slice(0, limit || subjects.length).map((subject, idx) => (
               <motion.div
                 key={subject.id}
                 initial={{ opacity: 0, y: 20 }}

@@ -14,7 +14,8 @@ import {
   Settings, 
   ArrowLeft,
   Menu,
-  X
+  X,
+  GraduationCap
 } from "lucide-react";
 import { clsx } from "clsx";
 
@@ -23,7 +24,8 @@ const navLinks = [
   { name: "Questions", href: "/admin/questions", icon: FileQuestion },
   { name: "AI Staging", href: "/admin/questions/ai-staging", icon: Sparkles },
   { name: "Users", href: "/admin/users", icon: Users },
-  { name: "Institutions", href: "/admin/institutions", icon: Building2 },
+  { name: "Institutions (B2B)", href: "/admin/institutions", icon: Building2 },
+  { name: "Cut-Off Marks", href: "/admin/cutoffs", icon: GraduationCap },
   { name: "Settings", href: "/admin/settings", icon: Settings },
 ];
 
