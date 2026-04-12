@@ -17,9 +17,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   useEffect(() => {
     // Redirect if loaded and not an admin
     if (!authLoading && (!user || !isAdmin)) {
-      router.replace("/dashboard");
+      window.location.href = "/dashboard";
     }
-  }, [user, isAdmin, authLoading, router]);
+  }, [user, isAdmin, authLoading]);
 
   // Show a loading screen while auth state is resolving or before redirect triggers
   if (authLoading || (!user || !isAdmin)) {
