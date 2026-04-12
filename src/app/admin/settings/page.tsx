@@ -251,7 +251,9 @@ export default function AdminSettings() {
                 { id: 'office-practice', name: 'Office Practice' },
                 { id: 'french', name: 'French' },
                 { id: 'visual-arts-music', name: 'Visual Arts/ Music' },
-                { id: 'nigerian-languages', name: 'Nigerian languages (Igbo, Hausa, Yoruba)' },
+                { id: 'igbo', name: 'Igbo' },
+                { id: 'hausa', name: 'Hausa' },
+                { id: 'yoruba', name: 'Yoruba' },
                 { id: 'nigerian-history', name: 'Nigerian History' },
                 { id: 'crs', name: 'Christian Religious Studies (CRS)' },
                 { id: 'islamic-studies', name: 'Islamic Studies' },
@@ -273,7 +275,9 @@ export default function AdminSettings() {
                       updated_at: serverTimestamp()
                   }, { merge: true });
                 }
-                setMessage({ type: 'success', text: 'All 22 subjects were successfully seeded to the database!' });
+                const { deleteDoc } = await import("firebase/firestore");
+                await deleteDoc(doc(db, "subjects", "nigerian-languages"));
+                setMessage({ type: 'success', text: 'All 24 subjects were successfully seeded to the database!' });
               } catch (err) {
                 console.error(err);
                 setMessage({ type: 'error', text: 'Failed to seed subjects.' });
@@ -284,7 +288,7 @@ export default function AdminSettings() {
             disabled={saving || loading}
             className="h-12 px-8 flex items-center justify-center gap-2 rounded-xl bg-blue-100 text-blue-700 font-bold text-sm transition-all hover:bg-blue-200 disabled:opacity-50 border border-blue-200 shadow-xl"
           >
-            {saving ? <Loader2 size={18} className="animate-spin" /> : <span>Seed 22 Subjects</span>}
+            {saving ? <Loader2 size={18} className="animate-spin" /> : <span>Seed 24 Subjects</span>}
           </button>
           <button
             type="submit"
