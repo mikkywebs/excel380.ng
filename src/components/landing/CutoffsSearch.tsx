@@ -17,6 +17,7 @@ export function CutoffsSearch() {
   const [results, setResults] = useState<Institution[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchCount, setSearchCount] = useState(0);
+  const [showDropdown, setShowDropdown] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -26,10 +27,16 @@ export function CutoffsSearch() {
     }
   }, []);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!query.trim()) {
+  // Compute dynamic dropdown suggestions (limit to 5)
+  const suggestions = React.useMemo(() => {
+    if (!query.trim()) return [];
+    return (institutionsData as Institution[])
+      .filter((inst) => inst.name.toLowerCase().includes(query.toLowerCase()))
+      .slice(0, 5);
+  }, [query]);
+
+  const executeSearch = (searchQuery: string) => {
+    if (!searchQuery.trim()) {
       setResults([]);
       setHasSearched(false);
       return;
@@ -41,16 +48,26 @@ export function CutoffsSearch() {
     }
 
     const filtered = (institutionsData as Institution[]).filter((inst) =>
-      inst.name.toLowerCase().includes(query.toLowerCase())
+      inst.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     
-    setResults(filtered.slice(0, 5)); // Limit visual clutter
+    setResults(filtered.slice(0, 10)); // Show more results once fully searched
     setHasSearched(true);
+    setShowDropdown(false);
 
-    // Only increment search count if they actually searched for something and got results or at least attempted
     const newCount = searchCount + 1;
     setSearchCount(newCount);
     localStorage.setItem("excel380_search_count", newCount.toString());
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    executeSearch(query);
+  };
+
+  const handleSuggestionClick = (inst: Institution) => {
+    setQuery(inst.name);
+    executeSearch(inst.name);
   };
 
   return (
@@ -65,38 +82,70 @@ export function CutoffsSearch() {
           </p>
         </div>
 
-        <form onSubmit={handleSearch} className="relative max-w-2xl mx-auto mb-8">
-          <div className="relative flex items-center">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-zinc-400" />
+        <div className="relative max-w-2xl mx-auto mb-8">
+          <form onSubmit={handleSearch}>
+            <div className="relative flex items-center">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-zinc-400" />
+              </div>
+              <input
+                type="text"
+                className="block w-full pl-11 pr-32 py-4 border-2 border-zinc-200 dark:border-zinc-700 rounded-2xl bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:border-[var(--brand)] focus:ring-1 focus:ring-[var(--brand)] transition-colors shadow-sm"
+                placeholder="E.g., University of Lagos..."
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setShowDropdown(true);
+                  setHasSearched(false);
+                }}
+                onFocus={() => setShowDropdown(true)}
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-[var(--brand)] text-white font-medium hover:opacity-90 transition-opacity"
+              >
+                Search
+              </button>
             </div>
-            <input
-              type="text"
-              className="block w-full pl-11 pr-32 py-4 border-2 border-zinc-200 dark:border-zinc-700 rounded-2xl bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:border-[var(--brand)] focus:ring-1 focus:ring-[var(--brand)] transition-colors shadow-sm"
-              placeholder="E.g., University of Lagos..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <button
-              type="submit"
-              className="absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-[var(--brand)] text-white font-medium hover:opacity-90 transition-opacity"
-            >
-              Search
-            </button>
-          </div>
-          <div className="mt-3 text-sm text-center text-zinc-500 font-medium">
+          </form>
+
+          {/* Autocomplete Dropdown */}
+          {showDropdown && query.trim() && !hasSearched && (
+            <div className="absolute z-20 w-full mt-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-2xl overflow-hidden max-h-64 overflow-y-auto">
+              {suggestions.length > 0 ? (
+                <ul className="divide-y divide-zinc-100 dark:divide-zinc-700/50">
+                  {suggestions.map((inst) => (
+                    <li 
+                      key={inst.id}
+                      className="px-4 py-3 hover:bg-zinc-50 dark:hover:bg-zinc-700/50 cursor-pointer flex flex-col justify-center transition-colors"
+                      onClick={() => handleSuggestionClick(inst)}
+                    >
+                      <span className="font-semibold text-zinc-900 dark:text-zinc-50">{inst.name}</span>
+                      <span className="text-xs text-zinc-500">{inst.category}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="px-4 py-4 text-center text-sm text-zinc-500">
+                  No institutions matching "{query}"
+                </div>
+              )}
+            </div>
+          )}
+
+          <div className="mt-4 text-sm text-center text-zinc-500 font-medium">
             {searchCount > 0 && searchCount < 3 && (
               <span className="text-amber-600 dark:text-amber-400">
                 You have {3 - searchCount} free search{3 - searchCount === 1 ? '' : 'es'} remaining today.
               </span>
             )}
             {searchCount >= 3 && (
-              <span className="text-red-500 font-bold flex items-center justify-center gap-1">
+              <span className="text-red-500 font-bold flex items-center justify-center gap-1 mt-2 p-2 bg-red-50 dark:bg-red-950/30 rounded-lg">
                 <AlertCircle className="w-4 h-4" /> Free search limit reached.
               </span>
             )}
           </div>
-        </form>
+        </div>
 
         {hasSearched && (
           <div className="max-w-2xl mx-auto">
