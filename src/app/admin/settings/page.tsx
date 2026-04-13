@@ -237,7 +237,7 @@ export default function AdminSettings() {
             type="button"
             onClick={async () => {
               const subjectsToEnsure = [
-                { id: 'english', name: 'English' },
+                { id: 'english_language', name: 'English Language' },
                 { id: 'mathematics', name: 'Mathematics' },
                 { id: 'economics', name: 'Economics' },
                 { id: 'government', name: 'Government' },
@@ -277,6 +277,7 @@ export default function AdminSettings() {
                 }
                 const { deleteDoc } = await import("firebase/firestore");
                 await deleteDoc(doc(db, "subjects", "nigerian-languages"));
+                await deleteDoc(doc(db, "subjects", "english"));
                 await deleteDoc(doc(db, "subjects", "english-language"));
                 await deleteDoc(doc(db, "subjects", "english_language"));
                 await deleteDoc(doc(db, "subjects", "use-of-english"));

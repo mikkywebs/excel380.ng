@@ -63,6 +63,16 @@ export default function Home() {
           <CutoffsSearch />
         </motion.div>
 
+        {/* Subjects Preview Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+        >
+          <SubjectsGrid limit={8} />
+        </motion.div>
+
         {/* How It Works Section */}
 
         {/* Pricing Section */}

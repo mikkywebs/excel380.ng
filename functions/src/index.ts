@@ -75,6 +75,14 @@ export const verifyPaystackPayment = onCall({ secrets: [PAYSTACK_SECRET_KEY] }, 
     const now = new Date();
     
     switch (plan) {
+      case "scholar":
+        targetTier = "scholar";
+        expiryDate = new Date(now.setMonth(now.getMonth() + 1));
+        break;
+      case "scholar_pro":
+        targetTier = "scholar_pro";
+        expiryDate = new Date(now.setMonth(now.getMonth() + 1));
+        break;
       case "scholar_6m":
         targetTier = "scholar";
         expiryDate = new Date(now.setMonth(now.getMonth() + 6));

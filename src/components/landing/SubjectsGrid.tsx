@@ -27,15 +27,22 @@ export function SubjectsGrid({ limit }: { limit?: number }) {
           ...doc.data()
         })) as Subject[];
 
-        // Standardize: If both "English" and "English Language" exist, keep "English"
-        // Also deduplicate by name (case-insensitive, normalized)
+        // Standardize: Ensure "English Language" is the canonical name
         const seen = new Set();
         const normalizedData = data.filter(sub => {
-          const name = sub.name.toLowerCase().trim();
-          // Map "English Language" or "Use of English" to a single key for deduplication
-          const normKey = name === "english language" || name === "use of english" ? "english" : name;
-          if (seen.has(normKey)) return false;
-          seen.add(normKey);
+          const name = sub.name.trim();
+          const lowerName = name.toLowerCase();
+          
+          // Map variations to "English Language"
+          if (lowerName === "english" || lowerName === "use of english" || lowerName === "english language") {
+            if (seen.has("english_language")) return false;
+            seen.add("english_language");
+            sub.name = "English Language"; // Force the display name
+            return true;
+          }
+
+          if (seen.has(lowerName)) return false;
+          seen.add(lowerName);
           return true;
         });
 

@@ -83,7 +83,11 @@ export default function UpgradePage() {
       metadata: { userId: user.uid, plan: plan.id },
       onSuccess: async (res: any) => {
         try {
-          await httpsCallable(functions, 'verifyPaystackPayment')({ reference: res.reference, plan: plan.id });
+          await httpsCallable(functions, 'verifyPaystackPayment')({ 
+            reference: res.reference, 
+            plan: plan.id,
+            user_uid: user.uid 
+          });
           confetti({
             particleCount: 180,
             spread: 90,
@@ -118,94 +122,136 @@ export default function UpgradePage() {
   );
 
   return (
-    <div className="space-y-8 max-w-5xl">
-      <div>
-        <h1 className="text-2xl font-bold">Upgrade Your Plan</h1>
-        <p className="text-muted-foreground mt-1">Choose the plan that fits your exam goals.</p>
-      </div>
-      
-      <div className="flex items-center gap-4 p-4 bg-primary/5 border border-primary/20 rounded-2xl">
-        <Shield className="h-5 w-5 text-primary shrink-0" />
-        <div>
-          <p className="text-sm font-bold">
-            Current Plan: <span className="text-primary capitalize">{currentTier.replace('_', ' ')}</span>
-          </p>
-          {expiryDate && <p className="text-xs text-muted-foreground mt-0.5">Renews on {expiryDate}</p>}
-        </div>
-      </div>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col gap-2"
+      >
+        <h1 className="text-4xl font-black tracking-tighter">Choose Your Edge</h1>
+        <p className="text-muted-foreground text-lg uppercase font-bold tracking-widest text-xs opacity-60">Unlock your potential with premium tools.</p>
+      </motion.div>
       
       {error && (
-        <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 text-sm">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex items-start gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-600 dark:text-red-400 text-sm font-medium"
+        >
           <X className="h-4 w-4 shrink-0 mt-0.5" />
           <p>{error}</p>
-        </div>
+        </motion.div>
       )}
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {PLANS.map(plan => {
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-4">
+        {PLANS.map((plan, idx) => {
           const isCurrent = plan.id === currentTier;
           const isPaying = payingPlanId === plan.id;
           const icons = {
-            explorer: <GraduationCap className="h-6 w-6" />,
-            scholar: <Zap className="h-6 w-6" />,
-            scholar_pro: <Crown className="h-6 w-6" />
+            explorer: <GraduationCap className="h-8 w-8" />,
+            scholar: <Zap className="h-8 w-8" />,
+            scholar_pro: <Crown className="h-8 w-8" />
           };
+
+          const cardStyles = plan.highlight 
+            ? "border-primary/50 bg-primary/5 shadow-2xl shadow-primary/10" 
+            : "border-border/50 bg-card/50 backdrop-blur-xl shadow-sm";
+
           return (
-            <div key={plan.id} className={`relative bg-card rounded-2xl border-2 p-6 shadow-sm flex flex-col ${plan.color}${plan.highlight ? " shadow-primary/20 shadow-lg" : ""}`}>
-              {plan.highlight && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 bg-primary text-white text-xs font-black rounded-full uppercase tracking-wider shadow-lg">
-                    Most Popular
+            <motion.div 
+              key={plan.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              className={`group relative flex flex-col rounded-3xl border-2 p-8 transition-all hover:-translate-y-2 ${cardStyles}`}
+            >
+              {isCurrent && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="px-5 py-1.5 bg-green-500 text-white text-[10px] font-black rounded-full uppercase tracking-[0.2em] shadow-lg flex items-center gap-1.5 whitespace-nowrap">
+                    <CheckCircle2 size={12} />
+                    Active Plan
                   </span>
                 </div>
               )}
-              <div className={`p-3 rounded-xl w-fit mb-4 ${plan.highlight ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"}`}>
+
+              {plan.highlight && !isCurrent && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="px-5 py-1.5 bg-primary text-white text-[10px] font-black rounded-full uppercase tracking-[0.2em] shadow-lg whitespace-nowrap">
+                    Best Value
+                  </span>
+                </div>
+              )}
+
+              <div className={`p-4 rounded-2xl w-fit mb-8 transition-transform group-hover:scale-110 group-hover:rotate-3 ${plan.id === 'scholar_pro' ? "bg-amber-400/10 text-amber-500" : plan.highlight ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground"}`}>
                 {icons[plan.id as keyof typeof icons] || icons.explorer}
               </div>
-              <h3 className="text-xl font-black">{plan.name}</h3>
-              <div className="my-4">
-                <span className="text-3xl font-black">{plan.priceDisplay}</span>
-                {plan.price > 0 && <span className="text-muted-foreground text-sm ml-1">/ {plan.period}</span>}
+
+              <h3 className="text-2xl font-black tracking-tight mb-1">{plan.name}</h3>
+              <p className="text-xs text-muted-foreground font-medium mb-6 uppercase tracking-wider opacity-60">
+                {plan.id === 'explorer' ? 'Perfect for starters' : plan.id === 'scholar' ? 'For active learners' : 'The ultimate experience'}
+              </p>
+
+              <div className="mb-10">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-5xl font-black tabular-nums tracking-tighter">{plan.priceDisplay}</span>
+                  {plan.price > 0 && <span className="text-muted-foreground font-bold opacity-60">/mo</span>}
+                </div>
+                {isCurrent && expiryDate && (
+                  <p className="text-[10px] font-bold text-green-600 mt-2 uppercase tracking-widest">Renews {expiryDate}</p>
+                )}
               </div>
-              <ul className="space-y-2.5 flex-1 mb-6">
+
+              <ul className="space-y-4 flex-1 mb-10">
                 {plan.features.map(f => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
+                  <li key={f} className="flex items-start gap-3 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                    <div className="h-5 w-5 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    </div>
                     {f}
                   </li>
                 ))}
               </ul>
+
               {isCurrent ? (
-                <div className="w-full py-3 text-center rounded-xl bg-muted text-muted-foreground text-sm font-bold">
-                  Current Plan
-                </div>
-              ) : plan.price === 0 ? (
-                <div className="w-full py-3 text-center rounded-xl border border-border text-sm font-bold text-muted-foreground">
-                  Free Forever
+                <div className="w-full py-4 text-center rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 text-sm font-black uppercase tracking-widest cursor-default">
+                  Currently Active
                 </div>
               ) : (
                 <button
                   onClick={() => handleUpgrade(plan)}
-                  className={`w-full py-3 rounded-xl text-sm font-black transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed ${plan.highlight ? "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25" : "bg-foreground text-background hover:bg-foreground/90"}`}
+                  disabled={isPaying}
+                  className={`w-full py-4 rounded-2xl text-sm font-black uppercase tracking-[0.1em] transition-all flex items-center justify-center gap-3 active:scale-95 shadow-xl ${
+                    plan.highlight 
+                    ? "bg-primary text-white hover:bg-primary/90 shadow-primary/20" 
+                    : "bg-foreground text-background hover:opacity-90 shadow-foreground/10"
+                  }`}
                 >
                   {isPaying ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      Processing...
+                      Securing...
                     </>
                   ) : (
-                    <>Upgrade to {plan.name}</>
+                    <>Get Started</>
                   )}
                 </button>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>
       
-      <p className="text-xs text-muted-foreground text-center">
-        Payments processed securely by Paystack. Cancel anytime.
-      </p>
+      <div className="flex flex-col items-center gap-6 pt-12">
+        <div className="flex items-center gap-4 text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] opacity-40">
+          <div className="h-px w-12 bg-border" />
+          Secured by Paystack
+          <div className="h-px w-12 bg-border" />
+        </div>
+        
+        <p className="text-xs text-muted-foreground/60 max-w-sm text-center font-medium leading-relaxed">
+          By upgrading, you agree to our Terms of Service. 
+          Subscriptions can be managed or canceled in your account settings.
+        </p>
+      </div>
     </div>
   );
 }
