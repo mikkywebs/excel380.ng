@@ -168,9 +168,6 @@ export default function ExamsPage() {
         </div>
       </div>
     </div>
-  );
-}
-
     </div>
   );
 }
