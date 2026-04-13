@@ -9,6 +9,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { SubjectsGrid } from "@/components/landing/SubjectsGrid";
+import { MockExamPreview } from "@/components/landing/MockExamPreview";
 import { CutoffsSearch } from "@/components/landing/CutoffsSearch";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { DownloadSection } from "@/components/landing/DownloadSection";
@@ -53,6 +54,16 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Mock Exam Preview Section [NEW] */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+        >
+          <MockExamPreview />
+        </motion.div>
+
         {/* Institution Cutoffs Search Section */}
         <motion.div
           initial="hidden"
@@ -72,8 +83,6 @@ export default function Home() {
         >
           <SubjectsGrid limit={8} />
         </motion.div>
-
-        {/* How It Works Section */}
 
         {/* Pricing Section */}
         <motion.div
