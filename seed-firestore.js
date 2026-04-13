@@ -86,6 +86,12 @@ async function seedData() {
       console.log(`✓ Seeded subject: ${subject.name}`);
     }
 
+    // Cleanup duplicates
+    await db.collection('subjects').doc('nigerian-languages').delete();
+    await db.collection('subjects').doc('english-language').delete();
+    await db.collection('subjects').doc('use-of-english').delete();
+    console.log('✓ Successfully cleaned up deprecated subject IDs');
+
     // 3. Seed 5 Sample Questions for English Language (JAMB)
     const sampleQuestions = [
       {

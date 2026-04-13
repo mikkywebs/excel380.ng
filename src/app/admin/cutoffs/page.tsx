@@ -161,6 +161,7 @@ export default function AdminCutoffs() {
                 <table className="w-full text-left text-sm whitespace-nowrap">
                    <thead className="bg-zinc-50 text-zinc-500 dark:bg-zinc-900/50 dark:text-zinc-400 font-semibold border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-10 backdrop-blur-md">
                       <tr>
+                         <th className="px-6 py-4 w-16">S/N</th>
                          <th className="px-6 py-4">Institution Name</th>
                          <th className="px-6 py-4">Category</th>
                          <th className="px-6 py-4">Cut-Off Score</th>
@@ -168,8 +169,11 @@ export default function AdminCutoffs() {
                       </tr>
                    </thead>
                    <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
-                      {filtered.map(item => (
+                      {filtered.map((item, index) => (
                           <tr key={item.id} className="hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors group">
+                               <td className="px-6 py-4 text-zinc-500 font-mono text-xs">
+                                   {index + 1}
+                               </td>
                                <td className="px-6 py-4 font-medium text-zinc-900 dark:text-zinc-50">
                                    <div className="truncate max-w-md" title={item.name}>{item.name}</div>
                                </td>

@@ -277,7 +277,11 @@ export default function AdminSettings() {
                 }
                 const { deleteDoc } = await import("firebase/firestore");
                 await deleteDoc(doc(db, "subjects", "nigerian-languages"));
-                setMessage({ type: 'success', text: 'All 24 subjects were successfully seeded to the database!' });
+                await deleteDoc(doc(db, "subjects", "english-language"));
+                await deleteDoc(doc(db, "subjects", "english_language"));
+                await deleteDoc(doc(db, "subjects", "use-of-english"));
+                await deleteDoc(doc(db, "subjects", "use_of_english"));
+                setMessage({ type: 'success', text: 'All 24 subjects were successfully seeded and duplicates were cleaned up!' });
               } catch (err) {
                 console.error(err);
                 setMessage({ type: 'error', text: 'Failed to seed subjects.' });

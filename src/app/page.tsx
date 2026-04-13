@@ -53,26 +53,6 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
-        {/* How It Works Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariants}
-        >
-          <HowItWorks />
-        </motion.div>
-
-        {/* Subjects Grid Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariants}
-        >
-          <SubjectsGrid limit={12} />
-        </motion.div>
-
         {/* Institution Cutoffs Search Section */}
         <motion.div
           initial="hidden"
@@ -82,6 +62,8 @@ export default function Home() {
         >
           <CutoffsSearch />
         </motion.div>
+
+        {/* How It Works Section */}
 
         {/* Pricing Section */}
         <motion.div

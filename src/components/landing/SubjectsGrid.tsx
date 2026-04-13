@@ -26,7 +26,20 @@ export function SubjectsGrid({ limit }: { limit?: number }) {
           id: doc.id,
           ...doc.data()
         })) as Subject[];
-        setSubjects(data);
+
+        // Standardize: If both "English" and "English Language" exist, keep "English"
+        // Also deduplicate by name (case-insensitive, normalized)
+        const seen = new Set();
+        const normalizedData = data.filter(sub => {
+          const name = sub.name.toLowerCase().trim();
+          // Map "English Language" or "Use of English" to a single key for deduplication
+          const normKey = name === "english language" || name === "use of english" ? "english" : name;
+          if (seen.has(normKey)) return false;
+          seen.add(normKey);
+          return true;
+        });
+
+        setSubjects(normalizedData);
       } catch (err) {
         console.error("Error fetching subjects:", err);
       } finally {

@@ -1,68 +1,4166 @@
 [
-  { "id": 1, "name": "PAN-ATLANTIC UNIVERSITY, AHMED ONIBUDO STREET, VICTORIA ISLAND, LAGOS STATE", "score": 210, "category": "Degree-Awarding Institutions" },
-  { "id": 2, "name": "COVENANT UNIVERSITY, CANAAN LAND, OTA, OGUN STATE", "score": 200, "category": "Degree-Awarding Institutions" },
-  { "id": 3, "name": "OBAFEMI AWOLOWO UNIVERSITY, ILE-IFE, OSUN STATE", "score": 200, "category": "Degree-Awarding Institutions" },
-  { "id": 4, "name": "UNIVERSITY OF IBADAN, IBADAN, OYO STATE", "score": 200, "category": "Degree-Awarding Institutions" },
-  { "id": 5, "name": "SEMINARY OF ALL SAINTS, EKPOMA, EDO STATE. (AFFL TO UNIBEN, BENIN)", "score": 200, "category": "Degree-Awarding Institutions" },
-  { "id": 6, "name": "UNIVERSITY OF BENIN, BENIN CITY, EDO STATE", "score": 200, "category": "Degree-Awarding Institutions" },
-  { "id": 8, "name": "UNIVERSITY OF LAGOS, LAGOS STATE", "score": 200, "category": "Degree-Awarding Institutions" },
-  { "id": 11, "name": "LAGOS STATE UNIVERSITY, OJO, LAGOS STATE", "score": 190, "category": "Degree-Awarding Institutions" },
-  { "id": 12, "name": "NIGERIAN ARMY UNIVERSITY, BIU, BORNO STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 13, "name": "EKITI STATE UNIVERSITY, ADO-EKITI, EKITI STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 14, "name": "AFE BABALOLA UNIVERSITY, ADO-EKITI, EKITI STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 17, "name": "PAMO UNIVERSITY OF MEDICAL SCIENCE, PORT HARCOURT, RIVERS STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 18, "name": "REDEEMERS UNIVERSITY, OSUN STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 19, "name": "LANDMARK UNIVERSITY, OMU-ARAN, KWARA STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 21, "name": "UNIVERSITY OF ILORIN, ILORIN, KWARA STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 22, "name": "UNIVERSITY OF JOS, JOS, PLATEAU STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 23, "name": "FEDERAL UNIVERSITY, LOKOJA, KOGI STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 24, "name": "UNIVERSITY OF ABUJA, ABUJA, FCT", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 25, "name": "BAYERO UNIVERSITY, KANO, KANO STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 26, "name": "AHMADU BELLO UNIVERSITY, ZARIA, KADUNA STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 34, "name": "UNIVERSITY OF PORT-HARCOURT, RIVERS STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 35, "name": "LADOKE AKINTOLA UNIVERSITY OF TECHNOLOGY, OGBOMOSO, OYO STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 38, "name": "BENUE STATE UNIVERSITY, MAKURDI, BENUE STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 41, "name": "OLABISI ONABANJO UNIVERSITY, AGO-IWOYE, OGUN STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 42, "name": "FEDERAL UNIVERSITY OF AGRICULTURE, ABEOKUTA, OGUN STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 46, "name": "UNIVERSITY OF NIGERIA NSUKKA, ENUGU STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 49, "name": "ABUBAKAR TAFAWA BALEWA UNIVERSITY, BAUCHI, BAUCHI STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 50, "name": "UNIVERSITY OF UYO, AKWA IBOM STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 51, "name": "AMBROSE ALLI UNIVERSITY, EKPOMA, EDO STATE", "score": 180, "category": "Degree-Awarding Institutions" },
-  { "id": 52, "name": "FEDERAL UNIVERSITY OF AGRICULTURE, MAKURDI, BENUE STATE", "score": 170, "category": "Degree-Awarding Institutions" },
-  { "id": 54, "name": "FEDERAL UNIVERSITY OF TECHNOLOGY, MINNA, NIGER STATE", "score": 170, "category": "Degree-Awarding Institutions" },
-  { "id": 57, "name": "DELTA STATE UNIVERSITY, ABRAKA, DELTA STATE", "score": 170, "category": "Degree-Awarding Institutions" },
-  { "id": 59, "name": "KADUNA STATE UNIVERSITY, KADUNA, KADUNA STATE", "score": 170, "category": "Degree-Awarding Institutions" },
-  { "id": 61, "name": "UMARU MUSA YARADUA UNIVERSITY, KATSINA, KATSINA STATE", "score": 170, "category": "Degree-Awarding Institutions" },
-  { "id": 67, "name": "OSUN STATE UNIVERSITY, OSOGBO, OSUN STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 78, "name": "NIGER DELTA UNIVERSITY, WILBERFORCE ISLAND, BAYELSA STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 83, "name": "NASARAWA STATE UNIVERSITY, KEFFI, NASARAWA STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 86, "name": "USMANU DANFODIO UNIVERSITY, SOKOTO, SOKOTO STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 88, "name": "EBONYI STATE UNIVERSITY, ABAKALIKI, EBONYI STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 96, "name": "NNAMDI AZIKIWE UNIVERSITY, AWKA, ANAMBRA STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 98, "name": "UNIVERSITY OF CALABAR, CALABAR, CROSS RIVER STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 99, "name": "UNIVERSITY OF MAIDUGURI, BORNO STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 100, "name": "KOGI STATE UNIVERSITY, ANYIGBA, KOGI STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 101, "name": "MICHAEL OKPARA UNIVERSITY OF AGRICULTURE, UMUDIKE, ABIA STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 103, "name": "KWARA STATE UNIVERSITY, MALETE, ILORIN, KWARA STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 107, "name": "ABIA STATE UNIVERSITY, UTURU, ABIA STATE", "score": 160, "category": "Degree-Awarding Institutions" },
-  { "id": 201, "name": "FEDERAL COLLEGE OF EDUCATION, EHA-AMUFU, ENUGU STATE", "score": 180, "category": "Colleges of Education" },
-  { "id": 205, "name": "DELTA STATE COLLEGE OF PHYSICAL EDUCATION, MOSOGAR, DELTA STATE", "score": 170, "category": "Colleges of Education" },
-  { "id": 212, "name": "ADEYEMI COLLEGE OF EDUCATION, ONDO, ONDO STATE", "score": 140, "category": "Colleges of Education" },
-  { "id": 223, "name": "FEDERAL COLLEGE OF EDUCATION, YOLA, ADAMAWA STATE", "score": 120, "category": "Colleges of Education" },
-  { "id": 228, "name": "AL-IBADAN COLLEGE OF EDUCATION, IBADAN, OYO STATE", "score": 120, "category": "Colleges of Education" },
-  { "id": 230, "name": "ADENIRAN OGUNSANYA COLLEGE OF EDUCATION, IJANIKIN, LAGOS STATE", "score": 120, "category": "Colleges of Education" },
-  { "id": 249, "name": "FEDERAL COLLEGE OF EDUCATION, KANO, KANO STATE", "score": 100, "category": "Colleges of Education" },
-  { "id": 256, "name": "COLLEGE OF EDUCATION, MINNA, NIGER STATE", "score": 100, "category": "Colleges of Education" },
-  { "id": 257, "name": "SHEHU SHAGARI COLLEGE OF EDUCATION, SOKOTO, SOKOTO STATE", "score": 100, "category": "Colleges of Education" },
-  { "id": 274, "name": "COLLEGE OF EDUCATION, ILORIN, KWARA STATE", "score": 100, "category": "Colleges of Education" },
-  { "id": 301, "name": "SCHOOL OF ORTHOPEDIC CAST TECHNOLOGY, ILORIN, KWARA STATE", "score": 200, "category": "Polytechnics" },
-  { "id": 302, "name": "FEDERAL POLYTECHNIC, NEKEDE, IMO STATE", "score": 180, "category": "Polytechnics" },
-  { "id": 314, "name": "FEDERAL POLYTECHNIC, ILARO, OGUN STATE", "score": 150, "category": "Polytechnics" },
-  { "id": 319, "name": "LAGOS STATE POLY, IKORODU, LAGOS STATE", "score": 150, "category": "Polytechnics" },
-  { "id": 320, "name": "THE POLYTECHNIC, IBADAN, OYO STATE", "score": 150, "category": "Polytechnics" },
-  { "id": 323, "name": "YABA COLLEGE OF TECHNOLOGY, YABA, LAGOS STATE", "score": 150, "category": "Polytechnics" },
-  { "id": 326, "name": "FEDERAL POLYTECHNIC, EDE, OSUN STATE", "score": 140, "category": "Polytechnics" },
-  { "id": 346, "name": "KWARA STATE POLYTECHNIC, ILORIN, KWARA STATE", "score": 130, "category": "Polytechnics" },
-  { "id": 359, "name": "AUCHI POLYTECHNIC, AUCHI, EDO STATE", "score": 120, "category": "Polytechnics" },
-  { "id": 360, "name": "FEDERAL POLYTECHNIC, BIDA, NIGER STATE", "score": 120, "category": "Polytechnics" }
+  {
+    "id": 1,
+    "name": "A.D. RUFAI COLLEGE OF EDU. FOR LEGAL AND ISLAMIC STUDIES, MISAU, BAUCHI STATE",
+    "score": 160,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 2,
+    "name": "ABDU GUSAU POLYTECHNIC, TALATA-MAFARA, ZAMFARA STATE",
+    "score": 160,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 3,
+    "name": "ABIA STATE COLLEGE OF EDUCATION (TECHNICAL), ABIA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 4,
+    "name": "ABIA STATE COLLEGE OF HEALTH SCIENCES AND MANAGEMENT TECHNOLOGY, ABA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 5,
+    "name": "ABIA STATE POLYTECHNIC, ABA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 6,
+    "name": "ABIA STATE UNIVERSITY, UTURU, ABIA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 7,
+    "name": "ABRAHAM ADESANYA POLYTECHNIC, IJEBU-IGBO, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 8,
+    "name": "ABUBAKAR TAFAWA BALEWA UNIVERSITY, BAUCHI, BAUCHI STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 9,
+    "name": "ABUBAKAR TATARI ALI POLYTECHNIC, BAUCHI, BAUCHI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 10,
+    "name": "ABUJA SCHOOL OF PENSION AND RETIREMENT PLANNING, ABUJA",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 11,
+    "name": "ACHIEVERS UNIVERSITY OWO, ONDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 12,
+    "name": "ADAMAWA STATE POLYTECHNIC, YOLA, ADAMAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 13,
+    "name": "ADAMAWA STATE UNIVERSITY, MUBI, ADAMAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 14,
+    "name": "ADAMU AUGIE COLLEGE OF EDUCATION, ARGUNGU, KEBBI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 15,
+    "name": "ADAMU TAFAWA BALEWA COLLEGE OF EDUCATION, KANGERE, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 16,
+    "name": "ADECOM COLLEGE OF BUSINESS AND MANAGEMENT STUDIES, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 17,
+    "name": "ADECOM COLLEGE OF BUSINESS AND MANAGEMENT STUDIES, IBADAN, OYO STATE 120 213. IGBAJO POLYTECHNIC, IGBAJO, OSUN STATE 120 214. GRACE POLYTECHNIC, LAGOS, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 18,
+    "name": "ADEKUNLE AJASIN UNIVERSITY, AKUNGBA-AKOKO, ONDO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 19,
+    "name": "ADELEKE UNIVERSITY, EDE, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 20,
+    "name": "ADENIRAN OGUNSANYA COLLEGE OF EDUCATION, IJANIKIN, LAGOS STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 21,
+    "name": "ADESHINA COLLEGE OF EDUCATION, SHARE, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 22,
+    "name": "ADEYEMI COLLEGE OF EDUCATION, ONDO, ONDO STATE",
+    "score": 140,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 23,
+    "name": "ADMIRALTY UNIVERSITY OF NIGERIA, IBUSA, DELTA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 24,
+    "name": "AFE BABALOLA UNIVERSITY, ADO-EKITI, EKITI STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 25,
+    "name": "AFRICAN THINKERS COMMUNITY OF INQUIRY COLLEGE OF EDUCATION, ENUGU STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 26,
+    "name": "AGZ COLLEGE OF EDUCATION, BAJOGA, GOMBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 27,
+    "name": "AHMADU BELLO UNIVERSITY TEACHING HOSPITAL, ZARIA, KADUNA STATE",
+    "score": 130,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 28,
+    "name": "AHMADU BELLO UNIVERSITY, ZARIA, KADUNA STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 29,
+    "name": "AIR FORCE INSTITUTE OF TECHNOLOGY, KADUNA, KADUNA STATE",
+    "score": 170,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 30,
+    "name": "AJAYI CROWTHER UNIVERSITY, OYO, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 31,
+    "name": "AJAYI POLYTECHNIC, ARA-EKITI, EKITI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 32,
+    "name": "AKANU IBIAM FEDERAL POLYTECHNIC, UNWANA, AFIKPO, EBONYI STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 33,
+    "name": "AKPERAN ORSHI COLLEGE OF AGRICULTURE, YANDEV, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 34,
+    "name": "AKWA IBOM STATE COLLEGE OF ARTS AND SCIENCE NUNG, UKIM, AKWA IBOM STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 35,
+    "name": "AKWA IBOM STATE UNIVERSITY, IKOT-AKPADEN, AKWA IBOM STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 36,
+    "name": "AKWA-IBOM STATE COLLEGE OF EDUCATION, AFAHA-NSIT, AKWA IBOM STATE",
+    "score": 180,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 37,
+    "name": "AKWA-IBOM STATE POLYTECHNIC, IKOT-OSURUA, AKWA IBOM STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 38,
+    "name": "AL-HIKMA POLYTECHNIC, MARARABA, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 39,
+    "name": "AL-HIKMAH UNIVERSITY, ILORIN, KWARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 40,
+    "name": "AL-IBADAN COLLEGE OF EDUCATION, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 41,
+    "name": "AL-QALAM UNIVERSITY, KATSINA, KATSINA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 42,
+    "name": "AL-QALAM UNIVERSITY, KATSINA, KATSINA STATE 160 153.UNIVERSITY OF MKAR, GBOKO, BENUE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 43,
+    "name": "ALEX EKWUEME FEDERAL UNIVERSITY, NDUFU-ALIKE, EBONYI STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 44,
+    "name": "ALHIKMA COLLEGE OF EDUCATION, ANKPA, KOGI STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 45,
+    "name": "ALLOVER CENTRAL POLYTECHNIC, LYNSON CHEMICAL AVENUE , OTA OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 46,
+    "name": "ALVAN IKOKU COLLEGE OF EDUCATION, OWERRI, IMO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 47,
+    "name": "AMBASSADOR COLLEGE OF MANAGEMENT AND TECH, PORT HARCOURT, RIVERS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 48,
+    "name": "AMBROSE ALLI UNIVERSITY, EKPOMA, EDO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 49,
+    "name": "AMEENUDEEN COLLEGE OF EDUCATION, KANO, KANO STATE",
+    "score": 150,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 50,
+    "name": "AMEER SHEHU IDRIS COLLEGE OF ADVANCE STUDIES, ZARIA, KADUNA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 51,
+    "name": "AMERICAN UNIVERSITY OF NIGERIA, YOLA, ADAMAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 52,
+    "name": "AMINU DABO COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY, KANO, KANO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 53,
+    "name": "AMINU KANO COLLEGE OF ISLAMIC AND LEGAL STUDIES, KANO, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 54,
+    "name": "AMINU KANO TEACHING HOSPITAL, SCHOOL OF HEALTH INFO MANAGEMENT, KANO, KANO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 55,
+    "name": "AMINU SALEH COLLEGE OF EDUCATION, AZARE, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 56,
+    "name": "ANAMBRA STATE COLLEGE OF HEALTH TECHNOLOGY, OBOSI, ANAMBRA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 57,
+    "name": "ANAMBRA STATE POLYTECHNIC, MGBAKWU, ANAMBRA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 58,
+    "name": "ANCHOR UNIVERSITY, AYOBO, LAGOS STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 59,
+    "name": "ANGEL CROWN COLLEGE OF EDUCATION, GIDAN-DAYA, FCT-ABUJA",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 60,
+    "name": "ANNUR INSTITUTE FOR ISLAMIC EDUC, KWALAJAWA, RANGAZA, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 61,
+    "name": "ANSAR-UD-DEEN COLLEGE OF EDUCATION, ISOLO, LAGOS STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 62,
+    "name": "APA COLLEGE OF EDUCATION, AIDO GODO-OKPOGA, BENUE STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 63,
+    "name": "ARABIC AND ISLAMIC COLLEGE OF EDUCATION, POTISKUM, YOBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 64,
+    "name": "AREWA PARALEGAL INNOVATION ENTERPRISE, KADUNA, KADUNA STATE",
+    "score": 140,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 65,
+    "name": "ARTHUR JARVIS UNIVERSITY, AKPABUYO, CROSS RIVER STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 66,
+    "name": "ASHI POLYTECHNIC, ANYIIN LOGO, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 67,
+    "name": "ASSANUSIYAH COLLEGE OF EDUCATION, IPETUMODU, OSUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 68,
+    "name": "ATIBA UNIVERSITY, OYO, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 69,
+    "name": "ATIKU ABUBAKAR COLLEGE OF LEGAL AND ISLAMIC STUDIES, NGURU, YOBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 70,
+    "name": "AUCHI POLYTECHNIC, AUCHI, EDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 71,
+    "name": "AUGUSTINE UNIVERSITY, ILARA, LAGOS, LAGOS STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 72,
+    "name": "AWORI DISTRICT COLLEGE OF EDUCATION, OGUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 73,
+    "name": "BABCOCK UNIVERSITY, ILISHAN-REMO, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 74,
+    "name": "BAPTIST COLLEGE OF THEOLOGY, BENIN CITY, EDO STATE (AFFL TO AMBROSE ALLI UNIV)",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 75,
+    "name": "BAPTIST COLLEGE OF THEOLOGY, OBINZE, OWERRI (AFFL TO UNIV OF PORT HARCOURT)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 76,
+    "name": "BARTHOLOMEW COLLEGE OF HEALTH TECHNOLOGY, SHAO, ILORIN, KWARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 77,
+    "name": "BAUCHI INSTITUTE FOR ARABIC AND ISLAMIC STUDIES, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 78,
+    "name": "BAUCHI STATE COLLEGE OF AGRICULTURE, BAUCHI, BAUCHI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 79,
+    "name": "BAUCHI STATE UNIVERSITY, GADAU, BAUCHI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 80,
+    "name": "BAYELSA MEDICAL UNIVERSITY, YENAGOA",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 81,
+    "name": "BAYELSA STATE COLLEGE OF HEALTH TECHNOLOGY, OTUOGIDI, OGBIA TOWN, BAYELSA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 82,
+    "name": "BAYELSA STATE POLYTECHNIC, ALEIBIRI, BAYELSA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 83,
+    "name": "BAYERO UNIVERSITY, KANO, KANO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 84,
+    "name": "BAYO TIJANI COLLEGE OF EDUCATION, EGAN-IGANDO, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 85,
+    "name": "BAZE UNIVERSITY, ABUJA, FCT",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 86,
+    "name": "BELLS UNIVERSITY OF TECHNOLOGY, OTA, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 87,
+    "name": "BENSON IDAHOSA SCHOOL OF BASIC AND APPLIED STUDIES, BENIN CITY, EDO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 88,
+    "name": "BENSON IDAHOSA UNIVERSITY, BENIN CITY, EDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 89,
+    "name": "BENUE STATE POLY, UGBOKOLO, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 90,
+    "name": "BENUE STATE UNIVERSITY, MAKURDI, BENUE STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 91,
+    "name": "BEST GLOBAL BUSINESS AND FINANCIAL SCHOOL, CICMA HOUSE, KACHIA RD, KADUNA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 92,
+    "name": "BEST LEGACY COLLEGE OF EDUCATION, OGBOMOSO, OYO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 93,
+    "name": "BEST SOLUTION POLYTECHNIC, AKURE, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 94,
+    "name": "BIGA COLLEGE OF EDUCATION, ARKILLA, FEDERAL-LOW COST, NASARAWA, SOKOTO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 95,
+    "name": "BIGARD MEMORIAL SEMINARY, ENUGU. (AFFLIATED TO UNIVERSITY OF IBADAN, OYO STATE)",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 96,
+    "name": "BILYAMINU OTHMAN COLLEGE OF EDUCATION, DASS, BAUCHI STATE",
+    "score": 160,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 97,
+    "name": "BINGHAM UNIVERSITY, KARU, NASARAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 98,
+    "name": "BINYAMINU USMAN POLYTECHNIC, HADIJIA, JIGAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 99,
+    "name": "BOLMOR POLYTECHNIC, 33 OLD IFE ROAD, PMB 32, AGODI IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 100,
+    "name": "BOLMOR POLYTECHNIC, 33 OLD IFE ROAD, PMB 32, AGODI IBADAN, OYO STATE 120 201. NOVELTY POLYTECHNIC, KISHI, OYO STATE 120 202. SPEEDWAY POLYTECHNIC, OSOBA, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 101,
+    "name": "BONNY VOCATIONAL CENTRE, ISLAND, RIVERS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 102,
+    "name": "BORNO STATE UNIVERSITY, MAIDUGURI, BORNO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 103,
+    "name": "BOWEN UNIVERSITY, IWO, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 104,
+    "name": "BUSINESS EDUCATION EXAMINATION COUNCIL, (BEEC),APAPA, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 105,
+    "name": "BUSINESS EDUCATION EXAMINATION COUNCIL, (BEEC),APAPA, LAGOS STATE 100 107. COLLEGE OF BANKING AND FINANCE, IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 106,
+    "name": "CALEB UNIVERSITY, IMOTA, LAGOS STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 107,
+    "name": "CALVARY COLLEGE OF TECHNOLOGY, PAPALANTO, OGUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 108,
+    "name": "CALVARY FOUNDATION INSTITUTE OF TECHNOLOGY, ENUGU, ENUGU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 109,
+    "name": "CALVARY POLYTECHNIC, OWO-OYIBO, DELTA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 110,
+    "name": "CARITAS UNIVERSITY, AMORJI-NIKE, ENUGU, ENUGU STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 111,
+    "name": "CENTRAL INSTITUTE OF BUSINESS AND TECHNOLOGY, EGBA, EDO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 112,
+    "name": "CENTRE FOR CREATIVE ARTS EDUCATION, PORT HARCOURT, RIVERS STATE",
+    "score": 130,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 113,
+    "name": "CHERISH ENTERPRISE INSTITUTE, BATSARI, KATSINA STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 114,
+    "name": "CHRISLAND UNIVERSITY, OWODE, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 115,
+    "name": "CHRISTOPHER UNIVERSITY, MOWE, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 116,
+    "name": "CHUKWUEMEKA ODUMEGWU OJUKWU UNIVERSITY, ULI, ANAMBRA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 117,
+    "name": "CIFMAN INST OF TECH AND MGT, 6 LANCASTER RD, YABA, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 118,
+    "name": "CITI POLYTECHNIC, ABUJA",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 119,
+    "name": "CITY COLLEGE OF EDUCATION, GARKI, ABUJA, FCT",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 120,
+    "name": "CLARETIAN INSTITUTE OF PHILOSOPHY, NEKEDE, IMO STATE (AFFL TO IMO STATE UNIVERSITY)",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 121,
+    "name": "CLIFFORD UNIVERSITY, OWERRINTTA, ABIA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 122,
+    "name": "COAL CITY UNIVERSITY, ENUGU, ENUGU STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 123,
+    "name": "COLLEGE OF ADMINISTRATIVE AND BUSINESS STUDIES, POTISKUM, YOBE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 124,
+    "name": "COLLEGE OF AGRICULTURE AND ANIMAL SCIENCE, BAKURA, ZAMFARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 125,
+    "name": "COLLEGE OF AGRICULTURE AND ANIMAL SCIENCE, MANDO ROAD, KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 126,
+    "name": "COLLEGE OF AGRICULTURE AND ANIMAL SCIENCE, MANDO ROAD, KADUNA, KADUNA STATE 120 186. COLLEGE OF AGRICULTURE, JALINGO, TARABA STATE 120 187. AKPERAN ORSHI COLLEGE OF AGRICULTURE, YANDEV, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 127,
+    "name": "COLLEGE OF AGRICULTURE, JALINGO, TARABA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 128,
+    "name": "COLLEGE OF AGRICULTURE, KABBA, KOGI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 129,
+    "name": "COLLEGE OF AGRICULTURE, LAFIA, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 130,
+    "name": "COLLEGE OF AGRICULTURE, ZURU, KEBBI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 131,
+    "name": "COLLEGE OF ARABIC AND ISLAMIC LEGAL STUDIES, ILORIN. (AFFL TO BAYERO UNIV, KANO)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 132,
+    "name": "COLLEGE OF ARABIC AND ISLAMIC LEGAL STUDIES, ILORIN. (AFFL TO BAYERO UNIV, KANO) 160 182.OSUN STATE COLLEGE OF EDUCATION, ILESA, OSUN STATE. (AFFL TO UNIV OF IBADAN)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 133,
+    "name": "COLLEGE OF BANKING AND FINANCE, IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 134,
+    "name": "COLLEGE OF BUSINESS AND MANAGEMENT STUDIES, KONDUGA, BORNO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 135,
+    "name": "COLLEGE OF BUSINESS AND MANAGEMENT STUDIES, KONDUGA, BORNO STATE 120 197. AL-HIKMA POLYTECHNIC, MARARABA, NASARAWA STATE. 120 198. ASHI POLYTECHNIC, ANYIIN LOGO, BENUE STATE 120 199. TIMEON KAIROS POLYTECHNIC, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 136,
+    "name": "COLLEGE OF EDUCATION, (TECH), LAFIAGI, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 137,
+    "name": "COLLEGE OF EDUCATION, AGBOR, DELTA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 138,
+    "name": "COLLEGE OF EDUCATION, AKWANGA, NASARAWA STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 139,
+    "name": "COLLEGE OF EDUCATION, ANKPA, KOGI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 140,
+    "name": "COLLEGE OF EDUCATION, BILLIRI, GOMBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 141,
+    "name": "COLLEGE OF EDUCATION, DARAZO, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 142,
+    "name": "COLLEGE OF EDUCATION, ERO, AKURE, ONDO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 143,
+    "name": "COLLEGE OF EDUCATION, FOREIGN LINKS CAMPUS MORO, IFE NORTH, OSUN STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 144,
+    "name": "COLLEGE OF EDUCATION, GINDIRI, PLATEAU STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 145,
+    "name": "COLLEGE OF EDUCATION, IGUEBEN, EDO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 146,
+    "name": "COLLEGE OF EDUCATION, IKERE, EKITI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 147,
+    "name": "COLLEGE OF EDUCATION, ILORIN, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 148,
+    "name": "COLLEGE OF EDUCATION, KURA, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 149,
+    "name": "COLLEGE OF EDUCATION, LANLATE, OYO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 150,
+    "name": "COLLEGE OF EDUCATION, MARU, ZAMFARA STATE",
+    "score": 180,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 151,
+    "name": "COLLEGE OF EDUCATION, MINNA, NIGER STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 152,
+    "name": "COLLEGE OF EDUCATION, MOSOGAR, DELTA STATE. (AFFL TO DELTA STATE UNIV, ABRAKA)",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 153,
+    "name": "COLLEGE OF EDUCATION, OJU, BENUE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 154,
+    "name": "COLLEGE OF EDUCATION, ORO, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 155,
+    "name": "COLLEGE OF EDUCATION, WARRI, DELTA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 156,
+    "name": "COLLEGE OF EDUCATION, ZING, TARABA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 157,
+    "name": "COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY, IJERO-EKITI, EKITI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 158,
+    "name": "COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY, IJERO-EKITI, EKITI STATE 120 193. HUSSAINI ADAMU FEDERAL POLYTECHNIC, KAZAURE, JIGAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 159,
+    "name": "COLLEGE OF HEALTH TECHNOLOGY, CALABAR, CROSS RIVER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 160,
+    "name": "COLLEGE OF HEALTH TECHNOLOGY, ZAWAN, PLATEAU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 161,
+    "name": "COMPLETE COMPUTERS AND TECH INSTITUTE, 11 ADESUWA GRAMMAR SCH RD, GRA, BENIN",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 162,
+    "name": "COMPREHENSIVE INSTITUTE OF MANAGEMENT AND TECHNOLOGY, BYAZIN, KUBWA, ABUJA",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 163,
+    "name": "CORONA COLLEGE OF EDUCATION, LEKKI, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 164,
+    "name": "COVENANT POLYTECHNIC, ABA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 165,
+    "name": "COVENANT UNIVERSITY, CANAAN LAND, OTA, OGUN STATE",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 166,
+    "name": "CRESCENT UNIVERSITY, ABEOKUTA, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 167,
+    "name": "CRESTFIELD COLLEGE OF EDUCATION, ERIN OSUN, OSUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 168,
+    "name": "CROSS RIVER STATE COLLEGE OF EDUCATION, AKAMKPA, CROSS RIVER STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 169,
+    "name": "CROSS RIVER STATE INSTITUTE OF TECH AND MANAGEMENT, UGEP, CROSS RIVER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 170,
+    "name": "CROSS RIVER STATE INSTITUTE OF TECH AND MANAGEMENT, UGEP, CROSS RIVER STATE 120 204. COVENANT POLYTECHNIC, ABA, ABIA STATE 120 205. THE POLYTECHNIC, ADOKA, BENUE STATE 120 206. CROWN POLYTECHNIC, ODO ADO-EKITI, EKITI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 171,
+    "name": "CROSS RIVERS UNIVERSITY OF TECHNOLOGY, CALABAR, CROSS RIVERS STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 172,
+    "name": "CROWFORD UNIVERSITY OF APOSTOLIC FAITH MISSION FAITH CITY, IGBESA, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 173,
+    "name": "CROWN HILL UNIVERSITY, EIYENKORIN, KWARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 174,
+    "name": "CROWN POLYTECHNIC, ODO ADO-EKITI, EKITI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 175,
+    "name": "D.S. ADEGBENRO ICT POLYTECHNIC, ITORI, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 176,
+    "name": "DA'WAH COLLEGE OF EDUCATION, BAUCHI, BAUCHI STATE",
+    "score": 135,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 177,
+    "name": "DAGAMA'S COLLEGE OF APPLIED SCIENCE, ZARIA, KADUNA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 178,
+    "name": "DAGAMA'S COLLEGE OF APPLIED SCIENCE, ZARIA, KADUNA STATE 100 109. NIIT EDUCATION AND TRAINING CENTRE, OWERRI, IMO STATE 100 110. INSTITUTE OF MARITIME AND SAFETY, LAGOS STATE 100 111. UNIVAL INSTITUTE OF TECHNOLOGY, BENIN CITY, EDO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 179,
+    "name": "DALEWARES INSTITUTE OF TECHNOLOGY, SURULERE, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 180,
+    "name": "DALEWARES INSTITUTE OF TECHNOLOGY, SURULERE, LAGOS STATE 100 99. IFE BUSINESS SCHOOL, IIE-IFE, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 181,
+    "name": "DAMSON INSTITUTE OF MANAGEMENT AND TECHNOLOGY, FCT ABUJA",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 182,
+    "name": "DELAR COLLEGE of EDUCATION, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 183,
+    "name": "DELTA STATE COLLEGE OF HEALTH TECHNOLOGY, UGHELLI, DELTA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 184,
+    "name": "DELTA STATE COLLEGE OF PHYSICAL EDUCATION, MOSOGAR, DELTA STATE",
+    "score": 170,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 185,
+    "name": "DELTA STATE POLYTECHNIC, OGWASHI-UKU, DELTA STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 186,
+    "name": "DELTA STATE POLYTECHNIC, OTEFE, DELTA STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 187,
+    "name": "DELTA STATE POLYTECHNIC, OZORO, DELTA STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 188,
+    "name": "DELTA STATE SCHOOL OF MARINE TECHNOLOGY, BURUTU, DELTA STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 189,
+    "name": "DELTA STATE UNIVERSITY, ABRAKA, DELTA STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 190,
+    "name": "DIALOGUE COMPUTER INSTITUTE, KADUNA, KADUNA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 191,
+    "name": "DIALOGUE COMPUTER INSTITUTE, KATSINA, KATSINA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 192,
+    "name": "DIGITAL BRIDGE INSTITUTE, KANO, KANO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 193,
+    "name": "DIGITAL BRIDGE INSTITUTE, OSHODI, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 194,
+    "name": "DISTINCT INSTITUTE OF MANAGEMENT SCIENCE, OSOGBO, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 195,
+    "name": "DOMINICAN UNIVERSITY, IBADAN, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 196,
+    "name": "DOMINION UNIVERSITY, IBADAN, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 197,
+    "name": "DORBEN POLYTECHNIC, BWARI-GARAM ROAD, FCT-ABUJA",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 198,
+    "name": "DOTS ICT INSTITUTE OF TECHNOLOGY, IJEMO AGBADU ROAD, ABEOKUTA, OGUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 199,
+    "name": "EASTERN POLYTECHNIC, PORT HARCOURT, RIVERS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 200,
+    "name": "EBONYI STATE UNIVERSITY, ABAKALIKI, EBONYI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 201,
+    "name": "ECWA COLLEGE OF EDUCATION, IGBAJA, KWARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 202,
+    "name": "ECWA INTERNATIONAL COLLEGE OF TECHNOLOGY, JOS, PLATEAU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 203,
+    "name": "EDO STATE INSTITUTE OF TECHNOLOGY AND MANAGEMENT, USEN, EDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 204,
+    "name": "EDO UNIVERSITY, IYAMHO, EDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 205,
+    "name": "EDWIN CLARK UNIVERSITY, KIAGBODO, DELTA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 206,
+    "name": "EKITI STATE UNIVERSITY, ADO-EKITI, EKITI STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 207,
+    "name": "EKO COLLEGE OF MANAGEMENT AND TECHNOLOGY, IKOTUN, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 208,
+    "name": "EKO UNIVERSITY OF MEDICINE AND HEALTH SCIENCE, IJANIKIN, LAGOS STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 209,
+    "name": "ELIZABETH MEMORIAL COLLEGE OF EDUCATION, ODENIGBO, NSUKKA, ENUGU STATE",
+    "score": 150,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 210,
+    "name": "ELIZADE UNIVERSITY, ILARA-MOKIN, ONDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 211,
+    "name": "EMIRATE COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY KANO",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 212,
+    "name": "ENTREPRENEURSHIP, VOCATIONAL TECHNOLOGY LIMITED, MATAN FADA, KANO STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 213,
+    "name": "ENUGU STATE POLYTECHNIC, IWOLLO, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 214,
+    "name": "ENVILLE INSTITUTE OF ENVIRONMENTAL AND SAFETY MANAGEMENT, IKEJA, LAGOS STATE",
+    "score": 110,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 215,
+    "name": "ESSIEN UKPABIA PRESBYTERIAN THEOLOGICAL COLLEGE, ITU (AFFL TO UNICAL)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 216,
+    "name": "ESTAC INSTITUTE OF CONSTRUCTION TECHNOLOGY, TRANSEKULU, ENUGU STATE",
+    "score": 110,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 217,
+    "name": "EVANGEL UNIVERSITY, AKAEZE, EBONYI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 218,
+    "name": "FCT COLLEGE OF EDUCATION, ZUBA, ABUJA, FCT",
+    "score": 130,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 219,
+    "name": "FEDERAL COLLEGE OF AGRICULTURAL PRODUCE TECH, HOTORO GRA EXT, KANO, KANO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 220,
+    "name": "FEDERAL COLLEGE OF AGRICULTURE, AKURE, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 221,
+    "name": "FEDERAL COLLEGE OF AGRICULTURE, MOOR PLANTATION, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 222,
+    "name": "FEDERAL COLLEGE OF ANIMAL HEALTH AND PRODUCTION TECHNOLOGY, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 223,
+    "name": "FEDERAL COLLEGE OF EDUCATION (SPECIAL), OYO, OYO STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 224,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.) BICHI, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 225,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), AKOKA, LAGOS STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 226,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), ASABA, DELTA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 227,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), GOMBE, GOMBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 228,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), GOMBE, GOMBE STATE 100 128.CORONA COLLEGE OF EDUCATION, LEKKI, LAGOS STATE 100 129.KWARARAFA COLLEGE OF EDUCATION, OTUKPO, BENUE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 229,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), GUSAU (AFFL TO ABU ZARIA)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 230,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), OMOKU, RIVERS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 231,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), OMOKU, RIVERS STATE 100 123.NATIONAL INSTITUTE FOR NIGERIAN LANGUAGES, ABA, ABIA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 232,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), POTISKUM, YOBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 233,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), UMUNZE, ANAMBRA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 234,
+    "name": "FEDERAL COLLEGE OF EDUCATION (TECH.), UMUNZE, ANAMBRA STATE 100 125.BAYO TIJANI COLLEGE OF EDUCATION, EGAN-IGANDO, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 235,
+    "name": "FEDERAL COLLEGE OF EDUCATION, ABEOKUTA, OGUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 236,
+    "name": "FEDERAL COLLEGE OF EDUCATION, ABEOKUTA, OGUN STATE 100 134.HAMZAINAB COLLEGE OF EDUCATION, OSOGBO, OSUN STATE 100 135. ANGEL CROWN COLLEGE OF EDUCATION, GIDAN-DAYA, FCT-ABUJA 100 136. COLLEGE OF EDUCATION, WARRI, DELTA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 237,
+    "name": "FEDERAL COLLEGE OF EDUCATION, EHA-AMUFU, ENUGU STATE",
+    "score": 180,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 238,
+    "name": "FEDERAL COLLEGE OF EDUCATION, KANO, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 239,
+    "name": "FEDERAL COLLEGE OF EDUCATION, KATSINA, KATSINA STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 240,
+    "name": "FEDERAL COLLEGE OF EDUCATION, KONTAGORA, NIGER STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 241,
+    "name": "FEDERAL COLLEGE OF EDUCATION, OBUDU, CROSS RIVER STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 242,
+    "name": "FEDERAL COLLEGE OF EDUCATION, OKENE, KOGI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 243,
+    "name": "FEDERAL COLLEGE OF EDUCATION, PANKSHIN, PLATEAU STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 244,
+    "name": "FEDERAL COLLEGE OF EDUCATION, YOLA, ADAMAWA STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 245,
+    "name": "FEDERAL COLLEGE OF FISHERIES AND MARINE TECHNOLOGY, VICTORIA ISLAND LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 246,
+    "name": "FEDERAL COLLEGE OF FORESTRY TECHNOLOGY, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 247,
+    "name": "FEDERAL COLLEGE OF FORESTRY, JOS, PLATEAU STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 248,
+    "name": "FEDERAL COLLEGE OF FORESTRY, MECHANISATION, AFAKA, KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 249,
+    "name": "FEDERAL COLLEGE OF FORESTRY, MECHANISATION, AFAKA, KADUNA, KADUNA STATE 120 175. FEDERAL COLLEGE OF FORESTRY TECHNOLOGY, IBADAN, OYO STATE 120 176. FEDERAL COLLEGE OF AGRICULTURE, AKURE, ONDO STATE 120 177. GATEWAY ICT POLYTECHNIC, SAAPADE, OGUN STATE 120 178. NIGER STATE POLYTECHNIC, ZUNGERU, NIGER STATE 120 179. NOGAK POLYTECHNIC, MILE 2 ROAD, IKOM, CROSS RIVER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 250,
+    "name": "FEDERAL COLLEGE OF FRESHWATER FISHERIES TECHNOLOGY, BAGA, BORNO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 251,
+    "name": "FEDERAL COLLEGE OF HORTICULTURE, DADIN KOWA, GOMBE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 252,
+    "name": "FEDERAL COLLEGE OF LAND RESOURCES TECHNOLOGY, KURU, JOS, PLATEAU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 253,
+    "name": "FEDERAL COLLEGE OF LAND RESOURCES TECHNOLOGY, OWERRI, IMO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 254,
+    "name": "FEDERAL COLLEGE OF WILDLIFE MANAGEMENT, NEW BUSSA, NIGER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 255,
+    "name": "FEDERAL COLLEGE OF WILDLIFE MANAGEMENT, NEW BUSSA, NIGER STATE 120 157. SHAKA POLYTECHNIC, PRINCE SHAKA WAY, BENIN CITY, EDO STATE 120 158. LAGOS CITY POLYTECHNIC, IKEJA, LAGOS STATE 120 159. LIGHT HOUSE POLYTECHNIC, EUBUOBANOSA, EDO STATE 120 160. UMARU ALI SHINKAFI POLYTECHNIC, SOKOTO, SOKOTO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 256,
+    "name": "FEDERAL COOPERATIVE COLLEGE, IBADAN P.M.B. 5033, ELEYELE, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 257,
+    "name": "FEDERAL COOPERATIVE COLLEGE, KADUNA ABUJA RD JUNCTION, KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 258,
+    "name": "FEDERAL COOPERATIVE COLLEGE, KADUNA ABUJA RD JUNCTION, KADUNA, KADUNA STATE 120 145. ADAMAWA STATE POLYTECHNIC, YOLA, ADAMAWA STATE 120 146. VALLEY VIEW POLYTECHNIC, OHAFIA, ABIA STATE 120 147. VILLANOVA POLYTECHNIC, IMESI-ILE, OSUN STATE 120 148. HASSAN USMAN KATSINA POLYTECHNIC, KATSINA, KATSINA STATE 120 149. GRUNDTVIG POLYTECHNIC, OBA, ANAMBRA STATE 120 150. CITI POLYTECHNIC, ABUJA 120 151. FEDERAL POLYTECHNIC, MUBI, ADAMAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 259,
+    "name": "FEDERAL COOPERATIVE COLLEGE, OJI RIVER, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 260,
+    "name": "FEDERAL POLYTECHNIC OF OIL AND GAS, BONNY, RIVERS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 261,
+    "name": "FEDERAL POLYTECHNIC, ADO-EKITI, EKITI STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 262,
+    "name": "FEDERAL POLYTECHNIC, BALI, TARABA STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 263,
+    "name": "FEDERAL POLYTECHNIC, BAUCHI, BAUCHI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 264,
+    "name": "FEDERAL POLYTECHNIC, BIDA, NIGER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 265,
+    "name": "FEDERAL POLYTECHNIC, DAMATURU, YOBE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 266,
+    "name": "FEDERAL POLYTECHNIC, EDE, OSUN STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 267,
+    "name": "FEDERAL POLYTECHNIC, EKOWE, BAYELSA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 268,
+    "name": "FEDERAL POLYTECHNIC, IDAH, KOGI STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 269,
+    "name": "FEDERAL POLYTECHNIC, ILARO, OGUN STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 270,
+    "name": "FEDERAL POLYTECHNIC, ILE-OLUJI, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 271,
+    "name": "FEDERAL POLYTECHNIC, KAURA/NAMODA, ZAMFARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 272,
+    "name": "FEDERAL POLYTECHNIC, MUBI, ADAMAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 273,
+    "name": "FEDERAL POLYTECHNIC, NASARAWA, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 274,
+    "name": "FEDERAL POLYTECHNIC, NEKEDE, IMO STATE",
+    "score": 180,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 275,
+    "name": "FEDERAL POLYTECHNIC, OFFA, KWARA STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 276,
+    "name": "FEDERAL POLYTECHNIC, OKO, ANAMBRA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 277,
+    "name": "FEDERAL POLYTECHNIC, UKANA, AKWA IBOM STATE",
+    "score": 130,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 278,
+    "name": "FEDERAL SCHOOL OF BIOMEDICAL ENGINEERING, (LUTH), IDI-ARABA, LAGOS STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 279,
+    "name": "FEDERAL SCHOOL OF DENTAL TECHNOLOGY AND THERAPY, ENUGU, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 280,
+    "name": "FEDERAL SCHOOL OF STATISTICS, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 281,
+    "name": "FEDERAL SCHOOL OF STATISTICS, MANCHOK, KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 282,
+    "name": "FEDERAL SCHOOL OF SURVEYING, OYO, OYO STATE",
+    "score": 160,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 283,
+    "name": "FEDERAL TRAINING CENTRE, IKOYI, LAGOS STATE",
+    "score": 130,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 284,
+    "name": "FEDERAL TRAINING CENTRE, KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 285,
+    "name": "FEDERAL UNIVERSITY OF AGRICULTURE, ABEOKUTA, OGUN STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 286,
+    "name": "FEDERAL UNIVERSITY OF AGRICULTURE, MAKURDI, BENUE STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 287,
+    "name": "FEDERAL UNIVERSITY OF PETROLEUM RESOURCES, EFFURUN, DELTA STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 288,
+    "name": "FEDERAL UNIVERSITY OF TECHNOLOGY, AKURE, ONDO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 289,
+    "name": "FEDERAL UNIVERSITY OF TECHNOLOGY, MINNA, NIGER STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 290,
+    "name": "FEDERAL UNIVERSITY OF TECHNOLOGY, OWERRI, IMO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 291,
+    "name": "FEDERAL UNIVERSITY, BIRNIN-KEBBI, KEBBI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 292,
+    "name": "FEDERAL UNIVERSITY, DUTSE, JIGAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 293,
+    "name": "FEDERAL UNIVERSITY, DUTSIN-MA, KATSINA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 294,
+    "name": "FEDERAL UNIVERSITY, GASHUA, YOBE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 295,
+    "name": "FEDERAL UNIVERSITY, GUSAU, ZAMFARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 296,
+    "name": "FEDERAL UNIVERSITY, KASHERE, GOMBE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 297,
+    "name": "FEDERAL UNIVERSITY, LAFIA, NASARAWA STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 298,
+    "name": "FEDERAL UNIVERSITY, LOKOJA, KOGI STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 299,
+    "name": "FEDERAL UNIVERSITY, OTUOKE, BAYELSA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 300,
+    "name": "FEDERAL UNIVERSITY, OYE-EKITI, EKITI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 301,
+    "name": "FIDEI POLYTECHNIC, GBOKO, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 302,
+    "name": "FILAPS MEDIA TRAINING INSTITUTE, GYADI-GYADI, KANO, KANO STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 303,
+    "name": "FIRST TECHNICAL UNIVERSITY, IBADAN, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 304,
+    "name": "FIRSTMARK INNOVATION SCHOOL OF TECH, UREJE QTRS, OFF IKERRE RD, ADO-EKITI",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 305,
+    "name": "FLYINGDOVE INSTITUTE OF INFORMATION TECHNOLOGY, ABUJA, FCT",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 306,
+    "name": "FOUNDATION COLLEGE OF TECHNOLOGY, IKOT IDEM, IKOT EKPENE, AKWA IBOM STATE",
+    "score": 140,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 307,
+    "name": "FOUNTAIN UNIVERSITY, OSOGBO, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 308,
+    "name": "GATEWAY ICT POLYTECHNIC, SAAPADE, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 309,
+    "name": "GATEWAY INDUSTRIAL AND PETRO-GAS INSTITUTE, ONI, OGUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 310,
+    "name": "GBOKO COLLEGE OF EDUCATION, GBOKO, BENUE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 311,
+    "name": "GBOKO POLYTECHNICS, GBOKO, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 312,
+    "name": "GLOBAL COLLEGE OF EDUCATION, JOS, PLATEAU STATE",
+    "score": 160,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 313,
+    "name": "GLOBAL MARITIME ACADEMY, OGONI-OLOMU, UGHELLI SOUTH, DELTA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 314,
+    "name": "GLOBAL POLYTECHNIC, OYEMEKUN ROAD, AKURE, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 315,
+    "name": "GLORY LAND INSTITUTE OF MANAGEMENT, ANKPA, KOGI STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 316,
+    "name": "GODFREY OKOYE UNIVERSITY, URGWUOMU-NIKE, ENUGU STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 317,
+    "name": "GOMBE STATE COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY, KALTUNGO, GOMBE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 318,
+    "name": "GOMBE STATE COLLEGE OF NURSING AND MIDWIFERY, GOMBE STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 319,
+    "name": "GOMBE STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY, KUMO, GOMBE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 320,
+    "name": "GOMBE STATE UNIVERSITY, TUDUN WADA, GOMBE, GOMBE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 321,
+    "name": "GOOD SHEPHERD COLLEGE OF EDUCATION, DANLEMO ALAKUKO, OGUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 322,
+    "name": "GRACE CITY INSTITUTE OF TECHNOLOGY & MANAGEMENT SCIENCE, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 323,
+    "name": "GRACE POLYTECHNIC, LAGOS, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 324,
+    "name": "GRAIG-PHILLIPS COLLEGE OF TECHNOLOGY, MARYLAND, LAGOS STATE",
+    "score": 140,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 325,
+    "name": "GREENFIELD UNIVERSITY, KASARAMI, KADUNA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 326,
+    "name": "GREGORY UNIVERSITY, UTURU, ABIA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 327,
+    "name": "GRUNDTVIG POLYTECHNIC, OBA, ANAMBRA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 328,
+    "name": "HALLMARK UNIVERSITY, IJEBU-ITELE, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 329,
+    "name": "HAMZAINAB COLLEGE OF EDUCATION, OSOGBO, OSUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 330,
+    "name": "HARVARD WILSON COLLEGE OF EDUCATION, ABA, ABIA STATE",
+    "score": 130,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 331,
+    "name": "HASSAN USMAN KATSINA POLYTECHNIC, KATSINA, KATSINA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 332,
+    "name": "HERITAGE POLYTECHNIC, IKOT UDOTA, AKWA IBOM STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 333,
+    "name": "HEZEKIAH UNIVERSITY, UMUDI, IMO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 334,
+    "name": "HIGHLAND COLLEGE OF TECHNOLOGY AND FURTHER EDUCATION, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 335,
+    "name": "HILL COLLEGE OF EDUCATION, GWANJI, AKWANGA, NASARAWA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 336,
+    "name": "HOMIK OIL AND GAS FACILITY ENGINEERING SCHOOL, PORT HARCOURT, RIVERS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 337,
+    "name": "HON. JUSTICE L. O . AREMU'S ACADEMY FOR BASICS STUDIES,IBADAN,OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 338,
+    "name": "HUSSAINI ADAMU FEDERAL POLYTECHNIC, KAZAURE, JIGAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 339,
+    "name": "IBADAN CITY POLYTECHNIC, IBADAN, OYO STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 340,
+    "name": "IBOM INSTITUTE OF MANAGEMENT AND TECHNOLOGY, IKOT EKPENE, AKWA IBOM STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 341,
+    "name": "IBRAHIM BADAMASI BABANGIDA UNIVERSITY, LAPAI, NIGER STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 342,
+    "name": "ICCN-INSTITUTE OF FINANCE AND INVESTMENT MANAGEMENT, UMUKO, IMO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 343,
+    "name": "IFE BUSINESS SCHOOL, IIE-IFE, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 344,
+    "name": "IFO COLLEGE OF MANAGEMENT AND TECHNOLOGY, IFO, OGUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 345,
+    "name": "IGBAJO POLYTECHNIC, IGBAJO, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 346,
+    "name": "IGBINEDION UNIVERSITY, OKADA, BENIN CITY, EDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 347,
+    "name": "IGNATIUS AJURU UNIVERSITY OF EDUCATION, PORT HARCOURT, RIVERS STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 348,
+    "name": "ILESHA CITY COLLEGE OF TECHNOLOGY, ILESHA-IJESHA, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 349,
+    "name": "ILORI COLLEGE OF EDUCATION, EDE, OSUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 350,
+    "name": "IMAM HAMZAT COLLEGE OF EDUCATION, ILORIN, KWARA STATE",
+    "score": 110,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 351,
+    "name": "IMAM SAIDU COLLEGE OF EDUCATION, FUNTUA, KATSINA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 352,
+    "name": "IMAN COLLEGE OF BUSINESS TECHNOLOGY, KANO, KANO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 353,
+    "name": "IMFI, ICT ACADEMY, UYO, AKWA IBOM STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 354,
+    "name": "IMMANUEL COLLEGE OF THEOLOGY AND CHRISTIAN EDUC. IBADAN (AFFL TO UNIV OF IBADAN)",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 355,
+    "name": "IMO STATE COLLEGE OF EDUCATION, IHITTE/UBOMA, IMO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 356,
+    "name": "IMO STATE COLLEGE OF NURSING AND HEALTH SCIENCE, AMAIGBO, IMO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 357,
+    "name": "IMO STATE UNIVERSITY, OWERRI, IMO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 358,
+    "name": "INDUSTRIAL TRAINING FUND MODELS SKILLS TRAINING CENTRE, MAITAMA, ABUJA, FCT",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 359,
+    "name": "INNOVATION INSTITUTE OF TECHNOLOGY, AKURE, ONDO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 360,
+    "name": "INNOVATION INSTITUTE OF TECHNOLOGY, KADUNA, KADUNA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 361,
+    "name": "INNOVATION INSTITUTE OF TECHNOLOGY, KADUNA, KADUNA STATE 100 93. INSTITUTE OF BANKING AND FINANCE, IBADAN, OYO STATE 100 94. IMFI, ICT ACADEMY, UYO, AKWA IBOM STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 362,
+    "name": "INSTITUTE OF BANKING AND FINANCE, IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 363,
+    "name": "INSTITUTE OF CORPORATE SECURITY AND INTELLIGENCE STUDIES, KANO, KANO STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 364,
+    "name": "INSTITUTE OF INFORMATION AND COMPUTER TECHNOLOGY, AWGU, ENUGU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 365,
+    "name": "INSTITUTE OF MANAGEMENT AND TECHNOLOGY, ENUGU, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 366,
+    "name": "INSTITUTE OF MARITIME AND SAFETY, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 367,
+    "name": "INSTITUTE OF TRANSPORT AND MANAGEMENT TECHNOLOGY, LOGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 368,
+    "name": "INTERLINK POLYTECHNIC, IJEBU-JESA, OSUN STATE NIGERIA",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 369,
+    "name": "INTERNATIONAL CHAPLAINCY CORPS NETWORK INSTITUTE OF SECURITY TECH AND MGT, ORLU",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 370,
+    "name": "INTERNATIONAL CHAPLAINCY CORPS NETWORK INSTITUTE OF SECURITY TECH AND MGT, ORLU 100 105. MAGIC BRUSH FILM SCHOOL, PORT HARCOURT, RIVERS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 371,
+    "name": "INTERNATIONAL VOCATIONAL, TECH & ENTREPRENEURSHIP COLL. AJASE-IPO, KWARA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 372,
+    "name": "IPERE COLLEGE OF EDUCATION, AGYARAGU, NASARAWA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 373,
+    "name": "IPETU-IJESHA COLLEGE OF TECHNOLOGY, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 374,
+    "name": "IRISH BUSINESS SCHOOL, EGBEDA IDUMU, LAGOS STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 375,
+    "name": "ISA KAITA COLLEGE OF EDUCATION, DUTSINMA, KATSINA STATE",
+    "score": 135,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 376,
+    "name": "ISAAC JASPER BORO COLLEGE OF EDUCATION, SAGBAMA, BAYELSA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 377,
+    "name": "IZISCO OBOS INSTITUTE OF MARITIME STUDIES AND TECHNOLOGY, WARRI, DELTA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 378,
+    "name": "JIBWIS COLLEGE OF ARABIC AND ISLAMIC EDUCATION, GOMBE, GOMBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 379,
+    "name": "JIBWIS COLLEGE OF EDUCATION, JAMA'ARE, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 380,
+    "name": "JIGAWA STATE COLLEGE OF EDUCATION AND LEGAL STUDIES, RINGIM, JIGAWA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 381,
+    "name": "JIGAWA STATE COLLEGE OF EDUCATION, GUMEL, JIGAWA STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 382,
+    "name": "JIGAWA STATE INSTITUTE OF INFORMATION TECHNOLOGY, KAZAURE, JIGAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 383,
+    "name": "JIGAWA STATE INSTITUTE OF INFORMATION TECHNOLOGY, KAZAURE, JIGAWA STATE 120 162. ST MARY POLYTECHNIC, KWAMBA, SULEJA, NIGER STATE 120 163. PRIME POLYTECHNIC, JIDA BASSA, AJAOKUTA, KOGI STATE 120 164. ABUJA SCHOOL OF PENSION AND RETIREMENT PLANNING, ABUJA",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 384,
+    "name": "JIGAWA STATE POLYTECHNIC, DUTSE, JIGAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 385,
+    "name": "JOSEPH AYO BABALOLA UNIVERSITY, IKEJI-ARAKEJI, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 386,
+    "name": "JOSEPH AYO BABALOLA UNIVERSITY, IKEJI-ARAKEJI, OSUN STATE 160 151.ODUDUWA UNIVERSITY, IPETUMODU, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 387,
+    "name": "KADUNA POLYTECHNIC, KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 388,
+    "name": "KADUNA STATE COLLEGE OF EDUCATION, GIDAN-WAYA, KAFANCHAN, KADUNA STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 389,
+    "name": "KADUNA STATE UNIVERSITY, KADUNA, KADUNA STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 390,
+    "name": "KANO STATE COLLEGE OF EDUCATION AND PRELIMINARY STUDIES, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 391,
+    "name": "KANO STATE COLLEGE OF HEALTH SCIENCES AND TECHNOLOGY, KANO, KANO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 392,
+    "name": "KANO STATE POLYTECHNIC, KANO, KANO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 393,
+    "name": "KANO UNIVERSITY OF SCIENCE AND TECHNOLOGY, WUDIL, KANO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 394,
+    "name": "KASHIM-IBRAHIM COLLEGE OF EDUCATION, MAIDUGURI, BORNO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 395,
+    "name": "KATSINA STATE INSTITUTE OF TECHNOLOGY & MANAGEMENT, KATSINA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 396,
+    "name": "KAZAURE INNOVATION ENTERPRISE INSTITUTE, HUSSAINI ADAMU FEDERAL POLY, KAZAURE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 397,
+    "name": "KEBBI STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY, ALIERO, KEBBI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 398,
+    "name": "KENULE BEESON SARO-WIWA POLYTECHNIC, BORI, RIVERS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 399,
+    "name": "KINGS AND QUEENS BEAUTY INSTITUTE, ABUJA, FCT",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 400,
+    "name": "KINGS POLYTECHNIC, UBIAJA, EDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 401,
+    "name": "KINGS UNIVERSITY, ODE-OMU, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 402,
+    "name": "KOGI EAST COLLEGE OF EDUCATION, KOGI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 403,
+    "name": "KOGI STATE COLLEGE OF EDUCATION (TECHNICAL), KABBA, KOGI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 404,
+    "name": "KOGI STATE POLYTECHNIC, LOKOJA, KOGI STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 405,
+    "name": "KOGI STATE UNIVERSITY, ANYIGBA, KOGI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 406,
+    "name": "KOLADAISI UNIVERSITY, IBADAN, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 407,
+    "name": "KWARA STATE POLYTECHNIC, ILORIN, KWARA STATE",
+    "score": 130,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 408,
+    "name": "KWARA STATE UNIVERSITY, MALETE, ILORIN, KWARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 409,
+    "name": "KWARARAFA COLLEGE OF EDUCATION, OTUKPO, BENUE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 410,
+    "name": "KWARARAFA UNIVERSITY, WUKARI, BALLARI LGA, TARABA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 411,
+    "name": "KWARARAFA UNIVERSITY, WUKARI, TARABA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 412,
+    "name": "LADELA EDUCATIONAL INSTITUTTE, GARKI ABUJA, FCT",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 413,
+    "name": "LADOKE AKINTOLA UNIVERSITY OF TECHNOLOGY, OGBOMOSO, OYO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 414,
+    "name": "LAGOS AVIATION AND MARITIME BUS ACADEMY, IYANA IPAJA, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 415,
+    "name": "LAGOS CITY POLYTECHNIC, IKEJA, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 416,
+    "name": "LAGOS STATE COLLEGE OF HEALTH TECHNOLOGY, YABA, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 417,
+    "name": "LAGOS STATE POLY, IKORODU, LAGOS STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 418,
+    "name": "LAGOS STATE UNIVERSITY, OJO, LAGOS STATE",
+    "score": 190,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 419,
+    "name": "LANDMARK POLYTECHNIC, AYETORO, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 420,
+    "name": "LANDMARK UNIVERSITY, OMU-ARAN, KWARA STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 421,
+    "name": "LAUREL SCHOOL OF MINES, OGUDU, LAGOS STATE",
+    "score": 180,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 422,
+    "name": "LEAD CITY UNIVERSITY, IBADAN, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 423,
+    "name": "LENS POLYTECHNIC, OFFA, KWARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 424,
+    "name": "LENS SCHOOL OF MANAGEMENT AND TECHNOLOGY, OFFA, KWARA STATE",
+    "score": 110,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 425,
+    "name": "LESSEL COLLEGE OF EDUCATION, LESSEL, USHONGO LGA, BENUE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 426,
+    "name": "LESSEL COLLEGE OF EDUCATION, LESSEL, USHONGO LGA, BENUE STATE 100 105.THE COLLEGE OF EDUCATION, NSUKKA, ENUGU STATE 100 106.MURITADHA COLLEGE OF EDUCATION, OLODO, IBADAN, OYO STATE 100 107.AWORI DISTRICT COLLEGE OF EDUCATION, OGUN STATE 100 108.NANA AISHAT MEMORIAL COLLEGE OF EDUCATION, KWARA STATE 100 109.AFRICAN THINKERS COMMUNITY OF INQUIRY COLLEGE OF EDUCATION, ENUGU STATE 100 110.PEACE LAND COLLEGE OF EDUCATION, ENUGU, ENUGU STATE 100 111.MUHYIDEEN COLLEGE OF EDUCATION, ILORIN, KWARA STATE 100 112.ASSANUSIYAH COLLEGE OF EDUCATION, IPETUMODU, OSUN STATE 100 113.ATIKU ABUBAKAR COLLEGE OF LEGAL AND ISLAMIC STUDIES, NGURU, YOBE STATE 100 114.BIGA COLLEGE OF EDUCATION, ARKILLA, FEDERAL-LOW COST, NASARAWA, SOKOTO STATE 100 115.ARABIC AND ISLAMIC COLLEGE OF EDUCATION, POTISKUM, YOBE STATE 100 116.AMINU KANO COLLEGE OF ISLAMIC AND LEGAL STUDIES, KANO, KANO STATE 100 117.IMAM SAIDU COLLEGE OF EDUCATION, FUNTUA, KATSINA STATE 100 118.BAUCHI INSTITUTE FOR ARABIC AND ISLAMIC STUDIES, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 427,
+    "name": "LIFE GATE COLLEGE OF EDUCATION, AFON, ASA, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 428,
+    "name": "LIGHT HOUSE POLYTECHNIC, EUBUOBANOSA, EDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 429,
+    "name": "LINET PAUL INNOVATIVE INSTITUTE, ETEGWE-YENAGOA, BAYELSA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 430,
+    "name": "LITERACY COLLEGE OF MGT AND TECH(FORMERLY, THE LITERACY CENTRE) ABA, ABIA STATE",
+    "score": 140,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 431,
+    "name": "LIVING SPRING COLLEGE OF TECHNOLOGY AND INNOVATION, OSHOGBO, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 432,
+    "name": "MADONNA UNIVERSITY, ELELE, RIVERS STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 433,
+    "name": "MAGIC BRUSH FILM SCHOOL, PORT HARCOURT, RIVERS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 434,
+    "name": "MARIO INSTITUE OF HOSPITALITY MGT AND ENTREPRENEURSHIP EDUC. NSUKKA, ENUGU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 435,
+    "name": "MARIO INSTITUE OF HOSPITALITY MGT AND ENTREPRENEURSHIP EDUC. NSUKKA, ENUGU STATE 100 97. ST. WINIFRED INNOVATION INSTITUTE IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 436,
+    "name": "MARIST POLYTECHNIC, UMUCHIGBO-DE NIKE EMENE-ENUGU, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 437,
+    "name": "MARIST POLYTECHNIC, UMUCHIGBO-DE NIKE EMENE-ENUGU, ENUGU STATE 120 166. CALVARY POLYTECHNIC, OWO-OYIBO, DELTA STATE 120 167. FIDEI POLYTECHNIC, GBOKO, BENUE STATE 120 168. EMIRATE COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY KANO 120 169. LENS POLYTECHNIC, OFFA, KWARA STATE.",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 438,
+    "name": "MARITIME ACADEMY OF NIGERIA, ORON, AKWA IBOM STATE",
+    "score": 160,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 439,
+    "name": "MARVEL INSTITUTE OF MANAGEMENT AND TECHNOLOGY, KUCHIKAU, NASARAWA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 440,
+    "name": "MATER DEI POLYTECHNIC, UGWUOBA TOWN, OJI RIVER, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 441,
+    "name": "MAURID INSTITUTE OF MGT AND TECH, MBIASO, AKWA IBOM STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 442,
+    "name": "MBARA OZIOMA COLLEGE OF TECHNOLOGY, EHIME-MBANO, IMO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 443,
+    "name": "McPHERSON UNIVERSITY, SERIKI SOTAYO, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 444,
+    "name": "METRO COLLEGE OF EDUCATION, ADOGI, NASARAWA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 445,
+    "name": "MICHAEL AND CECILIA FOUNDATION COLLEGE OF EDUC. AGBRHAOTOR, UGHELLI, DELTA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 446,
+    "name": "MICHAEL AND CECILIA IBRU UNIVERSITY, OWHRODE, UGHELLI NORTH, DELTA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 447,
+    "name": "MICHAEL OKPARA UNIVERSITY OF AGRICULTURE, UMUDIKE, ABIA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 448,
+    "name": "MICHAEL OTEDOLA COLLEGE OF PRIMARY EDUCATION, NOFORIJA, EPE, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 449,
+    "name": "MILLENNIUM COLLEGE OF HEALTH TECHNOLOGY, AKURE, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 450,
+    "name": "MILLENNIUM COLLEGE OF HEALTH TECHNOLOGY, AKURE, ONDO STATE 120 195. SURE FOUNDATION POLYTECHNIC, IKOT AKAI, AKWA IBOM STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 451,
+    "name": "MINNA INSTITUTE OF TECHNOLOGY AND INNOVATION, KPAKUNGU ROAD, NIGER STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 452,
+    "name": "MODIBO ADAMA UNIVERSITY OF TECHNOLOGY, YOLA, ADAMAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 453,
+    "name": "MOHAMMED GONI COLLEGE OF LEGAL AND ISLAMIC STUDIES, BORNO STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 454,
+    "name": "MOHAMMED LAWAN COLLEGE OF AGRICULTURE, MAIDUGURI, BORNO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 455,
+    "name": "MOJE COLLEGE OF EDUCATION, ERIN-ILE, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 456,
+    "name": "MOSHOOD ABIOLA POLYTECHNIC, ABEOKUTA, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 457,
+    "name": "MOUNTAIN TOP UNIVERSITY, MAKOGI-OBA, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 458,
+    "name": "MOUNTAIN TOP UNIVERSITY, MAKOGI-OBA, OGUN STATE 160 167.OBONG UNIVERSITY, OBONG, NTAK, AKWA IBOM",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 459,
+    "name": "MUHYIDEEN COLLEGE OF EDUCATION, ILORIN, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 460,
+    "name": "MURITADHA COLLEGE OF EDUCATION, OLODO, IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 461,
+    "name": "MY PROJECT INSTITUTE OF SECURITY AND TECHNOLOGY MANAGEMENT, ZUBA, ABUJA, FCT",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 462,
+    "name": "NACABS POLYTECHNIC, AKWANGA, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 463,
+    "name": "NANA AISHAT MEMORIAL COLLEGE OF EDUCATION, KWARA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 464,
+    "name": "NAOWA INSTITUTE OF MANAGEMENT AND TECHNOLOGY, MAMBILLA BARRACKS, ASOKORO, ABUJA",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 465,
+    "name": "NASARAWA STATE POLYTECHNIC, LAFIA, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 466,
+    "name": "NASARAWA STATE UNIVERSITY, KEFFI, NASARAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 467,
+    "name": "NATIONAL FILM INSTITUTE, JOS, PLATEAU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 468,
+    "name": "NATIONAL INSTITUTE FOR NIGERIAN LANGUAGES, ABA, ABIA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 469,
+    "name": "NATIONAL WATER RESOURCES INSTITUTE, MANDO, KADUNA KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 470,
+    "name": "NEW GATE COLLEGE OF HEALTH TECHNOLOGY, MINNA, NIGER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 471,
+    "name": "NIGER DELTA UNIVERSITY, WILBERFORCE ISLAND, BAYELSA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 472,
+    "name": "NIGER STATE COLLEGE OF AGRICULTURE, MOKWA, NIGER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 473,
+    "name": "NIGER STATE POLYTECHNIC, ZUNGERU, NIGER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 474,
+    "name": "NIGER-DELTA INNOVATION ENTERPRISE INSTITUTE, YENAGOA, BAYELSA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 475,
+    "name": "NIGERIA ARMY COLLEGE OF ENVIRONMENTAL SCIENCE AND TECH., MAKURDI, BENUE STATE",
+    "score": 160,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 476,
+    "name": "NIGERIA MARITIME UNIVERSITY, OKERENKOKO, DELTA STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 477,
+    "name": "NIGERIA-KOREA FRIENDSHIP INST. OF VOCATIONAL & ADVANCED TECH, LOKOJA, KOGI STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 478,
+    "name": "NIGERIAN ARMY SCHOOL OF EDUCATION, ILORIN, KWARA STATE",
+    "score": 120,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 479,
+    "name": "NIGERIAN ARMY UNIVERSITY, BIU, BORNO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 480,
+    "name": "NIGERIAN CHRISTIAN BIBLE COLLEGE, ABAK, AKWA IBOM STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 481,
+    "name": "NIGERIAN COLLEGE OF AVIATION TECHNOLOGY, ZARIA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 482,
+    "name": "NIGERIAN DEFENCE ACADEMY, KADUNA, KADUNA STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 483,
+    "name": "NIGERIAN INSTITUTE OF JOURNALISM, IKEJA, LAGOS STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 484,
+    "name": "NIGERIAN INSTITUTE OF LEATHER TECHNOLOGY AND SCIENCE TECH. KADUNA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 485,
+    "name": "NIGERIAN INSTITUTE OF LEATHER TECHNOLOGY AND SCIENCE TECH. KADUNA, KADUNA STATE 120 181. BAUCHI STATE COLLEGE OF AGRICULTURE, BAUCHI, BAUCHI STATE 120 182. BEST SOLUTION POLYTECHNIC, AKURE, ONDO STATE.",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 486,
+    "name": "NIGERIAN NAVY SCHOOL OF FINANCE AND LOGISTICS COLLEGE, OWERRINTA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 487,
+    "name": "NIGERIAN NAVY SCHOOL OF FINANCE AND LOGISTICS COLLEGE, OWERRINTA, ABIA STATE 120 217. GLOBAL POLYTECHNIC, OYEMEKUN ROAD, AKURE, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 488,
+    "name": "NIGERIAN NAVY SCHOOL OF HEALTH SCIENCE, OFFA, KWARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 489,
+    "name": "NIGERIAN POLICE ACADEMY, WUDIL, KANO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 490,
+    "name": "NIGERIAN TELEVISION AUTHORITY, TELEVISION COLLEGE, RAY FIELD, JOS, PLATEAU STATE",
+    "score": 170,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 491,
+    "name": "NIIT EDUCATION AND TRAINING CENTRE, OWERRI, IMO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 492,
+    "name": "NILE UNIVERSITY OF NIGERIA, ABUJA, FCT",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 493,
+    "name": "NKST COLLEGE OF HEALTH TECHNOLOGY, MKAR, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 494,
+    "name": "NNAMDI AZIKIWE UNIVERSITY, AWKA, ANAMBRA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 495,
+    "name": "NOGAK POLYTECHNIC, MILE 2 ROAD, IKOM, CROSS RIVER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 496,
+    "name": "NOSAKHARE COLLEGE OF EDUCATION, BENIN CITY, EDO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 497,
+    "name": "NOVELTY POLYTECHNIC, KISHI, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 498,
+    "name": "NOVENA UNIVERSITY, OGUME, DELTA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 499,
+    "name": "NSPIRE SCHOOL OF MANAGEMENT AND TECHNOLOGY LIMITED, ABUJA, FCT",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 500,
+    "name": "NUHU BAMALLI POLYTECHNIC, ZARIA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 501,
+    "name": "NWAFOR ORIZU COLLEGE OF EDUCATION, NSUGBE, ANAMBRA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 502,
+    "name": "OBAFEMI AWOLOWO UNIVERSITY, ILE-IFE, OSUN STATE",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 503,
+    "name": "OBONG UNIVERSITY, OBONG, NTAK, AKWA IBOM",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 504,
+    "name": "ODUDUWA UNIVERSITY, IPETUMODU, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 505,
+    "name": "OFFER CENTRE INSTITUTE OF AGRICULTURE OLUPONNA, IWO, OSUN STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 506,
+    "name": "OGUN STATE COLLEGE OF HEALTH TECHNOLOGY, ILESE-IJEBU, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 507,
+    "name": "OGUN STATE INSTITUTE OF TECH(FORMERLY GATEWAY ICT POLY), IGBESA, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 508,
+    "name": "OGUN STATE INSTITUTE OF TECH(FORMERLY GATEWAY ICT POLY), IGBESA, OGUN STATE 120 208. INTERLINK POLYTECHNIC, IJEBU-JESA, OSUN STATE NIGERIA 120 209. OSUN STATE POLYTECHNIC, IREE, OSUN STATE 120 210. ABUBAKAR TATARI ALI POLYTECHNIC, BAUCHI, BAUCHI STATE 120 211. JIGAWA STATE POLYTECHNIC, DUTSE, JIGAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 509,
+    "name": "OLABISI ONABANJO UNIVERSITY, AGO-IWOYE, OGUN STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 510,
+    "name": "OLAWOYIN AWOSIKA SCH OF INNOVATION STD,OSHURUN HERITAGE EST,ISHERI,LAG",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 511,
+    "name": "OLUAKA INSTITUTE OF TECHNOLOGY, OWERRI, IMO STATE",
+    "score": 150,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 512,
+    "name": "ONDO STATE SCHOOL OF HEALTH TECHNOLOGY, AKURE, ONDO STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 513,
+    "name": "ONDO STATE UNIVERSITY OF MEDICAL SCIENCES, LAJE ROAD, ONDO, ONDO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 514,
+    "name": "ONDO STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY, OKITIPUPA, ONDO STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 515,
+    "name": "ONIT COLLEGE OF EDUCATION MBAUKWU, ANAMBRA STATE",
+    "score": 180,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 516,
+    "name": "OSENI ELAMAH INSTITUTE, AUCHI, EDO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 517,
+    "name": "OSUN STATE COLLEGE OF EDUCATION, ILA-ORANGUN, OSUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 518,
+    "name": "OSUN STATE COLLEGE OF EDUCATION, ILESA, OSUN STATE. (AFFL TO UNIV OF IBADAN)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 519,
+    "name": "OSUN STATE COLLEGE OF HEALTH TECHNOLOGY, IIESA, OSUN STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 520,
+    "name": "OSUN STATE COLLEGE OF TECHNOLOGY, ESA-OKE, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 521,
+    "name": "OSUN STATE POLYTECHNIC, IREE, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 522,
+    "name": "OSUN STATE UNIVERSITY, OSOGBO, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 523,
+    "name": "OSWALD WALLER COLLEGE OF EDUCATION, SHENDAM, PLATEAU STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 524,
+    "name": "OUR SAVIOUR INSTITUTE OF SCIENCE & TECHNOLOGY COLLEGE OF EDUCATION, OGUI, ENUGU",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 525,
+    "name": "OUR SAVIOUR INSTITUTE OF SCIENCE & TECHNOLOGY COLLEGE OF EDUCATION, OGUI, ENUGU 100 100.GBOKO COLLEGE OF EDUCATION, GBOKO, BENUE STATE 100 101.HILL COLLEGE OF EDUCATION, GWANJI, AKWANGA, NASARAWA STATE 100 102.IPERE COLLEGE OF EDUCATION, AGYARAGU, NASARAWA STATE 100 103.JIBWIS COLLEGE OF ARABIC AND ISLAMIC EDUCATION, GOMBE, GOMBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 526,
+    "name": "OUR SAVIOUR INSTITUTE OF SCIENCE AND TECHNOLOGY (POLYTECHNIC) ENUGU, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 527,
+    "name": "OUR SAVIOUR INSTITUTE OF SCIENCE AND TECHNOLOGY (POLYTECHNIC) ENUGU, ENUGU STATE 120 171. NEW GATE COLLEGE OF HEALTH TECHNOLOGY, MINNA, NIGER STATE.",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 528,
+    "name": "OYO STATE COLLEGE OF AGRICULTURE AND TECHNOLOGY, IGBOORA, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 529,
+    "name": "OYO STATE COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY, ELEYELE, IBADAN",
+    "score": 160,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 530,
+    "name": "PAMO UNIVERSITY OF MEDICAL SCIENCE, PORT HARCOURT, RIVERS STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 531,
+    "name": "PAN-AFRICAN INSTITUTE OF PARALEGAL STUDIES, GWARIMPA, FCT, ABUJA",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 532,
+    "name": "PAN-ATLANTIC UNIVERSITY, AHMED ONIBUDO STREET, VICTORIA ISLAND, LAGOS STATE",
+    "score": 210,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 533,
+    "name": "PAUL UNIVERSITY, AWKA, ANAMBRA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 534,
+    "name": "PEACE LAND COLLEGE OF EDUCATION, ENUGU, ENUGU STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 535,
+    "name": "PEACOCK COLLEGE OF EDUCATION, JALINGO, TARABA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 536,
+    "name": "PETROLEUM TRAINING INSTITUTE, EFFURUN, DELTA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 537,
+    "name": "PIAGET COLLEGE OF EDUCATION, IBARA, ABEOKUTA, OGUN STATE",
+    "score": 150,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 538,
+    "name": "PLATEAU STATE COLLEGE OF AGRICULTURE, GARKAWA, PLATEAU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 539,
+    "name": "PLATEAU STATE POLYTECHNIC, (ND), BARKIN-LADI, PLATEAU STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 540,
+    "name": "PLATEAU STATE UNIVERSITY, BOKKOS, PLATEAU STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 541,
+    "name": "POGIL COLLEGE OF HEALTH TECHNOLOGY, OKE-ERI, IJEBU-ODE, OGUN STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 542,
+    "name": "PORT HARCOURT POLYTECHNIC, RUMUOLA, PORT HARCOURT, RIVERS STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 543,
+    "name": "PRECIOUS CORNERSTONE UNIVERSITY, IBADAN, OYO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 544,
+    "name": "PRIME INNOVATION INSTITUTE OF TECHNOLOGY, AJAH, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 545,
+    "name": "PRIME POLYTECHNIC, JIDA BASSA, AJAOKUTA, KOGI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 546,
+    "name": "RAMAT POLYTECHNIC, MAIDUGURI, BORNO STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 547,
+    "name": "REDEEMER'S COLLEGE OF TECHNOLOGY AND MANAGEMENT, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 548,
+    "name": "REDEEMER'S COLLEGE OF TECHNOLOGY AND MANAGEMENT, OGUN STATE 120 153. DORBEN POLYTECHNIC, BWARI-GARAM ROAD, FCT-ABUJA 120 154. EASTERN POLYTECHNIC, PORT HARCOURT, RIVERS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 549,
+    "name": "REDEEMERS UNIVERSITY, OSUN STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 550,
+    "name": "RENAISSANCE UNIVERSITY, OJIAGU-AGBANI, ENUGU, ENUGU STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 551,
+    "name": "RHEMA UNIVERSITY, ABA, ABIA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 552,
+    "name": "RISK CONTROL ACADEMY, ROYAL CEDAR PLAZA, AJAH, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 553,
+    "name": "RITMAN UNIVERSITY, IKOT-EKPENE, AKWA-IBOM STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 554,
+    "name": "RITMAN UNIVERSITY,IKOT-EKPENE, AKWA-IBOM STATE 160 125.UNIVERSITY OF AFRICA, TORU-ORUA, BAYELSA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 555,
+    "name": "RIVERS STATE COLLEGE OF HEALTH SCIENCE, IKWERRE RD, RUMUEME, PORT HARCOURT",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 556,
+    "name": "RIVERS STATE UNIVERSITY, PORT HARCOURT, RIVERS STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 557,
+    "name": "ROCANA INSTITUTE OF TECHNOLOGY, EMENE, ENUGU, ENUGU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 558,
+    "name": "ROLOF COMPUTER ACADEMY, WARRI, DELTA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 559,
+    "name": "RONIK POLYTECHNIC, IKEJA, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 560,
+    "name": "ROYAL ARTS ACADEMY, SURULERE, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 561,
+    "name": "ROYAL CITY COLLEGE OF EDUCATION, IYESI, OTTA, OGUN STATE",
+    "score": 110,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 562,
+    "name": "RUFUS GIWA POLYTECHNIC, OWO, ONDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 563,
+    "name": "SAADATU RIMI COLLEGE OF EDUCATION, KUMBOTSO, KANO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 564,
+    "name": "SAF POLYTECHNIC, ISEYIN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 565,
+    "name": "SAGAMU BUSINESS AND ART INSTITUTE, SAGAMU, OGUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 566,
+    "name": "SALEM UNIVERSITY, LOKOJA, KOGI STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 567,
+    "name": "SALEM UNIVERSITY, LOKOJA, KOGI STATE 160 175.NILE UNIVERSITY OF NIGERIA, ABUJA, FCT 160 176.NIGERIAN CHRISTIAN BIBLE COLLEGE, ABAK, AKWA IBOM STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 568,
+    "name": "SAMARU COLLEGE OF AGRICULTURE (DIVISION OF AGRIC COL, ABU) ZARIA, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 569,
+    "name": "SAMARU COLLEGE OF AGRICULTURE (DIVISION OF AGRIC COL, ABU) ZARIA, KADUNA STATE 120 173. FEDERAL COOPERATIVE COLLEGE, OJI RIVER, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 570,
+    "name": "SAMUEL ADEGBOYEGA UNIVERSITY, OGWA, EDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 571,
+    "name": "SAVANNAH INSTITUTE OF TECHNOLOGY, ABAKALIKI, EBONYI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 572,
+    "name": "SCHOOL OF BANKING HONOURS, LAGOS, LAGOS STATE",
+    "score": 150,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 573,
+    "name": "SCHOOL OF BIOMEDICAL ENGINEERING, MAIDUGURI, BORNO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 574,
+    "name": "SCHOOL OF BIOMEDICAL ENGINEERING, MAIDURGURI, BORNO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 575,
+    "name": "SCHOOL OF BIOMEDICAL ENGINEERING, UNIVERSITY OF BENIN TEACHING HOSP, BENIN",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 576,
+    "name": "SCHOOL OF HEALTH INFORMATION MANAGEMENT (UDU TEACHING HOSPITAL), SOKOTO STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 577,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT (UCH, IBADAN, OYO STATE)",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 578,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT (UNIBEN TEACHING HOSPITAL), BENIN, EDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 579,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT, LUTH, IDIARABA, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 580,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT, OAU TEACHING HOSPITAL, ILE-IFE, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 581,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT, UNIUYO TEACHING HOSPITAL, UYO, AKWA IBOM STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 582,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT, UNIV OF ILORIN TEACHING HOSPITAL, ILORIN",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 583,
+    "name": "SCHOOL OF HEALTH INFORMATION MGT. (UNIMAID TEACHING HOSPITAL), BORNO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 584,
+    "name": "SCHOOL OF HEALTH TECHNOLOGY, KEFFI, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 585,
+    "name": "SCHOOL OF NURSING AND MIDWIFERY ABUBAKAR TAFAWA BALEWA UNIVERSITY, BAUCHI",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 586,
+    "name": "SCHOOL OF ORTHOPEDIC CAST TECHNOLOGY, ENUGU, ENUGU STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 587,
+    "name": "SCHOOL OF ORTHOPEDIC CAST TECHNOLOGY, ILORIN, KWARA STATE",
+    "score": 200,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 588,
+    "name": "SCHOOL OF ORTHOPEDIC CAST TECHNOLOGY, NATIONAL ORTHOPEDIC HOSPITAL DALA, KANO",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 589,
+    "name": "SEAT OF WISDOM SEMINARY, OWERRI, IMO STATE (AFFL TO IMO STATE UNIVERSITY)",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 590,
+    "name": "SEMINARY OF ALL SAINTS, EKPOMA, EDO STATE. (AFFL TO UNIBEN, BENIN)",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 591,
+    "name": "SENTONA INSTITUTE OF MANAGEMENT AND TECHNOLOGY, NEW NYANYA, NASARAWA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 592,
+    "name": "SENTONA INSTITUTE OF MANAGEMENT AND TECHNOLOGY, NEW NYANYA, NASARAWA STATE 100 103. LADELA EDUCATIONAL INSTITUTTE, GARKI ABUJA, FCT",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 593,
+    "name": "SHAKA POLYTECHNIC, PRINCE SHAKA WAY, BENIN CITY, EDO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 594,
+    "name": "SHEHU IDRIS COLLEGE OF HEALTH SCIENCES AND TECHNOLOGY, MAKARFI, KADUNA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 595,
+    "name": "SHEHU SHAGARI COLLEGE OF EDUCATION, SOKOTO, SOKOTO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 596,
+    "name": "SINAI COLLEGE OF EDUCATION AND ENTREPRENEURIAL STUDIES, GBOKO, BENUE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 597,
+    "name": "SKYLINE UNIVERSITY NIGERIA, KANO, KANO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 598,
+    "name": "SMART IMAGE FILM AND THEATRE INSTITUTE, AGBOWO-UI, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 599,
+    "name": "SOKOTO STATE UNIVERSITY, SOKOTO, SOKOTO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 600,
+    "name": "SOTERIA BUSINESS SCHOOL, OKE ADO, IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 601,
+    "name": "SOUTH-EASTERN COLLEGE OF ENGINEERING AND INFORMATION TECH, OWERRI, IMO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 602,
+    "name": "SOUTHERN-NIGERIA INSTITUTE OF INNOVATIVE TECHNOLOGY, IFEWARA, OSUN STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 603,
+    "name": "SOUTHWESTERN UNIVERSITY, OKUN-OWA, OGUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 604,
+    "name": "SPEEDWAY POLYTECHNIC, OSOBA, OGUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 605,
+    "name": "SPIRITAN INT'L SCHOOL OF THEOLOGY, ATTAKWU, ENUGU (AFFL TO UNIV OF NIG, NSUKKA)",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 606,
+    "name": "SPIRITAN SCHOOL OF PHILOSOPHY, ISSIENU, NSUKKA, (AFFL TO UNIV OF NIG, NSUKKA)",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 607,
+    "name": "SPIRITAN UNIVERSITY, NNEOCHI, ABIA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 608,
+    "name": "ST MARY POLYTECHNIC, KWAMBA, SULEJA, NIGER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 609,
+    "name": "ST. AUGUSTINE COLLEGE OF EDUCATION (PROJECT TIME), YABA, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 610,
+    "name": "ST. PETER AND PAUL SEMINARY BODIJA, IBADAN (AFFL TO UNIV OF IBADAN), OYO STATE",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 611,
+    "name": "ST. WINIFRED INNOVATION INSTITUTE IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 612,
+    "name": "STARS MARITIME ACADEMY (MERCHANT NAVY INSTITUTE), AYOBO, OTTA RD, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 613,
+    "name": "STEADY FLOW COLLEGE OF EDUCATION, AKARABONG, IKOM, CROSS RIVER STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 614,
+    "name": "STEADY FLOW COLLEGE OF EDUCATION, AKARABONG, IKOM, CROSS RIVER STATE 100 131.YUSUF BALA USMAN COLLEGE OF LEGAL AND GENERAL STUDIES, DAURA, KATSINA STATE 100 132.TOPMOST COLLEGE OF EDUCATION, IPAJA, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 615,
+    "name": "SULE LAMIDO UNIVERSITY, KAFIN HAUSA, JIGAWA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 616,
+    "name": "SUMMIT UNIVERSITY, OFFA, KWARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 617,
+    "name": "SUNNAH COLLEGE OF EDUCATION, BAUCHI, BAUCHI STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 618,
+    "name": "SURE FOUNDATION POLYTECHNIC, IKOT AKAI, AKWA IBOM STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 619,
+    "name": "TAI SOLARIN COLLEGE OF EDUCATION, IJEBU-ODE, OGUN STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 620,
+    "name": "TAI SOLARIN UNIVERSITY OF EDUCATION, IJAGUN, OGUN STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 621,
+    "name": "TANSIAN UNIVERSITY, OBA, ANAMBRA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 622,
+    "name": "TARABA STATE POLYTECHNIC, SUNTAI, TARABA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 623,
+    "name": "TARABA STATE UNIVERSITY, JALINGO, TARABA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 624,
+    "name": "TEMPLE-GATE POLYTECHNIC, OSISIOMA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 625,
+    "name": "THE AFRICAN CHURCH COLLEGE OF EDUCATION, LAGOS, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 626,
+    "name": "THE APOSTOLIC CHURCH THEOLOGICAL SEMINARY, AMUMARA (AFFL TO UNIV OF UYO)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 627,
+    "name": "THE CERTIFIED INSTITUTE OF SHIPPING OF NIGERIA, APAPA, LAGOS STATE",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 628,
+    "name": "THE COLLEGE OF EDUCATION, NSUKKA, ENUGU STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 629,
+    "name": "THE FILM AND BROADCAST ACADEMY WESTIN HALL, DELTA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 630,
+    "name": "THE IBARAPA POLYTECHNIC, ERUWA, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 631,
+    "name": "THE OKE-OGUN POLYTECHNIC, SAKI, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 632,
+    "name": "THE POLYTECHNIC IGBO-OWU, OFF ASA DAM, OSERE ROAD JUNCTION, ILORIN, KWARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 633,
+    "name": "THE POLYTECHNIC IGBO-OWU, OFF ASA DAM, OSERE ROAD JUNCTION, ILORIN, KWARA STATE 120 184. COLLEGE OF AGRICULTURE, LAFIA, NASARAWA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 634,
+    "name": "THE POLYTECHNIC, ADOKA, BENUE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 635,
+    "name": "THE POLYTECHNIC, IBADAN, OYO STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 636,
+    "name": "THE POLYTECHNIC, ILE-IFE, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 637,
+    "name": "THE POLYTECHNIC, IRESI, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 638,
+    "name": "THE SAMUEL BILL THEOLOGICAL COLLEGE, ABAK, AKWA IBOM STATE. (AFFL TO UNIV OF UYO)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 639,
+    "name": "TIMEON KAIROS EDUCATIONAL & VOCATIONAL INSTITUTE, AGEGE, LAGOS STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 640,
+    "name": "TIMEON KAIROS POLYTECHNIC, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 641,
+    "name": "TOPMOST COLLEGE OF EDUCATION, IPAJA, LAGOS STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 642,
+    "name": "TOWER INNOVATION COLLEGE, IBADAN, OYO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 643,
+    "name": "TOWER POLYTECHNIC, 136, LIBERTY ROAD, IBADAN, OYO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 644,
+    "name": "TRINITY POLYTECHNIC, UYO, AKWA IBOM STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 645,
+    "name": "TRINITY UNIVERSITY, YABA, LAGOS STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 646,
+    "name": "UMA UKPAI POLYTECHNIC, OHAFIA, ASAGA OHAFIA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 647,
+    "name": "UMAR BUN KHATAB COLLEGE OF EDUCATION, KADUNA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 648,
+    "name": "UMAR SULEIMAN COLLEGE OF EDUCATION, GASHUA, YOBE STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 649,
+    "name": "UMAR-IBN EI-KANEMI COLLEGE OF EDUC, SCIENCE AND TECH, BAMA, BORNO STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 650,
+    "name": "UMARU ALI SHINKAFI POLYTECHNIC, SOKOTO, SOKOTO STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 651,
+    "name": "UMARU MUSA YARADUA UNIVERSITY, KATSINA, KATSINA STATE",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 652,
+    "name": "UNICEM COM INITIATIVE TRAIN.INST,UNICEM FACTORY SPRING RD,DIAMOND HILL,MFAMOSING",
+    "score": 120,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 653,
+    "name": "UNITED SCHOOL OF SCIENCE AND TECHNOLOGY GANAJIGO, JOS, PLATEAU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 654,
+    "name": "UNIVAL INSTITUTE OF TECHNOLOGY, BENIN CITY, EDO STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 655,
+    "name": "UNIVERSITY OF ABUJA, ABUJA, FCT",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 656,
+    "name": "UNIVERSITY OF AFRICA, TORU-ORUA, BAYELSA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 657,
+    "name": "UNIVERSITY OF BENIN, BENIN CITY, EDO STATE",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 658,
+    "name": "UNIVERSITY OF CALABAR TEACHING HOSPITAL SCHOOL OF HEALTH INFORMATION MGT.",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 659,
+    "name": "UNIVERSITY OF CALABAR, CALABAR, CROSS RIVER STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 660,
+    "name": "UNIVERSITY OF IBADAN, IBADAN, OYO STATE",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 661,
+    "name": "UNIVERSITY OF ILORIN, ILORIN, KWARA STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 662,
+    "name": "UNIVERSITY OF JOS, JOS, PLATEAU STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 663,
+    "name": "UNIVERSITY OF LAGOS, LAGOS STATE",
+    "score": 200,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 664,
+    "name": "UNIVERSITY OF MAIDUGURI, BORNO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 665,
+    "name": "UNIVERSITY OF MKAR, GBOKO, BENUE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 666,
+    "name": "UNIVERSITY OF NIGERIA NSUKKA, ENUGU STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 667,
+    "name": "UNIVERSITY OF PORT HARCOURT TEACHING HOSPITAL, PORT HARCOURT , RIVER STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 668,
+    "name": "UNIVERSITY OF PORT-HARCOURT, RIVERS STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 669,
+    "name": "UNIVERSITY OF UYO, AKWA IBOM STATE",
+    "score": 180,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 670,
+    "name": "UPTONVILLE OIL AND GAS INSTITUTE, PORT HARCOURT, RIVERS STATE",
+    "score": 150,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 671,
+    "name": "USMANU DANFODIO UNIVERSITY, SOKOTO, SOKOTO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 672,
+    "name": "VALLEY VIEW POLYTECHNIC, OHAFIA, ABIA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 673,
+    "name": "VERITAS UNIVERSITY, ABUJA, FCT",
+    "score": 170,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 674,
+    "name": "VILLANOVA POLYTECHNIC, IMESI-ILE, OSUN STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 675,
+    "name": "WAVECREST COLLEGE OF CATERING & HOSPITALITY MANAGEMENT, LAGOS STATE",
+    "score": 140,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 676,
+    "name": "WAZIRI UMARU FEDERAL POLYTECHNIC, BIRNIN KEBBI, KEBBI STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 677,
+    "name": "WELLSPRING UNIVERSITY, EVBUOBANOSA, BENIN CITY, EDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 678,
+    "name": "WESLEY UNIVERSITY, ONDO, ONDO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 679,
+    "name": "WESTERN DELTA UNIVERSITY, OGHARA, DELTA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 680,
+    "name": "WESTLAND UNIVERSITY, IWO, OSUN STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 681,
+    "name": "WOLEX POLYTECHNIC, IKEJA, LAGOS STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 682,
+    "name": "WORLD HARVEST BIBLE COLLEGE AND SEMINARY, CALABAR (AFFL TO UNICAL)",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 683,
+    "name": "YABA COLLEGE OF TECHNOLOGY, YABA, LAGOS STATE",
+    "score": 150,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 684,
+    "name": "YAHAYA HAMZA INSTITUTE OF ADVANCE STUDIES, KADUNA, KADUNA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 685,
+    "name": "YEFMADEC INSTITUTE OF SCIENCE AND TECHNOLOGY, MOSOGAR, DELTA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 686,
+    "name": "YENAGOA ENTERPRISE SCHOOL, YENOGOA, BAYELSA STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  },
+  {
+    "id": 687,
+    "name": "YEWA CENTRAL COLLEGE OF EDUCATION, ABEOKUTA, OGUN STATE",
+    "score": 110,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 688,
+    "name": "YOBE STATE COLLEGE OF AGRICULTURE, GUJBA, YOBE STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 689,
+    "name": "YOBE STATE UNIVERSITY, DAMATURU, YOBE STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 690,
+    "name": "YUSUF BALA USMAN COLLEGE OF LEGAL AND GENERAL STUDIES, DAURA, KATSINA STATE",
+    "score": 100,
+    "category": "Colleges of Education"
+  },
+  {
+    "id": 691,
+    "name": "YUSUF MAITAMA SULE UNIVERSITY, KANO, KANO STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 692,
+    "name": "ZAMFARA STATE COLLEGE OF ARTS AND SCIENCE, GUSAU, ZAMFARA STATE",
+    "score": 120,
+    "category": "Polytechnics"
+  },
+  {
+    "id": 693,
+    "name": "ZAMFARA STATE UNIVERSITY, TALATA MAFARA, ZAMFARA STATE",
+    "score": 160,
+    "category": "Degree-Awarding Institutions"
+  },
+  {
+    "id": 694,
+    "name": "ZIBEH INSTITUTE OF TECHNOLOGY, JOS, PLATEAU STATE",
+    "score": 100,
+    "category": "Innovation Enterprise Institutions"
+  }
 ]

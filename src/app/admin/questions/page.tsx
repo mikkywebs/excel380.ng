@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { collection, query, orderBy, limit, getDocs, addDoc, serverTimestamp, deleteDoc, doc } from "firebase/firestore";
+import { collection, query, orderBy, limit, getDocs, addDoc, serverTimestamp, deleteDoc, doc, writeBatch } from "firebase/firestore";
 import { httpsCallable } from "firebase/functions";
 import { db, functions } from "@/lib/firebase";
 import { Plus, Search, FileDown, Upload, MoreHorizontal, Database, X, Loader2, Filter, Sparkles } from "lucide-react";
@@ -14,6 +14,8 @@ export default function QuestionsManagement() {
   const [adding, setAdding] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [subjectFilter, setSubjectFilter] = useState("all");
+  const [importModalOpen, setImportModalOpen] = useState(false);
+  const [importing, setImporting] = useState(false);
 
   const { register, handleSubmit, reset, watch } = useForm();
 
@@ -109,9 +111,9 @@ export default function QuestionsManagement() {
             <Database size={16} /> 
             <span className="hidden sm:inline">Export SQLite</span>
           </button>
-          <button className="flex items-center gap-2 h-10 px-4 rounded-xl border border-zinc-200 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900 bg-white dark:bg-black transition-all">
+          <button onClick={() => setImportModalOpen(true)} className="flex items-center gap-2 h-10 px-4 rounded-xl border border-zinc-200 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900 bg-white dark:bg-black transition-all">
             <Upload size={16} />
-            <span className="hidden sm:inline">Import CSV</span>
+            <span className="hidden sm:inline">Bulk Import JSON</span>
           </button>
           <button onClick={() => setPanelOpen(true)} className="flex items-center gap-2 h-10 px-4 rounded-xl bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-800 transition-all shadow-lg dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
             <Plus size={16} />
@@ -278,6 +280,193 @@ export default function QuestionsManagement() {
           </div>
         </div>
       )}
+
+      {/* Import Modal */}
+      {importModalOpen && (
+        <ImportQuestionsModal 
+          onClose={() => setImportModalOpen(false)} 
+          onSuccess={() => {
+            setImportModalOpen(false);
+            fetchQuestions();
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+function ImportQuestionsModal({ onClose, onSuccess }: { onClose: () => void, onSuccess: () => void }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [selectedSubject, setSelectedSubject] = useState("");
+  const [selectedBodies, setSelectedBodies] = useState<string[]>([]);
+  const [importing, setImporting] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const bodies = ["JAMB", "WAEC", "NECO", "NABTEB"];
+
+  const handleImport = async () => {
+    if (!file || !selectedSubject || selectedBodies.length === 0) {
+      alert("Please select a file, subject, and at least one exam body.");
+      return;
+    }
+
+    setImporting(true);
+    try {
+      const text = await file.text();
+      const rawData = JSON.parse(text);
+      if (!Array.isArray(rawData)) throw new Error("JSON must be an array of questions.");
+
+      const totalOperations = rawData.length * selectedBodies.length;
+      let completedOperations = 0;
+
+      // Firestore batches are limited to 500 operations
+      const BATCH_SIZE = 500;
+      let batch = writeBatch(db);
+      let opCount = 0;
+
+      for (const item of rawData) {
+        for (const body of selectedBodies) {
+          const qRef = doc(collection(db, "questions"));
+          
+          // Map fields from user's JSON format
+          const payload = {
+            subject: selectedSubject.toLowerCase(),
+            body: body,
+            topic: item.topic || "Unknown",
+            year: item.year || "Unknown",
+            text: item.question || item.text,
+            options: {
+              a: item.options?.A || item.options?.a || "",
+              b: item.options?.B || item.options?.b || "",
+              c: item.options?.C || item.options?.c || "",
+              d: item.options?.D || item.options?.d || "",
+            },
+            correct_answer: (item.answer || item.correct_answer || "").toLowerCase(),
+            explanation: item.explanation || "",
+            source: "admin",
+            created_at: serverTimestamp(),
+          };
+
+          batch.set(qRef, payload);
+          opCount++;
+          completedOperations++;
+
+          if (opCount >= BATCH_SIZE) {
+            await batch.commit();
+            batch = writeBatch(db);
+            opCount = 0;
+            setProgress(Math.round((completedOperations / totalOperations) * 100));
+          }
+        }
+      }
+
+      if (opCount > 0) {
+        await batch.commit();
+      }
+
+      alert(`Successfully imported ${rawData.length} questions across ${selectedBodies.length} bodies!`);
+      onSuccess();
+    } catch (err: any) {
+      console.error(err);
+      alert("Import failed: " + err.message);
+    } finally {
+      setImporting(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={onClose} />
+      <div className="relative w-full max-w-xl bg-white dark:bg-zinc-950 rounded-3xl shadow-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
+        <div className="p-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-black tracking-tighter">BULK IMPORT QUESTIONS</h2>
+            <button onClick={onClose} className="p-2 hover:bg-zinc-100 rounded-xl dark:hover:bg-zinc-900"><X size={20} /></button>
+          </div>
+
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <label className="text-sm font-bold uppercase tracking-widest text-zinc-500">1. Select JSON File</label>
+              <input 
+                type="file" 
+                accept=".json" 
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
+                className="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-[var(--brand)]/10 file:text-[var(--brand)] hover:file:bg-[var(--brand)]/20"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-bold uppercase tracking-widest text-zinc-500">2. Target Subject ID</label>
+              <input 
+                type="text" 
+                placeholder="e.g. biology"
+                value={selectedSubject}
+                onChange={(e) => setSelectedSubject(e.target.value)}
+                className="w-full h-12 px-4 rounded-xl border border-zinc-200 bg-zinc-50 dark:bg-zinc-900 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-[var(--brand)]"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <label className="text-sm font-bold uppercase tracking-widest text-zinc-500 block">3. Broadcast to Exam Bodies</label>
+              <div className="grid grid-cols-2 gap-3">
+                {bodies.map(body => (
+                  <button
+                    key={body}
+                    onClick={() => {
+                      setSelectedBodies(prev => 
+                        prev.includes(body) ? prev.filter(b => b !== body) : [...prev, body]
+                      );
+                    }}
+                    className={`h-12 rounded-xl font-bold flex items-center justify-center border-2 transition-all ${
+                      selectedBodies.includes(body)
+                        ? "bg-[var(--brand)] border-[var(--brand)] text-white"
+                        : "bg-white border-zinc-100 text-zinc-500 hover:border-[var(--brand)]/30 dark:bg-zinc-900 dark:border-zinc-800"
+                    }`}
+                  >
+                    {body}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-8 bg-zinc-50 dark:bg-zinc-900/50 flex flex-col gap-4">
+          {importing && (
+            <div className="w-full bg-zinc-200 rounded-full h-2 dark:bg-zinc-800 overflow-hidden">
+              <div 
+                className="bg-[var(--brand)] h-full transition-all duration-300" 
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          )}
+          <div className="flex gap-4">
+            <button 
+              onClick={onClose} 
+              className="flex-1 h-12 rounded-xl font-bold border border-zinc-200 hover:bg-white transition-colors"
+            >
+              Cancel
+            </button>
+            <button 
+              onClick={handleImport}
+              disabled={importing || !file || !selectedSubject || selectedBodies.length === 0}
+              className="flex-1 h-12 rounded-xl bg-zinc-900 text-white font-bold hover:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 dark:bg-white dark:text-zinc-900"
+            >
+              {importing ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Importing ({progress}%)
+                </>
+              ) : (
+                <>
+                  <Upload size={16} />
+                  Start Import
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function SubjectsPage() {
           data.length > 0
             ? data
             : [
-                { id: "english", name: "English Language", exam_bodies: ["JAMB", "WAEC", "NECO"] },
+                { id: "english", name: "English", exam_bodies: ["JAMB", "WAEC", "NECO"] },
                 { id: "math", name: "Mathematics", exam_bodies: ["JAMB", "WAEC", "NECO"] },
                 { id: "physics", name: "Physics", exam_bodies: ["JAMB", "WAEC", "NECO"] },
                 { id: "chemistry", name: "Chemistry", exam_bodies: ["JAMB", "WAEC", "NECO"] },
