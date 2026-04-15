@@ -14,7 +14,16 @@ const EXAM_BODIES = ["JAMB", "WAEC", "NECO", "NABTEB"];
 export default function ExamsPage() {
   const { user, userDoc } = useAuth();
   const { config } = useAppConfig();
-  const [subjects, setSubjects] = useState<string[]>([]);
+  
+  const fallbackSubjects = [
+    "English Language", "Mathematics", "Physics", "Chemistry", 
+    "Biology", "Government", "Economics", "Commerce", "Financial Accounting", 
+    "Literature in English", "Christian Religious Studies (CRS)", 
+    "Islamic Studies", "Geography", "Agricultural Science", 
+    "History", "French", "Computer Studies", "Civic Education", 
+    "Further Mathematics", "Data Processing", "Yoruba", "Igbo", "Hausa"
+  ];
+  const [subjects, setSubjects] = useState<string[]>(fallbackSubjects);
 
   const getCompulsorySubjects = (body: string) => {
     if (body === "JAMB") return ["English Language"];
@@ -31,9 +40,19 @@ export default function ExamsPage() {
         const q = query(collection(db, "subjects"));
         const snap = await getDocs(q);
         const names = snap.docs.map((d) => d.data().name as string).filter(Boolean);
-        setSubjects(names.length > 0 ? names : ["English Language", "Mathematics", "Physics", "Chemistry", "Biology", "Government", "Economics"]);
+        
+        const fallbackSubjects = [
+          "English Language", "Mathematics", "Physics", "Chemistry", 
+          "Biology", "Government", "Economics", "Commerce", "Financial Accounting", 
+          "Literature in English", "Christian Religious Studies (CRS)", 
+          "Islamic Studies", "Geography", "Agricultural Science", 
+          "History", "French", "Computer Studies", "Civic Education", 
+          "Further Mathematics", "Data Processing", "Yoruba", "Igbo", "Hausa"
+        ];
+        
+        setSubjects(names.length > 0 ? names : fallbackSubjects);
       } catch {
-        setSubjects(["English Language", "Mathematics", "Physics", "Chemistry", "Biology", "Government", "Economics"]);
+        // Fallback already handled in state
       } finally {
         setLoadingSubjects(false);
       }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { collection, query, orderBy, limit, getDocs, addDoc, serverTimestamp, deleteDoc, doc, writeBatch } from "firebase/firestore";
+import { collection, query, orderBy, limit, getDocs, addDoc, serverTimestamp, deleteDoc, doc, writeBatch, where } from "firebase/firestore";
 import { httpsCallable } from "firebase/functions";
 import { db, functions } from "@/lib/firebase";
 import { Plus, Search, FileDown, Upload, MoreHorizontal, Database, X, Loader2, Filter, Sparkles } from "lucide-react";
@@ -17,12 +17,36 @@ export default function QuestionsManagement() {
   const [importModalOpen, setImportModalOpen] = useState(false);
   const [importing, setImporting] = useState(false);
 
+  // Available subjects for the filter dropdown
+  const availableSubjects = [
+    "english language", "mathematics", "physics", "chemistry", 
+    "biology", "government", "economics", "commerce", "financial accounting", 
+    "literature in english", "christian religious studies (crs)", 
+    "islamic studies", "geography", "agricultural science", 
+    "history", "french", "computer studies", "civic education", 
+    "further mathematics", "data processing", "yoruba", "igbo", "hausa"
+  ];
+
   const { register, handleSubmit, reset, watch } = useForm();
 
   const fetchQuestions = async () => {
     setLoading(true);
     try {
-      const q = query(collection(db, "questions"), orderBy("created_at", "desc"), limit(50));
+      let q;
+      if (subjectFilter !== "all") {
+        q = query(
+          collection(db, "questions"), 
+          where("subject", "==", subjectFilter),
+          orderBy("created_at", "desc"), 
+          limit(200)
+        );
+      } else {
+        q = query(
+          collection(db, "questions"), 
+          orderBy("created_at", "desc"), 
+          limit(200)
+        );
+      }
       const snap = await getDocs(q);
       setQuestions(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     } catch (err) {
@@ -34,7 +58,7 @@ export default function QuestionsManagement() {
 
   useEffect(() => {
     fetchQuestions();
-  }, []);
+  }, [subjectFilter]);
 
   const onAddQuestion = async (data: any) => {
     setAdding(true);
@@ -90,13 +114,11 @@ export default function QuestionsManagement() {
   };
 
   const filteredQuestions = questions.filter(q => {
+    // Subject filtering is now done server-side, but keeping it here for safety
     if (subjectFilter !== "all" && q.subject !== subjectFilter) return false;
     if (searchTerm && !q.text?.toLowerCase().includes(searchTerm.toLowerCase())) return false;
     return true;
   });
-
-  // Extract unique subjects for the filter dropdown
-  const subjects = Array.from(new Set(questions.map(q => q.subject))).filter(Boolean);
 
   return (
     <div className="w-full max-w-7xl flex flex-col h-[calc(100vh-2rem)]">
@@ -142,7 +164,7 @@ export default function QuestionsManagement() {
             className="w-full h-11 pl-10 pr-4 appearance-none rounded-xl border border-zinc-200 bg-white text-zinc-900 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:bg-zinc-950 dark:border-zinc-800 dark:text-zinc-50 dark:focus:ring-zinc-100 font-semibold uppercase tracking-wider"
           >
             <option value="all">ALL SUBJECTS</option>
-            {subjects.map(s => (
+            {availableSubjects.map(s => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>

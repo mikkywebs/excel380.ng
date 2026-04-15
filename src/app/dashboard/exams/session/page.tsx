@@ -63,9 +63,11 @@ export default function ExamSessionPage() {
       try {
         let allFetched: Question[] = [];
         for (const subName of selectedSubjectNames) {
+          // We use 'in' to handle cases where JSON injection converted the subject name to lowercase
+          const variations = [subName, subName.toLowerCase(), subName.toUpperCase()];
           const q = query(
             collection(db, "questions"),
-            where("subject", "==", subName),
+            where("subject", "in", variations),
             where("body", "==", body),
             limit(40)
           );
