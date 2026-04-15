@@ -15,12 +15,15 @@ export default function ExamsPage() {
   const { user, userDoc } = useAuth();
   const { config } = useAppConfig();
   const [subjects, setSubjects] = useState<string[]>([]);
-  const [selectedBody, setSelectedBody] = useState("JAMB");
-  const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
-  const [loadingSubjects, setLoadingSubjects] = useState(true);
 
-  const tier = userDoc?.subscription_tier || "explorer";
-  const isPaid = tier !== "explorer";
+  const getCompulsorySubjects = (body: string) => {
+    if (body === "JAMB") return ["English Language"];
+    return ["English Language", "Mathematics"];
+  };
+
+  const [selectedBody, setSelectedBody] = useState("JAMB");
+  const [selectedSubjects, setSelectedSubjects] = useState<string[]>(getCompulsorySubjects("JAMB"));
+  const [loadingSubjects, setLoadingSubjects] = useState(true);
 
   useEffect(() => {
     async function fetchSubjects() {
@@ -37,11 +40,6 @@ export default function ExamsPage() {
     }
     fetchSubjects();
   }, []);
-
-  const getCompulsorySubjects = (body: string) => {
-    if (body === "JAMB") return ["English Language"];
-    return ["English Language", "Mathematics"];
-  };
 
   const toggleSubject = (name: string) => {
     const compulsory = getCompulsorySubjects(selectedBody);
@@ -123,20 +121,20 @@ export default function ExamsPage() {
                   key={subject}
                   onClick={() => toggleSubject(subject)}
                   className={`flex items-center justify-between p-5 border-2 rounded-2xl transition-all group ${
-                    isCompulsory ? "cursor-not-allowed border-green-600/30 bg-green-50" : "cursor-pointer"
-                  } ${isSelected && !isCompulsory
-                    ? "border-green-600 bg-green-50 shadow-md transform -translate-y-1"
-                    : !isSelected ? "border-gray-50 bg-white hover:border-green-200 hover:bg-zinc-50" : ""
+                    isCompulsory ? "cursor-not-allowed" : "cursor-pointer"
+                  } ${isSelected
+                    ? "border-green-600 bg-green-50 shadow-md " + (!isCompulsory ? "transform -translate-y-1" : "")
+                    : "border-gray-50 bg-white hover:border-green-200 hover:bg-zinc-50"
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${isSelected ? (isCompulsory ? "bg-green-600/50 text-white" : "bg-green-600 text-white") : "bg-zinc-100 text-zinc-400 group-hover:bg-green-100 group-hover:text-green-600"}`}>
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${isSelected ? "bg-green-600 text-white" : "bg-zinc-100 text-zinc-400 group-hover:bg-green-100 group-hover:text-green-600"}`}>
                       <BookOpen size={20} />
                     </div>
                     <span className={`font-bold text-sm ${isSelected ? "text-green-900" : "text-zinc-600"}`}>{subject}</span>
                   </div>
                   {isCompulsory && (
-                    <span className="text-[10px] font-black uppercase text-green-600/60 tracking-widest bg-green-100 px-2 py-1 rounded-md">Compulsory</span>
+                    <span className="text-[10px] font-black uppercase text-green-700 tracking-widest bg-green-200 px-2 py-1 rounded-md">Compulsory</span>
                   )}
                   {!isCompulsory && (
                     <div className={`h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all ${isSelected ? "bg-green-600 border-green-600" : "border-zinc-200 group-hover:border-green-300"}`}>

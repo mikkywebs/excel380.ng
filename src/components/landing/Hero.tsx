@@ -102,36 +102,68 @@ export function Hero() {
           className="relative hidden lg:block"
         >
           {/* Mockup Container */}
-          <div className="relative mx-auto w-[320px] aspect-[9/18.5] bg-zinc-900 rounded-[3rem] border-[8px] border-zinc-800 shadow-2xl p-4 overflow-hidden dark:border-zinc-800/50">
+          <div className="relative mx-auto w-[320px] aspect-[9/18.5] bg-zinc-900 rounded-[3rem] border-[8px] border-zinc-800 shadow-2xl overflow-hidden dark:border-zinc-800/50 flex">
             {/* Screen Content */}
-            <div className="h-full w-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
-              <div className="h-14 bg-[var(--brand)] p-4 flex items-center justify-between text-white">
-                <GraduationCap size={20} />
-                <span className="text-xs font-bold">JAMB 2026 MOCK</span>
-                <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-              </div>
-              <div className="p-6 flex flex-col gap-4">
-                <div className="h-4 w-2/3 bg-zinc-100 rounded" />
-                <div className="h-10 w-full bg-zinc-50 border-2 border-[var(--brand)] rounded-xl flex items-center px-4">
-                  <div className="h-4 w-4 rounded-full border-2 border-[var(--brand)] mr-3" />
-                  <div className="h-3 w-1/2 bg-zinc-200 rounded" />
+            <div className="h-full w-full bg-white dark:bg-zinc-950 rounded-[2rem] overflow-hidden flex flex-col font-sans">
+              
+              {/* Header */}
+              <div className="h-14 border-b border-zinc-100 dark:border-zinc-900 px-4 flex items-center justify-between bg-white/80 dark:bg-black/80 backdrop-blur-md">
+                <div className="flex flex-col">
+                  <span className="text-[8px] font-black text-zinc-400 uppercase tracking-widest">JAMB PRACTICE</span>
+                  <span className="font-bold text-[10px] tracking-tight dark:text-white">Use of English</span>
                 </div>
-                <div className="h-10 w-full bg-zinc-50 rounded-xl flex items-center px-4">
-                  <div className="h-4 w-4 rounded-full border-2 border-zinc-200 mr-3" />
-                  <div className="h-3 w-1/3 bg-zinc-200 rounded" />
-                </div>
-                <div className="h-10 w-full bg-zinc-50 rounded-xl flex items-center px-4">
-                  <div className="h-4 w-4 rounded-full border-2 border-zinc-200 mr-3" />
-                  <div className="h-3 w-2/3 bg-zinc-200 rounded" />
+                <div className="px-3 py-1 bg-red-500 text-white rounded-full font-black text-[10px] animate-pulse">
+                  01:54:20
                 </div>
               </div>
-              <div className="mt-auto p-4 flex gap-2">
-                <div className="h-10 flex-1 bg-zinc-100 rounded-lg" />
-                <div className="h-10 flex-1 bg-[var(--brand)] rounded-lg" />
+
+              {/* Body */}
+              <div className="flex-1 p-5 flex flex-col overflow-hidden">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-0.5 bg-green-100 text-green-600 rounded-md text-[8px] font-black uppercase tracking-widest">Q 1 of 40</span>
+                </div>
+                
+                <h2 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug mb-6">
+                  Choose the option that best completes the sentence:<br/><br/>
+                  The man was _____ by the court of all charges.
+                </h2>
+
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3 p-3 rounded-2xl border-2 border-[var(--brand)] bg-[var(--brand)]/10 text-left transition-all">
+                    <div className="h-8 w-8 rounded-xl bg-[var(--brand)] text-white flex items-center justify-center font-black text-[10px] shrink-0">
+                      A
+                    </div>
+                    <span className="font-bold text-xs text-[var(--brand)]">Acquitted</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 p-3 rounded-2xl border-2 border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-left transition-all">
+                    <div className="h-8 w-8 rounded-xl bg-zinc-100 dark:bg-zinc-900 text-zinc-400 flex items-center justify-center font-black text-[10px] shrink-0">
+                      B
+                    </div>
+                    <span className="font-bold text-xs text-zinc-600 dark:text-zinc-400">Condemned</span>
+                  </div>
+
+                  <div className="flex items-center gap-3 p-3 rounded-2xl border-2 border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-left transition-all">
+                    <div className="h-8 w-8 rounded-xl bg-zinc-100 dark:bg-zinc-900 text-zinc-400 flex items-center justify-center font-black text-[10px] shrink-0">
+                      C
+                    </div>
+                    <span className="font-bold text-xs text-zinc-600 dark:text-zinc-400">Reprimanded</span>
+                  </div>
+                </div>
+
+                <div className="mt-auto flex gap-2 pt-4">
+                  <div className="flex-1 h-10 border border-zinc-200 dark:border-zinc-800 rounded-xl flex items-center justify-center text-[10px] font-bold text-zinc-400 dark:text-zinc-500">
+                    PREVIOUS
+                  </div>
+                  <div className="flex-1 h-10 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl flex items-center justify-center text-[10px] font-bold shadow-lg">
+                    NEXT
+                  </div>
+                </div>
               </div>
             </div>
+            
             {/* Dynamic Accents */}
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 h-6 w-24 bg-zinc-800 rounded-full" />
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 h-5 w-20 bg-zinc-950 rounded-b-xl z-20" />
           </div>
 
           {/* Floating Accents */}

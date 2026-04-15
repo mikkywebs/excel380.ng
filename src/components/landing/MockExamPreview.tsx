@@ -52,76 +52,80 @@ export function MockExamPreview() {
             <div className="absolute inset-0 bg-[var(--brand)]/20 blur-[120px] rounded-full" />
             
             {/* Phone Container */}
-            <div className="relative w-full max-w-[320px] aspect-[9/19] bg-zinc-950 rounded-[3rem] p-3 border-[6px] border-zinc-900 shadow-2xl overflow-hidden ring-4 ring-zinc-900/50">
+            <div className="relative w-full max-w-[320px] aspect-[9/19] bg-zinc-950 rounded-[3rem] p-3 border-[6px] border-zinc-900 shadow-2xl overflow-hidden ring-4 ring-zinc-900/50 flex">
               {/* Screen Content */}
-              <div className="w-full h-full bg-white rounded-[2.2rem] overflow-hidden flex flex-col relative">
+              <div className="w-full h-full bg-white dark:bg-zinc-950 rounded-[2.2rem] overflow-hidden flex flex-col relative font-sans">
                 
                 {/* Header mimicking image */}
-                <div className="bg-[var(--brand)] h-14 flex items-center justify-between px-5 text-white">
-                  <GraduationCap size={20} />
-                  <span className="text-[10px] font-black uppercase tracking-widest">JAMB 2026 MOCK</span>
-                  <div className="h-2 w-2 rounded-full bg-red-400" />
+                <div className="h-14 border-b border-zinc-100 dark:border-zinc-900 px-4 flex items-center justify-between bg-zinc-50 dark:bg-zinc-900">
+                  <div className="flex flex-col">
+                    <span className="text-[8px] font-black text-[var(--brand)] uppercase tracking-widest">WAEC PRACTICE</span>
+                    <span className="font-bold text-[10px] tracking-tight dark:text-white">Mathematics</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-[var(--brand)] font-bold text-[10px] bg-[var(--brand)]/10 px-2 py-1 rounded-md">
+                    <Clock size={10} />
+                    02:30:00
+                  </div>
                 </div>
 
                 {/* Progress Bar */}
-                <div className="h-1 bg-zinc-100">
-                  <div className="h-full bg-[var(--brand)] w-1/3" />
+                <div className="h-1 bg-zinc-100 dark:bg-zinc-900">
+                  <div className="h-full bg-[var(--brand)] shadow-[0_0_10px_var(--brand)]" style={{ width: '45%' }} />
                 </div>
 
-                <div className="p-6 flex flex-col gap-5 flex-1">
-                  {/* Timer/Meta */}
+                <div className="p-5 flex flex-col gap-4 flex-1 overflow-hidden">
                   <div className="flex items-center justify-between">
-                    <div className="h-5 w-24 bg-zinc-100 rounded-full animate-pulse" />
-                    <div className="flex items-center gap-1 text-[var(--brand)] font-bold text-xs">
-                      <Clock size={12} />
-                      01:54:20
-                    </div>
+                    <span className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 rounded-md text-[8px] font-black uppercase tracking-widest">Q 22 of 50</span>
+                    <span className="text-[8px] font-bold text-zinc-400">Score: 42%</span>
                   </div>
 
                   {/* Question */}
-                  <div className="space-y-3">
-                    <div className="h-4 w-full bg-zinc-100 rounded-full" />
-                    <div className="h-4 w-4/5 bg-zinc-100 rounded-full" />
-                    <div className="h-4 w-3/5 bg-zinc-100 rounded-full" />
-                  </div>
+                  <h2 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-2 mb-4 leading-relaxed">
+                    If log₁₀2 = 0.3010 and log₁₀3 = 0.4771, evaluate log₁₀4.5
+                  </h2>
 
-                  {/* Options mimicking arrows in image */}
-                  <div className="space-y-3 mt-4">
-                    <div className="p-4 rounded-xl border-2 border-[var(--brand)] bg-green-50 flex items-center gap-4">
-                      <div className="h-4 w-4 rounded-full border-2 border-[var(--brand)]" />
-                      <div className="h-3 w-32 bg-zinc-200 rounded-full" />
+                  {/* Options mimicking functional app */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3 p-3 rounded-2xl border-2 border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-left transition-all">
+                      <div className="h-8 w-8 rounded-xl bg-zinc-100 dark:bg-zinc-900 text-zinc-400 flex items-center justify-center font-black text-[10px] shrink-0">
+                        A
+                      </div>
+                      <span className="font-bold text-xs text-zinc-600 dark:text-zinc-400">0.8341</span>
                     </div>
-                    <div className="p-4 rounded-xl border-2 border-zinc-50 bg-zinc-50/50 flex items-center gap-4">
-                      <div className="h-4 w-4 rounded-full border-2 border-zinc-200" />
-                      <div className="h-3 w-28 bg-zinc-200 rounded-full" />
-                    </div>
-                    <div className="p-4 rounded-xl border-2 border-zinc-50 bg-zinc-50/50 flex items-center gap-4 opacity-50">
-                      <div className="h-4 w-4 rounded-full border-2 border-zinc-200" />
-                      <div className="h-3 w-36 bg-zinc-200 rounded-full" />
-                    </div>
-                  </div>
 
-                  {/* Central "Red Box" Placeholder from image */}
-                  <div className="flex-1 border-2 border-red-50/20 border-dashed rounded-2xl flex items-center justify-center">
-                    <div className="h-20 w-20 bg-zinc-50 rounded-2xl animate-pulse" />
+                    <div className="flex items-center gap-3 p-3 rounded-2xl border-2 border-[var(--brand)] bg-[var(--brand)]/10 text-left transition-all">
+                      <div className="h-8 w-8 rounded-xl bg-[var(--brand)] text-white flex items-center justify-center font-black text-[10px] shrink-0">
+                        B
+                      </div>
+                      <span className="font-bold text-xs text-[var(--brand)]">0.6532</span>
+                    </div>
+
+                    <div className="flex items-center gap-3 p-3 rounded-2xl border-2 border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-left transition-all opacity-50">
+                      <div className="h-8 w-8 rounded-xl bg-zinc-100 dark:bg-zinc-900 text-zinc-400 flex items-center justify-center font-black text-[10px] shrink-0">
+                        C
+                      </div>
+                      <span className="font-bold text-xs text-zinc-600 dark:text-zinc-400 line-through">0.9542</span>
+                    </div>
                   </div>
 
                   {/* Footer Buttons mimicking arrows in image */}
-                  <div className="flex gap-3 mt-auto">
-                    <div className="h-12 flex-1 bg-zinc-100 rounded-xl" />
-                    <div className="h-12 flex-1 bg-[var(--brand)] rounded-xl flex items-center justify-center text-white">
-                      <ChevronRight size={20} />
+                  <div className="flex gap-2 mt-auto pt-4">
+                    <div className="h-10 flex-1 border border-zinc-200 dark:border-zinc-800 rounded-xl flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500">
+                      <ChevronLeft size={16} />
+                    </div>
+                    <div className="h-10 flex-1 bg-[var(--brand)] rounded-xl flex items-center justify-center text-white shadow-lg">
+                      <ChevronRight size={16} />
                     </div>
                   </div>
                 </div>
 
                 {/* Submit Float */}
-                <div className="absolute top-1/2 -right-12 translate-y-12">
-                   <div className="bg-zinc-950 text-white p-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-white/10 rotate-12">
-                      <div className="h-8 w-8 bg-[var(--brand)] rounded-lg flex items-center justify-center">
-                        <Send size={14} />
+                <div className="absolute top-1/2 -right-12 translate-y-8 animate-pulse">
+                   <div className="bg-zinc-900 text-white p-3 rounded-xl shadow-2xl flex items-center gap-2 border border-zinc-800 rotate-12">
+                      <div className="h-6 w-6 bg-red-500 rounded-md flex items-center justify-center">
+                        <Send size={10} />
                       </div>
-                      <span className="text-[10px] font-bold">SUBMIT</span>
+                      <span className="text-[8px] font-black tracking-widest mr-1">SUBMIT</span>
                    </div>
                 </div>
               </div>
