@@ -6,8 +6,7 @@ import { functions } from '@/lib/firebase';
 import { useAuth } from '@/contexts/AuthContext';
 import { format } from 'date-fns';
 import confetti from 'canvas-confetti';
-import { motion } from 'framer-motion';
-import { CheckCircle2, Zap, Crown, GraduationCap, Loader2, Star, X } from 'lucide-react';
+import { CheckCircle2, Zap, Shield, Crown, GraduationCap, Loader2, Star, X } from 'lucide-react';
 
 declare global {
   interface Window {
@@ -123,7 +122,6 @@ export default function UpgradePage() {
   );
 
   return (
-    <>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -254,6 +252,6 @@ export default function UpgradePage() {
           Subscriptions can be managed or canceled in your account settings.
         </p>
       </div>
-    </>
+    </div>
   );
 }

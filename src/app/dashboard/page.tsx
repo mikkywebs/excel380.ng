@@ -21,6 +21,17 @@ import {
   TrendingUp
 } from 'lucide-react';
 
+interface TestSession {
+  id: string;
+  exam_body: string;
+  subjects: string[];
+  score: number;
+  total: number;
+  percentage: number;
+  timeUsed: number;
+  timestamp: any;
+}
+
 function getGreeting() {
   const hour = new Date().getHours();
   if (hour < 12) return 'Good morning';
@@ -46,7 +57,7 @@ function formatCountdown(targetTime: Date): string {
 export default function DashboardPage() {
   const { user, userDoc } = useAuth();
   const { config } = useAppConfig();
-  const [sessions, setSessions] = useState<any[]>([]);
+  const [sessions, setSessions] = useState<TestSession[]>([]);
   const [stats, setStats] = useState({
     totalTests: 0,
     avgScore: 0,
@@ -79,17 +90,17 @@ export default function DashboardPage() {
         );
 
         const snapshot = await getDocs(q);
-        const sessionData = snapshot.docs.map(doc => ({
+        const sessionData: TestSession[] = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
-        }));
+        } as TestSession));
 
         setSessions(sessionData);
 
         // Calculate stats
         if (sessionData.length > 0) {
-          const scores = sessionData.map((s: any) => s.percentage || 0);
-          const subjects = new Set(sessionData.flatMap((s: any) => s.subjects || []));
+          const scores = sessionData.map((s) => s.percentage || 0);
+          const subjects = new Set(sessionData.flatMap((s) => s.subjects || []));
 
           setStats({
             totalTests: sessionData.length,
@@ -271,7 +282,7 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="divide-y divide-gray-200">
-            {sessions.map((session: any) => {
+            {sessions.map((session) => {
               const percentage = Math.round(session.percentage || 0);
               const scoreColor = percentage >= 70
                 ? 'bg-green-100 text-green-800 border-green-200'

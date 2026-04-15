@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Route protection middleware.
+ * Route protection proxy (formerly middleware).
  *
  * Firebase Auth is client-side and doesn't set cookies automatically.
  * True server-side session verification requires firebase-admin + a custom
@@ -12,12 +12,12 @@ import type { NextRequest } from "next/server";
  *  - Protect /dashboard and /exam from unauthenticated users using the
  *    `firebase_session` cookie (set manually on sign-in if needed).
  *  - Admin routes are protected at the layout level (AdminLayout checks
- *    `isAdmin` from AuthContext) — the middleware just requires any session.
+ *    `isAdmin` from AuthContext) — the proxy just requires any session.
  *
  * To enable proper cookie-based auth in the future, implement the
  * firebase-admin session cookie flow and set `firebase_session` on login.
  */
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Get the session cookie (present only if custom session-cookie flow is set up)
@@ -29,7 +29,7 @@ export function middleware(request: NextRequest) {
     !session
   ) {
     // NOTE: Since Firebase Auth is client-side, the layout already handles
-    // redirect to /login when auth state resolves to null. This middleware
+    // redirect to /login when auth state resolves to null. This proxy
     // acts as a secondary safeguard when a proper session cookie is present.
     // Remove this block if it causes redirect loops during development.
     return NextResponse.next();

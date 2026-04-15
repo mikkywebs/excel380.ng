@@ -232,7 +232,65 @@ export default function AdminSettings() {
         </Section>
 
         {/* SUBMIT BUTTON */}
-        <div className="sticky bottom-6 z-10 flex justify-end gap-3">
+        <div className="sticky bottom-6 z-10 flex justify-end gap-3 flex-wrap">
+          {/* Seed App Config */}
+          <button
+            type="button"
+            onClick={async () => {
+              if (!confirm('This will initialise the app_config/main_settings document in Firestore with production defaults (only if it does not already exist). Continue?')) return;
+              setSaving(true);
+              setMessage(null);
+              try {
+                const { doc, getDoc, setDoc, serverTimestamp } = await import('firebase/firestore');
+                const { db } = await import('@/lib/firebase');
+                const ref = doc(db, 'app_config', 'main_settings');
+                const snap = await getDoc(ref);
+                if (snap.exists()) {
+                  setMessage({ type: 'success', text: 'App config already exists — no changes made. Use "Save All Settings" to update individual fields.' });
+                  return;
+                }
+                await setDoc(ref, {
+                  primary_color: '#45a257',
+                  free_credits: 100,
+                  credits_per_question: 1,
+                  free_questions_per_test: 10,
+                  pause_window_minutes: 30,
+                  pause_between_tests_minutes: 30,
+                  exam_time_minutes: 120,
+                  jamb_time_minutes: 120,
+                  waec_time_minutes: 180,
+                  neco_time_minutes: 180,
+                  nabteb_time_minutes: 120,
+                  questions_per_exam: 40,
+                  passing_percentage: 50,
+                  subjects_available: 24,
+                  institutions_available: 900,
+                  max_institution_students: 500,
+                  maintenance_mode: false,
+                  ai_generation_enabled: true,
+                  subscription_plans: {
+                    scholar_6m: { label: 'Scholar', price: 5000, duration_months: 6 },
+                    scholar_lifetime: { label: 'Scholar Pro', price: 24000, duration_months: null },
+                    academy_6m: { label: 'Academy', price: 25000, duration_months: 6 },
+                    academy_elite: { label: 'Academy Elite', price: 50000, duration_months: null },
+                  },
+                  updated_at: serverTimestamp(),
+                });
+                setMessage({ type: 'success', text: '✓ App config initialised with production defaults! Refresh the page to load the values.' });
+              } catch (err) {
+                console.error(err);
+                setMessage({ type: 'error', text: 'Failed to initialise app config. Check Firestore permissions.' });
+              } finally {
+                setSaving(false);
+              }
+            }}
+            disabled={saving || loading}
+            className="h-12 px-6 flex items-center justify-center gap-2 rounded-xl bg-emerald-50 text-emerald-700 font-bold text-sm transition-all hover:bg-emerald-100 disabled:opacity-50 border border-emerald-200 shadow-xl"
+          >
+            {saving ? <Loader2 size={18} className="animate-spin" /> : <span>⚙ Init App Config</span>}
+          </button>
+
+          {/* Seed Subjects */}
           <button
             type="button"
             onClick={async () => {
@@ -265,24 +323,21 @@ export default function AdminSettings() {
               setSaving(true);
               setMessage(null);
               try {
-                const { doc, setDoc, serverTimestamp } = await import("firebase/firestore");
+                const { doc, setDoc, deleteDoc, serverTimestamp } = await import("firebase/firestore");
                 const { db } = await import("@/lib/firebase");
                 for (const sub of subjectsToEnsure) {
                   await setDoc(doc(db, "subjects", sub.id), {
                       name: sub.name,
                       exam_bodies: ['JAMB', 'WAEC', 'NECO', 'NABTEB'],
-                      is_compulsory: sub.id === 'english' || sub.id === 'mathematics',
+                      is_compulsory: sub.id === 'english_language' || sub.id === 'mathematics',
                       updated_at: serverTimestamp()
                   }, { merge: true });
                 }
-                const { deleteDoc } = await import("firebase/firestore");
-                await deleteDoc(doc(db, "subjects", "nigerian-languages"));
-                await deleteDoc(doc(db, "subjects", "english"));
-                await deleteDoc(doc(db, "subjects", "english-language"));
-                await deleteDoc(doc(db, "subjects", "english_language"));
-                await deleteDoc(doc(db, "subjects", "use-of-english"));
-                await deleteDoc(doc(db, "subjects", "use_of_english"));
-                setMessage({ type: 'success', text: 'All 24 subjects were successfully seeded and duplicates were cleaned up!' });
+                // Cleanup old/duplicate IDs
+                for (const oldId of ['nigerian-languages', 'english', 'english-language', 'english_language_old', 'use-of-english', 'use_of_english']) {
+                  try { await deleteDoc(doc(db, "subjects", oldId)); } catch {}
+                }
+                setMessage({ type: 'success', text: '✓ All 24 subjects seeded and duplicates removed!' });
               } catch (err) {
                 console.error(err);
                 setMessage({ type: 'error', text: 'Failed to seed subjects.' });
@@ -291,10 +346,12 @@ export default function AdminSettings() {
               }
             }}
             disabled={saving || loading}
-            className="h-12 px-8 flex items-center justify-center gap-2 rounded-xl bg-blue-100 text-blue-700 font-bold text-sm transition-all hover:bg-blue-200 disabled:opacity-50 border border-blue-200 shadow-xl"
+            className="h-12 px-6 flex items-center justify-center gap-2 rounded-xl bg-blue-100 text-blue-700 font-bold text-sm transition-all hover:bg-blue-200 disabled:opacity-50 border border-blue-200 shadow-xl"
           >
-            {saving ? <Loader2 size={18} className="animate-spin" /> : <span>Seed 24 Subjects</span>}
+            {saving ? <Loader2 size={18} className="animate-spin" /> : <span>📚 Seed 24 Subjects</span>}
           </button>
+
+          {/* Save Settings */}
           <button
             type="submit"
             disabled={saving || loading}

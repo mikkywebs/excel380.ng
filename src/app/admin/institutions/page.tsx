@@ -3,13 +3,14 @@
 import React, { useEffect, useState } from "react";
 import { collection, query, orderBy, getDocs, doc, setDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { Loader2, Building2, Ticket, Users, Search, RefreshCw, Plus } from "lucide-react";
+import { Loader2, Building2, Ticket, Users, Search, RefreshCw, Plus, Database } from "lucide-react";
 import { format } from "date-fns";
 
 export default function InstitutionsManagement() {
   const [institutions, setInstitutions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isSeeding, setIsSeeding] = useState(false);
 
   useEffect(() => {
     async function fetchInstitutions() {
@@ -37,6 +38,31 @@ export default function InstitutionsManagement() {
     }
   };
 
+  const seedInstitutions = async () => {
+    if (!confirm("This will seed 182+ institutions into the database. Proceed?")) return;
+    setIsSeeding(true);
+    try {
+      // Dynamic import to keep main bundle smaller
+      const data = (await import("@/data/institutions.json")).default;
+      let count = 0;
+      for (const inst of data) {
+        await setDoc(doc(db, "university_cutoffs", inst.id.toString()), {
+          name: inst.name,
+          score: inst.score,
+          category: inst.category,
+          updated_at: new Date()
+        }, { merge: true });
+        count++;
+      }
+      alert(`Successfully seeded ${count} institutions!`);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to seed institutions.");
+    } finally {
+      setIsSeeding(false);
+    }
+  };
+
   const filtered = institutions.filter(i => 
     i.name?.toLowerCase().includes(searchTerm.toLowerCase()) || 
     i.owner_email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -52,9 +78,19 @@ export default function InstitutionsManagement() {
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 mt-1">Manage B2B academy subscriptions and invite codes.</p>
         </div>
-        <button className="flex items-center gap-2 h-10 px-4 rounded-xl bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-800 transition-all shadow-lg dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
-          <Plus size={16} /> Create Manual
-        </button>
+        <div className="flex gap-3">
+          <button 
+            onClick={seedInstitutions}
+            disabled={isSeeding}
+            className="flex items-center gap-2 h-10 px-4 rounded-xl bg-green-100 text-green-700 font-bold text-sm hover:bg-green-200 transition-all disabled:opacity-50 border border-green-200"
+          >
+            {isSeeding ? <Loader2 size={16} className="animate-spin" /> : <Database size={16} />}
+            Seed Data
+          </button>
+          <button className="flex items-center gap-2 h-10 px-4 rounded-xl bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-800 transition-all shadow-lg dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
+            <Plus size={16} /> Create Manual
+          </button>
+        </div>
       </div>
 
       <div className="relative mb-4 shrink-0">

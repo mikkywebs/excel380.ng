@@ -14,7 +14,7 @@ export function PricingSection() {
     return <section className="py-24 bg-white animate-pulse h-[600px] dark:bg-black" />;
   }
 
-  const { subscription_plans } = config;
+  const subscription_plans = config.subscription_plans || {};
 
   const tiers = [
     {
@@ -55,7 +55,7 @@ export function PricingSection() {
       period: "6 Months / Institution",
       credits: "Unlimited",
       features: [
-        `Up to ${config.max_institution_students} Students`,
+        `Up to ${config.max_institution_students || 500} Students`,
         "Institutional Control Panel",
         "Batch Result Analysis",
         "Custom Mock Examinations",

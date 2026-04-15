@@ -70,11 +70,10 @@ export default function ExamsPage() {
                 setSelectedBody(body);
                 setSelectedSubjects([]); // Reset on body change
               }}
-              className={`h-14 rounded-xl font-bold text-sm transition-all border-2 ${
-                selectedBody === body
-                  ? "bg-green-600 border-green-600 text-white shadow-lg shadow-green-600/20"
-                  : "bg-white border-gray-100 text-gray-500 hover:border-green-300"
-              }`}
+              className={`h-14 rounded-xl font-bold text-sm transition-all border-2 ${selectedBody === body
+                ? "bg-green-600 border-green-600 text-white shadow-lg shadow-green-600/20"
+                : "bg-white border-gray-100 text-gray-500 hover:border-green-300"
+                }`}
             >
               {body}
             </button>
@@ -105,11 +104,10 @@ export default function ExamsPage() {
                 <div
                   key={subject}
                   onClick={() => toggleSubject(subject)}
-                  className={`flex items-center justify-between p-5 border-2 rounded-2xl transition-all group cursor-pointer ${
-                    isSelected 
-                      ? "border-green-600 bg-green-50 shadow-md transform -translate-y-1" 
-                      : "border-gray-50 bg-white hover:border-green-200 hover:bg-zinc-50"
-                  }`}
+                  className={`flex items-center justify-between p-5 border-2 rounded-2xl transition-all group cursor-pointer ${isSelected
+                    ? "border-green-600 bg-green-50 shadow-md transform -translate-y-1"
+                    : "border-gray-50 bg-white hover:border-green-200 hover:bg-zinc-50"
+                    }`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${isSelected ? "bg-green-600 text-white" : "bg-zinc-100 text-zinc-400 group-hover:bg-green-100 group-hover:text-green-600"}`}>
@@ -131,7 +129,7 @@ export default function ExamsPage() {
       <div className="bg-zinc-950 text-white rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-green-600/20 blur-[100px] -mr-32 -mt-32" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/10 blur-[100px] -ml-32 -mb-32" />
-        
+
         <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="flex items-center gap-6">
             <div className="h-16 w-16 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center border border-white/20">
@@ -146,15 +144,14 @@ export default function ExamsPage() {
               </div>
             </div>
           </div>
-          
-          <Link 
+
+          <Link
             href={canStart ? `/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}` : "#"}
             onClick={(e) => !canStart && e.preventDefault()}
-            className={`flex items-center gap-3 px-10 h-16 rounded-[1.5rem] font-black uppercase tracking-widest transition-all ${
-              canStart 
-                ? "bg-green-600 text-white hover:bg-green-500 shadow-xl shadow-green-600/20 active:scale-95" 
-                : "bg-zinc-800 text-zinc-600 cursor-not-allowed"
-            }`}
+            className={`flex items-center gap-3 px-10 h-16 rounded-[1.5rem] font-black uppercase tracking-widest transition-all ${canStart
+              ? "bg-green-600 text-white hover:bg-green-500 shadow-xl shadow-green-600/20 active:scale-95"
+              : "bg-zinc-800 text-zinc-600 cursor-not-allowed"
+              }`}
           >
             {canStart ? (
               <>
@@ -167,7 +164,6 @@ export default function ExamsPage() {
           </Link>
         </div>
       </div>
-    </div>
     </div>
   );
 }
