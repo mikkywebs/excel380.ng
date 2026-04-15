@@ -19,12 +19,12 @@ export default function QuestionsManagement() {
 
   // Available subjects for the filter dropdown
   const availableSubjects = [
-    "english language", "mathematics", "physics", "chemistry", 
-    "biology", "government", "economics", "commerce", "financial accounting", 
-    "literature in english", "christian religious studies (crs)", 
-    "islamic studies", "geography", "agricultural science", 
-    "history", "french", "computer studies", "civic education", 
-    "further mathematics", "data processing", "yoruba", "igbo", "hausa"
+    "English Language", "Mathematics", "Physics", "Chemistry", 
+    "Biology", "Government", "Economics", "Commerce", "Financial Accounting", 
+    "Literature in English", "Christian Religious Studies", 
+    "Islamic Studies", "Geography", "Agricultural Science", 
+    "History", "French", "Computer Studies", "Civic Education", 
+    "Further Mathematics", "Data Processing", "Yoruba", "Igbo", "Hausa"
   ];
 
   const { register, handleSubmit, reset, watch } = useForm();
@@ -34,9 +34,14 @@ export default function QuestionsManagement() {
     try {
       let q;
       if (subjectFilter !== "all") {
+        const variations = [
+          subjectFilter, 
+          subjectFilter.toLowerCase(), 
+          subjectFilter.toUpperCase()
+        ];
         q = query(
           collection(db, "questions"), 
-          where("subject", "==", subjectFilter),
+          where("subject", "in", variations),
           orderBy("created_at", "desc"), 
           limit(200)
         );
