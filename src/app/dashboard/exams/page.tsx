@@ -161,7 +161,7 @@ export default function ExamsPage() {
             <div>
               <p className="font-black text-2xl tracking-tighter">{selectedBody} Session</p>
               <div className="flex items-center gap-3 mt-1 text-zinc-400 font-bold text-sm tracking-widest uppercase">
-                <span>120 Min</span>
+                <span>120 Min <span className="text-[10px] text-zinc-500 lowercase">(~{Math.floor(120 / (selectedSubjects.length || 1))} min/subject)</span></span>
                 <span className="w-1.5 h-1.5 rounded-full bg-zinc-700 shrink-0" />
                 <span>{selectedSubjects.length} Subject{selectedSubjects.length !== 1 && "s"}</span>
               </div>
