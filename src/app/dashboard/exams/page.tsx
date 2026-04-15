@@ -38,19 +38,40 @@ export default function ExamsPage() {
     fetchSubjects();
   }, []);
 
+  const getCompulsorySubjects = (body: string) => {
+    if (body === "JAMB") return ["English Language"];
+    return ["English Language", "Mathematics"];
+  };
+
   const toggleSubject = (name: string) => {
+    const compulsory = getCompulsorySubjects(selectedBody);
+    if (compulsory.includes(name)) return; // Prevent toggling compulsory subjects
+
     setSelectedSubjects(prev => {
       if (prev.includes(name)) return prev.filter(s => s !== name);
-      // Limit to 4 for JAMB
-      if (selectedBody === "JAMB" && prev.length >= 4) {
-        alert("JAMB usually requires exactly 4 subjects.");
-        return prev;
-      }
+      
+      const maxAllowed = selectedBody === "JAMB" ? 4 : (selectedBody === "NABTEB" ? 8 : 9);
+      if (prev.length >= maxAllowed) return prev; // Reached max
       return [...prev, name];
     });
   };
 
-  const canStart = selectedSubjects.length > 0;
+  let validationMessage = "";
+  let canStart = false;
+
+  if (selectedBody === "JAMB") {
+    if (selectedSubjects.length < 4) validationMessage = `Select ${4 - selectedSubjects.length} more subject(s) (English is compulsory)`;
+    else if (selectedSubjects.length === 4) canStart = true;
+  } else if (selectedBody === "NABTEB") {
+    const hasEconCom = selectedSubjects.includes("Economics") || selectedSubjects.includes("Commerce");
+    if (selectedSubjects.length < 5) validationMessage = `Select at least ${5 - selectedSubjects.length} more subject(s)`;
+    else if (!hasEconCom) validationMessage = "Economics or Commerce is Compulsory";
+    else canStart = true;
+  } else {
+    // WAEC & NECO
+    if (selectedSubjects.length < 8) validationMessage = `Select at least ${8 - selectedSubjects.length} more subject(s) (English & Math are compulsory)`;
+    else canStart = true;
+  }
 
   return (
     <div className="space-y-6">
@@ -68,7 +89,7 @@ export default function ExamsPage() {
               key={body}
               onClick={() => {
                 setSelectedBody(body);
-                setSelectedSubjects([]); // Reset on body change
+                setSelectedSubjects(getCompulsorySubjects(body)); // Reset & Auto-select compulsory
               }}
               className={`h-14 rounded-xl font-bold text-sm transition-all border-2 ${selectedBody === body
                 ? "bg-green-600 border-green-600 text-white shadow-lg shadow-green-600/20"
@@ -85,11 +106,6 @@ export default function ExamsPage() {
       <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-semibold text-gray-800 uppercase tracking-widest text-xs opacity-60">Available Subjects</h2>
-          {!isPaid && (
-            <span className="text-[10px] bg-yellow-100 text-yellow-700 font-black uppercase px-3 py-1 rounded-full tracking-tighter">
-              Free plan: 3 Subjects max
-            </span>
-          )}
         </div>
 
         {loadingSubjects ? (
@@ -100,24 +116,33 @@ export default function ExamsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {subjects.map((subject) => {
               const isSelected = selectedSubjects.includes(subject);
+              const isCompulsory = getCompulsorySubjects(selectedBody).includes(subject);
+
               return (
                 <div
                   key={subject}
                   onClick={() => toggleSubject(subject)}
-                  className={`flex items-center justify-between p-5 border-2 rounded-2xl transition-all group cursor-pointer ${isSelected
+                  className={`flex items-center justify-between p-5 border-2 rounded-2xl transition-all group ${
+                    isCompulsory ? "cursor-not-allowed border-green-600/30 bg-green-50" : "cursor-pointer"
+                  } ${isSelected && !isCompulsory
                     ? "border-green-600 bg-green-50 shadow-md transform -translate-y-1"
-                    : "border-gray-50 bg-white hover:border-green-200 hover:bg-zinc-50"
-                    }`}
+                    : !isSelected ? "border-gray-50 bg-white hover:border-green-200 hover:bg-zinc-50" : ""
+                  }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${isSelected ? "bg-green-600 text-white" : "bg-zinc-100 text-zinc-400 group-hover:bg-green-100 group-hover:text-green-600"}`}>
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${isSelected ? (isCompulsory ? "bg-green-600/50 text-white" : "bg-green-600 text-white") : "bg-zinc-100 text-zinc-400 group-hover:bg-green-100 group-hover:text-green-600"}`}>
                       <BookOpen size={20} />
                     </div>
                     <span className={`font-bold text-sm ${isSelected ? "text-green-900" : "text-zinc-600"}`}>{subject}</span>
                   </div>
-                  <div className={`h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all ${isSelected ? "bg-green-600 border-green-600" : "border-zinc-200 group-hover:border-green-300"}`}>
-                    {isSelected && <ChevronRight className="h-3 w-3 text-white rotate-90" />}
-                  </div>
+                  {isCompulsory && (
+                    <span className="text-[10px] font-black uppercase text-green-600/60 tracking-widest bg-green-100 px-2 py-1 rounded-md">Compulsory</span>
+                  )}
+                  {!isCompulsory && (
+                    <div className={`h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all ${isSelected ? "bg-green-600 border-green-600" : "border-zinc-200 group-hover:border-green-300"}`}>
+                      {isSelected && <ChevronRight className="h-3 w-3 text-white rotate-90" />}
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -132,36 +157,43 @@ export default function ExamsPage() {
 
         <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="flex items-center gap-6">
-            <div className="h-16 w-16 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center border border-white/20">
+            <div className="h-16 w-16 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center border border-white/20 shrink-0">
               <Clock className="h-8 w-8 text-green-400" />
             </div>
             <div>
               <p className="font-black text-2xl tracking-tighter">{selectedBody} Session</p>
               <div className="flex items-center gap-3 mt-1 text-zinc-400 font-bold text-sm tracking-widest uppercase">
                 <span>120 Min</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-                <span>{selectedSubjects.length > 0 ? `${selectedSubjects.length * 40} Questions` : "Select Subjects"}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700 shrink-0" />
+                <span>{selectedSubjects.length} Subject{selectedSubjects.length !== 1 && "s"}</span>
               </div>
             </div>
           </div>
 
-          <Link
-            href={canStart ? `/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}` : "#"}
-            onClick={(e) => !canStart && e.preventDefault()}
-            className={`flex items-center gap-3 px-10 h-16 rounded-[1.5rem] font-black uppercase tracking-widest transition-all ${canStart
-              ? "bg-green-600 text-white hover:bg-green-500 shadow-xl shadow-green-600/20 active:scale-95"
-              : "bg-zinc-800 text-zinc-600 cursor-not-allowed"
-              }`}
-          >
-            {canStart ? (
-              <>
-                <PlayCircle size={24} />
-                Begin Practice
-              </>
-            ) : (
-              "Select Subjects"
+          <div className="flex flex-col items-end gap-2 shrink-0">
+            <Link
+              href={canStart ? `/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}` : "#"}
+              onClick={(e) => !canStart && e.preventDefault()}
+              className={`flex items-center justify-center gap-3 w-full md:w-auto px-10 h-16 rounded-[1.5rem] font-black uppercase tracking-widest transition-all ${canStart
+                ? "bg-green-600 text-white hover:bg-green-500 shadow-xl shadow-green-600/20 active:scale-95"
+                : "bg-zinc-800 text-zinc-600 cursor-not-allowed"
+                }`}
+            >
+              {canStart ? (
+                <>
+                  <PlayCircle size={24} />
+                  Begin Practice
+                </>
+              ) : (
+                "Not Ready"
+              )}
+            </Link>
+            {!canStart && validationMessage && (
+              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest w-full text-center md:text-right">
+                {validationMessage}
+              </span>
             )}
-          </Link>
+          </div>
         </div>
       </div>
     </div>
