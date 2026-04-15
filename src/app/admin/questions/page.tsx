@@ -29,8 +29,11 @@ export default function QuestionsManagement() {
 
   const { register, handleSubmit, reset, watch } = useForm();
 
+  const [errorMsg, setErrorMsg] = useState("");
+
   const fetchQuestions = async () => {
     setLoading(true);
+    setErrorMsg("");
     try {
       let q;
       if (subjectFilter !== "all") {
@@ -39,10 +42,12 @@ export default function QuestionsManagement() {
           subjectFilter.toLowerCase(), 
           subjectFilter.toUpperCase()
         ];
+        // Dropping orderBy here. Firestore REQUIRES a manually created composite index 
+        // to pair where('subject', 'in', ...) with orderBy('created_at'). Removing it allows 
+        // the single-field index to fulfill the query instantly.
         q = query(
           collection(db, "questions"), 
           where("subject", "in", variations),
-          orderBy("created_at", "desc"), 
           limit(200)
         );
       } else {
@@ -54,8 +59,10 @@ export default function QuestionsManagement() {
       }
       const snap = await getDocs(q);
       setQuestions(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
+      setErrorMsg(err.message || "Failed to fetch questions. Check console for index link.");
+      setQuestions([]); // Clear questions so they don't think it's just stuck on the old list
     } finally {
       setLoading(false);
     }
@@ -226,7 +233,10 @@ export default function QuestionsManagement() {
                     </td>
                   </tr>
                 ))}
-                {filteredQuestions.length === 0 && (
+                {errorMsg && (
+                  <tr><td colSpan={5} className="px-6 py-12 text-center text-red-500 font-bold max-w-full whitespace-normal">{errorMsg}</td></tr>
+                )}
+                {!errorMsg && filteredQuestions.length === 0 && (
                   <tr><td colSpan={5} className="px-6 py-12 text-center text-zinc-500">No questions found.</td></tr>
                 )}
               </tbody>
