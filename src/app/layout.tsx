@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { AppConfigProvider } from "@/contexts/AppConfigContext";
+import { ScrollToTop } from "@/components/landing/ScrollToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://excel380.ng"),
@@ -36,6 +37,7 @@ export default function RootLayout({
         <AppConfigProvider>
           <AuthProvider>
             {children}
+            <ScrollToTop />
           </AuthProvider>
         </AppConfigProvider>
       </body>

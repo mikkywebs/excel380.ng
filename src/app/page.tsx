@@ -17,7 +17,6 @@ import { DownloadSection } from "@/components/landing/DownloadSection";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
 import { Footer } from "@/components/landing/Footer";
-import { ScrollToTop } from "@/components/landing/ScrollToTop";
 
 export default function Home() {
   const { config, loading } = useAppConfig();
@@ -134,7 +133,6 @@ export default function Home() {
       </main>
 
       <Footer />
-      <ScrollToTop />
     </div>
   );
 }
