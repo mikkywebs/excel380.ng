@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { collection, query, where, getDocs, limit, addDoc, serverTimestamp, Timestamp } from "firebase/firestore";
+import { collection, query, where, getDocs, limit, addDoc, serverTimestamp, Timestamp, doc, updateDoc, increment } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/contexts/AuthContext";
 import { 
@@ -29,6 +29,7 @@ interface Question {
   };
   correct_answer: string;
   subject: string;
+  body?: string;
   explanation?: string;
 }
 
@@ -39,17 +40,18 @@ export default function ExamSessionPage() {
   
   const body = searchParams.get("body") || "JAMB";
   const subjectsParam = searchParams.get("subjects") || "";
+  const mode = searchParams.get("mode") || "real";
   const selectedSubjectNames = useMemo(() => subjectsParam.split(",").filter(Boolean), [subjectsParam]);
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [timeLeft, setTimeLeft] = useState(120 * 60); // 120 minutes
+  const [timeLeft, setTimeLeft] = useState(0); 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [finished, setFinished] = useState(false);
-  const [result, setResult] = useState<{ score: number; total: number; percentage: number } | null>(null);
+  const [result, setResult] = useState<{ score: number; total: number; percentage: number; cost?: number } | null>(null);
 
   // 1. Fetch Questions
   useEffect(() => {
@@ -62,25 +64,48 @@ export default function ExamSessionPage() {
       setLoading(true);
       try {
         let allFetched: Question[] = [];
+        
+        // Demo specific limits
+        const targetLimit = mode === "demo" ? (body === "JAMB" ? 5 : 10) : 40;
+
         for (const subName of selectedSubjectNames) {
-          // We use 'in' to handle cases where JSON injection converted the subject name to lowercase
           const variations = [subName, subName.toLowerCase(), subName.toUpperCase()];
+          
+          // BugFix: We decouple the 'body' query to avoid composite index failure
+          // Also fetch extra to account for client-side filtering
           const q = query(
             collection(db, "questions"),
             where("subject", "in", variations),
-            where("body", "==", body),
-            limit(40)
+            limit(150)
           );
+          
           const snap = await getDocs(q);
-          const subQs = snap.docs.map(doc => ({ 
+          const rawSubQs = snap.docs.map(doc => ({ 
             id: doc.id, 
             ...doc.data() 
           } as Question));
+
+          // 1. Filter by body locally to bypass index limitation
+          // 2. Sanitize: Ignore questions that have empty options
+          const sanitizedQs = rawSubQs.filter(q => {
+            const matchesBody = q.body === body || String(q.body).toLowerCase() === String(body).toLowerCase();
+            const hasOptions = Object.values(q.options || {}).some(opt => opt && typeof opt === 'string' && opt.trim() !== '');
+            return matchesBody && hasOptions;
+          });
+
+          // Shuffle the specific subject pool and slice to the target amount
+          const limitedSubQs = sanitizedQs.sort(() => Math.random() - 0.5).slice(0, targetLimit);
           
-          allFetched = [...allFetched, ...subQs];
+          allFetched = [...allFetched, ...limitedSubQs];
         }
-        // Shuffle the final selection
-        setQuestions(allFetched.sort(() => Math.random() - 0.5));
+        
+        // Final shuffle across all subjects so they are mixed
+        const finalQuestions = allFetched.sort(() => Math.random() - 0.5);
+        setQuestions(finalQuestions);
+        
+        // Set time: 1 min per loaded question (or default to 120m if none loaded)
+        setTimeLeft(finalQuestions.length > 0 ? finalQuestions.length * 60 : 120 * 60);
+
       } catch (err) {
         console.error("Error fetching questions:", err);
       } finally {
@@ -88,7 +113,7 @@ export default function ExamSessionPage() {
       }
     }
     fetchAllQuestions();
-  }, [selectedSubjectNames, body]);
+  }, [selectedSubjectNames, body, mode]);
 
   // 2. Timer Logic
   useEffect(() => {
@@ -129,17 +154,28 @@ export default function ExamSessionPage() {
     try {
       // Calculate results
       let score = 0;
+      let totalAttempted = 0;
+      
       questions.forEach(q => {
-        if (answers[q.id] === q.correct_answer) {
-          score++;
+        if (answers[q.id]) {
+          totalAttempted++;
+          if (answers[q.id] === q.correct_answer) {
+            score++;
+          }
         }
       });
 
       const total = questions.length;
       const percentage = total > 0 ? (score / total) * 100 : 0;
-      const timeUsed = (120 * 60) - timeLeft;
+      const timeUsed = (questions.length * 60) - timeLeft; // adjust total time
 
-      const finalResult = { score, total, percentage };
+      let cost = 0;
+      if (mode === "demo") {
+        const costPerQuestion = body === "JAMB" ? 5 : 2;
+        cost = totalAttempted * costPerQuestion;
+      }
+
+      const finalResult = { score, total, percentage, cost };
       setResult(finalResult);
 
       // Save to Firebase
@@ -153,7 +189,16 @@ export default function ExamSessionPage() {
           percentage,
           timeUsed,
           timestamp: serverTimestamp(),
+          mode,
+          credit_cost: cost
         });
+
+        // Deduct credits
+        if (cost > 0) {
+          await updateDoc(doc(db, "users", user.uid), {
+            credits: increment(-cost)
+          });
+        }
       }
 
       setFinished(true);
@@ -204,7 +249,13 @@ export default function ExamSessionPage() {
             <CheckCircle2 size={48} />
           </div>
           <h1 className="text-4xl font-black mb-2 tracking-tighter">EXAM COMPLETED!</h1>
-          <p className="text-zinc-500 mb-12 font-medium">Great job! Here is how you performed today.</p>
+          <p className="text-zinc-500 mb-6 font-medium">Great job! Here is how you performed today.</p>
+          
+          {mode === "demo" && (
+            <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-500 rounded-full border border-amber-200 dark:border-amber-900/50 text-xs font-bold uppercase tracking-widest mx-auto shadow-sm">
+              Credits Used: {result?.cost || 0}
+            </div>
+          )}
           
           <div className="grid grid-cols-3 gap-6 mb-12">
             <div className="p-6 bg-zinc-50 dark:bg-zinc-800 rounded-3xl">

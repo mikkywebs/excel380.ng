@@ -6,7 +6,7 @@ import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAppConfig } from "@/contexts/AppConfigContext";
-import { PlayCircle, Clock, BookOpen, Loader2, ChevronRight, Compass } from "lucide-react";
+import { PlayCircle, Clock, BookOpen, Loader2, ChevronRight, Compass, Lock } from "lucide-react";
 
 // Exam bodies
 const EXAM_BODIES = ["JAMB", "WAEC", "NECO", "NABTEB"];
@@ -196,25 +196,41 @@ export default function ExamsPage() {
           </div>
 
           <div className="flex flex-col items-end gap-2 shrink-0">
-            <Link
-              href={canStart ? `/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}` : "#"}
-              onClick={(e) => !canStart && e.preventDefault()}
-              className={`flex items-center justify-center gap-3 w-full md:w-auto px-10 h-16 rounded-[1.5rem] font-black uppercase tracking-widest transition-all ${canStart
-                ? "bg-green-600 text-white hover:bg-green-500 shadow-xl shadow-green-600/20 active:scale-95"
-                : "bg-zinc-800 text-zinc-600 cursor-not-allowed"
-                }`}
-            >
-              {canStart ? (
-                <>
-                  <PlayCircle size={24} />
-                  Begin Practice
-                </>
-              ) : (
-                "Not Ready"
-              )}
-            </Link>
+            {canStart ? (
+              <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+                <Link
+                  href={`/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}&mode=demo`}
+                  className="flex flex-1 items-center justify-center gap-2 px-6 h-14 rounded-2xl font-bold uppercase tracking-wider bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm transition-all shadow-xl shadow-black/5 active:scale-95 border border-white/20 whitespace-nowrap text-sm"
+                  title="Demo mode uses credits"
+                >
+                  Start Demo (-{selectedBody === "JAMB" ? "5" : "2"}/Q)
+                </Link>
+
+                <Link
+                  href={userDoc?.subscription_tier === 'explorer' ? '/dashboard/upgrade' : `/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}&mode=real`}
+                  className={`flex flex-2 items-center justify-center gap-2 px-6 h-14 rounded-2xl font-black uppercase tracking-widest transition-all shadow-xl whitespace-nowrap text-sm ${
+                    userDoc?.subscription_tier === 'explorer'
+                      ? "bg-amber-500 text-white hover:bg-amber-600 shadow-amber-500/20 active:scale-95"
+                      : "bg-green-600 text-white hover:bg-green-500 shadow-green-600/20 active:scale-95"
+                  }`}
+                >
+                  {userDoc?.subscription_tier === 'explorer' ? (
+                    <><Lock size={18} /> Official Exam</>
+                  ) : (
+                    <><PlayCircle size={18} /> Official Exam</>
+                  )}
+                </Link>
+              </div>
+            ) : (
+              <div
+                className="flex items-center justify-center px-10 h-14 rounded-[1.5rem] font-black uppercase tracking-widest bg-zinc-800 text-zinc-600 cursor-not-allowed w-full md:w-auto"
+              >
+                Not Ready
+              </div>
+            )}
+            
             {!canStart && validationMessage && (
-              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest w-full text-center md:text-right">
+              <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest w-full text-center md:text-right mt-1">
                 {validationMessage}
               </span>
             )}
