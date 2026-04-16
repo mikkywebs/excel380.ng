@@ -81,24 +81,13 @@ export function DownloadSection() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Desktop Preview */}
-                <div className="relative w-full max-w-[400px] h-[300px] bg-zinc-900 rounded-xl border-4 border-zinc-100 shadow-2xl dark:border-zinc-800 overflow-hidden">
-                  <div className="h-6 bg-zinc-100 flex items-center px-4 dark:bg-zinc-800">
-                    <div className="flex gap-1.5">
-                      <div className="h-2 w-2 rounded-full bg-red-400" />
-                      <div className="h-2 w-2 rounded-full bg-yellow-400" />
-                      <div className="h-2 w-2 rounded-full bg-green-400" />
-                    </div>
-                  </div>
-                  <div className="p-4 flex flex-col gap-4">
-                    <div className="h-4 w-1/3 bg-[var(--brand)] rounded" />
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="h-24 bg-zinc-100 rounded-lg dark:bg-zinc-800" />
-                      <div className="h-24 bg-zinc-100 rounded-lg dark:bg-zinc-800" />
-                      <div className="h-24 bg-zinc-100 rounded-lg dark:bg-zinc-800" />
-                      <div className="h-24 bg-zinc-100 rounded-lg dark:bg-zinc-800" />
-                    </div>
-                  </div>
+                {/* CBT Center Image */}
+                <div className="relative w-full max-w-[500px] rounded-2xl shadow-2xl overflow-hidden border-4 border-white dark:border-zinc-800 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                    src="/images/cbt-center.jpg" 
+                    alt="Students practicing on Excel 380 CBT software" 
+                    className="w-full h-auto object-cover"
+                  />
                 </div>
 
                 {/* Floating Download Indicator */}

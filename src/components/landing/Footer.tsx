@@ -101,8 +101,8 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-zinc-100 dark:border-zinc-900 gap-6">
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm flex items-center gap-1">
-            Made with <Heart size={14} className="text-red-500 fill-red-500" /> for Nigerian Students.
+          <p className="text-zinc-500 dark:text-zinc-400 text-sm flex items-center gap-1.5 flex-wrap">
+            Made with <span className="text-sm">💚</span> for 🇳🇬 Students by <a href="https://wa.link/1a3xt7" target="_blank" rel="noopener noreferrer" className="font-bold text-zinc-900 dark:text-white hover:text-[var(--brand)] dark:hover:text-[var(--brand)] transition-colors">ITHub NG</a>.
           </p>
           <p className="text-zinc-500 dark:text-zinc-400 text-sm order-first md:order-last">
             © {currentYear} Excel 380 Platform. All rights reserved. Registered with CAC.
