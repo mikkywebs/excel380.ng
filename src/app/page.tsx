@@ -17,6 +17,7 @@ import { DownloadSection } from "@/components/landing/DownloadSection";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
 import { Footer } from "@/components/landing/Footer";
+import { ScrollToTop } from "@/components/landing/ScrollToTop";
 
 export default function Home() {
   const { config, loading } = useAppConfig();
@@ -65,25 +66,21 @@ export default function Home() {
           <MockExamPreview />
         </motion.div>
 
-        {/* Institution Cutoffs Search Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariants}
-        >
-          <CutoffsSearch />
-        </motion.div>
-
-        {/* JAMB Combinations CTA Section [NEW] */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={sectionVariants}
-        >
-          <JambCombinationsCTA />
-        </motion.div>
+        {/* Student Resources Grid Section */}
+        <section className="py-24 bg-zinc-50 dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-800">
+          <div className="max-w-6xl mx-auto px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={sectionVariants}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            >
+              <CutoffsSearch />
+              <JambCombinationsCTA />
+            </motion.div>
+          </div>
+        </section>
 
         {/* Subjects Preview Section */}
         <motion.div
@@ -137,6 +134,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
