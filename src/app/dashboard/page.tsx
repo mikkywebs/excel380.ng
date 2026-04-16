@@ -20,6 +20,7 @@ import {
   Calendar,
   TrendingUp
 } from 'lucide-react';
+import { InstitutionJoinBanner } from '@/components/dashboard/InstitutionJoinBanner';
 
 interface TestSession {
   id: string;
@@ -98,19 +99,27 @@ export default function DashboardPage() {
         setSessions(sessionData);
 
         // Calculate stats
-        if (sessionData.length > 0) {
-          const scores = sessionData.map((s) => s.percentage || 0);
-          const subjects = new Set(sessionData.flatMap((s) => s.subjects || []));
+        let totalScore = 0;
+        let bestScore = 0;
+        const subjects = new Set<string>();
 
-          setStats({
-            totalTests: sessionData.length,
-            avgScore: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
-            bestScore: Math.round(Math.max(...scores)),
-            subjectsStudied: subjects.size
-          });
-        }
+        snapshot.docs.forEach(doc => {
+          const data = doc.data();
+          totalScore += data.percentage || 0;
+          if (data.percentage > bestScore) bestScore = data.percentage;
+          if (data.subjects) {
+            data.subjects.forEach((s: string) => subjects.add(s));
+          }
+        });
+
+        setStats({
+          totalTests: snapshot.size,
+          avgScore: snapshot.size > 0 ? Math.round(totalScore / snapshot.size) : 0,
+          bestScore: Math.round(bestScore),
+          subjectsStudied: subjects.size
+        });
       } catch (error) {
-        console.error('Error fetching sessions:', error);
+        console.error('Error fetching dashboard data:', error);
       } finally {
         setLoading(false);
       }
@@ -119,31 +128,33 @@ export default function DashboardPage() {
     fetchSessions();
   }, [user]);
 
-  // Handle pause window countdown
+  // Pause window countdown logic
   useEffect(() => {
-    const pauseWindow = config?.pause_window_minutes || 30;
-    const nextTime = getNextExamTime(lastExamTime, pauseWindow);
+    if (!lastExamTime || !config?.pause_window_minutes) return;
+
+    const nextTime = getNextExamTime(lastExamTime, config.pause_window_minutes);
     setNextExamTime(nextTime);
 
-    if (nextTime && nextTime > new Date()) {
-      const interval = setInterval(() => {
+    if (!nextTime) return;
+
+    const updateCountdown = () => {
+      if (nextTime.getTime() > new Date().getTime()) {
         setCountdown(formatCountdown(nextTime));
-        if (nextTime <= new Date()) {
-          setNextExamTime(null);
-          setCountdown("");
-          clearInterval(interval);
-        }
-      }, 1000);
+      } else {
+        setCountdown("");
+      }
+    };
 
-      return () => clearInterval(interval);
-    }
-  }, [lastExamTime, config]);
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, [lastExamTime, config?.pause_window_minutes]);
 
-  const isInPauseWindow = nextExamTime && nextExamTime > new Date();
+  const isInPauseWindow = nextExamTime && nextExamTime.getTime() > new Date().getTime();
 
   const quickStats = [
     {
-      icon: <Trophy className="h-6 w-6 text-green-600" />,
+      icon: <FileText className="h-6 w-6 text-green-600" />,
       label: 'Total Tests',
       value: loading ? '—' : String(stats.totalTests),
       color: 'bg-green-100',
@@ -174,6 +185,8 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
+      <InstitutionJoinBanner />
+
       {/* Low Credits Warning */}
       {lowCredits && (
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-center gap-4">

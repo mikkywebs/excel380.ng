@@ -175,6 +175,12 @@ export default function DashboardLayout({
             {navItems.map((item) => (
               <NavLink key={item.href} item={item} />
             ))}
+            {userDoc?.subscription_tier === 'academy' && (
+              <NavLink item={{ href: '/dashboard/academy', label: 'Academy Panel', icon: Building }} />
+            )}
+            {userDoc?.subscription_tier === 'academy_elite' && (
+              <NavLink item={{ href: '/dashboard/academy', label: 'Academy Panel', icon: Building }} />
+            )}
           </nav>
 
           {/* Sign Out */}
