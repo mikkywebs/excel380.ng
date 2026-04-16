@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Search, BookOpen, CheckCircle2, ChevronRight, PlayCircle } from 'lucide-react';
+import { Search, BookOpen, CheckCircle2, ChevronRight, PlayCircle, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import combinationsData from '@/data/jamb-combinations.json';
 
@@ -15,6 +15,12 @@ interface Faculty {
   faculty: string;
   courses: Course[];
 }
+
+const NORM_MAP: Record<string, string> = {
+  "Use of English": "English Language",
+  "Christian Religious Knowledge": "Christian Religious Studies (CRS)",
+  "Islamic Religious Studies": "Islamic Studies",
+};
 
 export default function DashboardCombinationsPage() {
   const [search, setSearch] = useState('');
@@ -109,12 +115,32 @@ export default function DashboardCombinationsPage() {
         {filteredResults.length > 0 ? (
           filteredResults.map((result, idx) => (
             <div key={`${result.facultyName}-${result.course.id}-${idx}`} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="mb-4">
-                <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold uppercase tracking-widest rounded-md mb-2">
-                  Faculty of {result.facultyName}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900">{result.course.course}</h3>
-              </div>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                  <div>
+                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold uppercase tracking-widest rounded-md mb-2">
+                      Faculty of {result.facultyName}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900">{result.course.course}</h3>
+                  </div>
+                    <div className="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                      <button
+                        onClick={() => {
+                          const text = encodeURIComponent(`Found the subjects for ${result.course.course} on Excel 380! 📚\n\nSubjects: ${result.course.subjects.join(', ')}\n\nCheck your combination here: https://excel380.ng/jamb-combinations`);
+                          window.open(`https://wa.me/?text=${text}`, '_blank');
+                        }}
+                        className="flex items-center justify-center p-2.5 bg-green-500/10 text-green-600 rounded-xl hover:bg-green-500/20 transition-all active:scale-95 shrink-0"
+                        title="Share on WhatsApp"
+                      >
+                        <MessageCircle size={18} />
+                      </button>
+                      <Link
+                        href={`/dashboard/exams?subjects=${result.course.subjects.map(s => NORM_MAP[s] || s).join(',')}`}
+                        className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-3 bg-zinc-900 text-white rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest hover:bg-zinc-800 transition-all shadow-lg active:scale-95"
+                      >
+                        <PlayCircle size={14} /> Prep for this Course
+                      </Link>
+                    </div>
+                </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {result.course.subjects.map((sub, i) => (

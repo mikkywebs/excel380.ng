@@ -9,8 +9,8 @@ export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
   const pathname = usePathname();
 
-  // Hide on dashboard and admin pages
-  const isHiddenRoute = pathname?.startsWith('/dashboard') || pathname?.startsWith('/admin');
+  // Show on all pages as requested
+  const isHiddenRoute = false;
 
   const toggleVisibility = () => {
     if (window.scrollY > 500) {
@@ -60,7 +60,7 @@ export function ScrollToTop() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}
             onClick={scrollToTop}
-            className="p-4 bg-[var(--brand)] text-white font-bold rounded-full shadow-2xl hover:bg-green-700 hover:shadow-[var(--brand)]/50 active:scale-95 transition-all outline-none focus:ring-4 focus:ring-[var(--brand)]/50 border border-white/20 dark:border-zinc-800/50 flex items-center justify-center"
+            className="p-4 bg-amber-600 text-white font-bold rounded-full shadow-2xl hover:bg-amber-700 hover:shadow-amber-600/50 active:scale-95 transition-all outline-none focus:ring-4 focus:ring-amber-500/50 border border-white/20 dark:border-zinc-800/50 flex items-center justify-center"
             aria-label="Scroll to top"
           >
             <ChevronUp className="w-6 h-6 stroke-[3]" />

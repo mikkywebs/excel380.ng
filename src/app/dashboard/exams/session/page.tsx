@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { collection, query, where, getDocs, limit, addDoc, serverTimestamp, Timestamp, doc, updateDoc, increment } from "firebase/firestore";
+import { collection, query, where, getDocs, limit, addDoc, serverTimestamp, Timestamp, doc, updateDoc, increment, deleteDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/contexts/AuthContext";
 import { 
@@ -52,6 +52,9 @@ export default function ExamSessionPage() {
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [finished, setFinished] = useState(false);
   const [result, setResult] = useState<{ score: number; total: number; percentage: number; cost?: number } | null>(null);
+  const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
+
+  const { userDoc } = useAuth();
 
   // 1. Fetch Questions
   useEffect(() => {
@@ -114,6 +117,51 @@ export default function ExamSessionPage() {
     }
     fetchAllQuestions();
   }, [selectedSubjectNames, body, mode]);
+
+  // 1.1 Create Active Session & Heartbeat
+  useEffect(() => {
+    if (loading || questions.length === 0 || !user || finished) return;
+
+    let sessionId: string | null = null;
+    let heartbeatInterval: any = null;
+
+    const startActiveSession = async () => {
+      try {
+        const sessionRef = await addDoc(collection(db, "active_sessions"), {
+          userId: user.uid,
+          userName: userDoc?.displayName || user.displayName || 'Student',
+          institutionId: userDoc?.institution_id || null,
+          body,
+          subjects: selectedSubjectNames,
+          startTime: serverTimestamp(),
+          lastActive: serverTimestamp(),
+          status: 'active'
+        });
+        sessionId = sessionRef.id;
+        setActiveSessionId(sessionId);
+
+        // Heartbeat every 60s
+        heartbeatInterval = setInterval(async () => {
+          if (sessionId) {
+            await updateDoc(doc(db, "active_sessions", sessionId), {
+              lastActive: serverTimestamp()
+            });
+          }
+        }, 60000);
+      } catch (err) {
+        console.error("Failed to start active session:", err);
+      }
+    };
+
+    startActiveSession();
+
+    return () => {
+      if (heartbeatInterval) clearInterval(heartbeatInterval);
+      if (sessionId) {
+        deleteDoc(doc(db, "active_sessions", sessionId)).catch(console.error);
+      }
+    };
+  }, [loading, questions.length, user, finished]);
 
   // 2. Timer Logic
   useEffect(() => {

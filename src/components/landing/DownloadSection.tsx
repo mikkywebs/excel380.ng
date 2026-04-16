@@ -74,33 +74,21 @@ export function DownloadSection() {
             </div>
 
             {/* Right Visual */}
-            <div className="relative bg-[var(--brand)]/5 p-12 lg:p-20 overflow-hidden flex items-center justify-center">
+            <div className="relative bg-[var(--brand)]/5 overflow-hidden flex items-center justify-center min-h-[400px]">
               <motion.div 
-                initial={{ opacity: 0, scale: 0.9, rotate: 10 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="w-full h-full"
               >
-                {/* CBT Center Image */}
-                <div className="relative w-full max-w-[500px] rounded-2xl shadow-2xl overflow-hidden border-4 border-white dark:border-zinc-800 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                {/* CBT Center Image - Expanded to fill more space */}
+                <div className="relative w-full h-full shadow-2xl overflow-hidden border-zinc-100 dark:border-zinc-800 flex items-center justify-center">
                   <img 
                     src="/images/cbt-center.jpg" 
                     alt="Students practicing on Excel 380 CBT software" 
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Floating Download Indicator */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-zinc-100 flex flex-col items-center gap-2 dark:bg-black dark:border-zinc-800"
-                >
-                  <div className="h-10 w-10 bg-[var(--brand)] rounded-full flex items-center justify-center text-white">
-                    <Download size={20} />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-500">Fast Download</span>
-                </motion.div>
               </motion.div>
             </div>
 

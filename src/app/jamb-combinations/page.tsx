@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Search, BookOpen, ChevronRight, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { Search, BookOpen, ChevronRight, CheckCircle2, ArrowLeft, PlayCircle, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
@@ -18,6 +18,12 @@ interface Faculty {
   faculty: string;
   courses: Course[];
 }
+
+const NORM_MAP: Record<string, string> = {
+  "Use of English": "English Language",
+  "Christian Religious Knowledge": "Christian Religious Studies (CRS)",
+  "Islamic Religious Studies": "Islamic Studies",
+};
 
 export default function PublicCombinationsPage() {
   const { config } = useAppConfig();
@@ -114,11 +120,31 @@ export default function PublicCombinationsPage() {
             {filteredResults.length > 0 ? (
               filteredResults.map((result, idx) => (
                 <div key={`${result.facultyName}-${result.course.id}-${idx}`} className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 hover:shadow-md transition-shadow">
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-xs font-black uppercase tracking-widest rounded-lg mb-2">
-                      Faculty of {result.facultyName}
-                    </span>
-                    <h3 className="text-2xl font-black text-zinc-900 dark:text-white">{result.course.course}</h3>
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-xs font-black uppercase tracking-widest rounded-lg mb-2">
+                        Faculty of {result.facultyName}
+                      </span>
+                      <h3 className="text-2xl font-black text-zinc-900 dark:text-white">{result.course.course}</h3>
+                    </div>
+                    <div className="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                      <button
+                        onClick={() => {
+                          const text = encodeURIComponent(`Found the subjects for ${result.course.course} on Excel 380! 📚\n\nSubjects: ${result.course.subjects.join(', ')}\n\nCheck your combination here: https://excel380.ng/jamb-combinations`);
+                          window.open(`https://wa.me/?text=${text}`, '_blank');
+                        }}
+                        className="flex items-center justify-center p-3 bg-green-500/10 text-green-600 rounded-2xl hover:bg-green-500/20 transition-all active:scale-95 shrink-0"
+                        title="Share on WhatsApp"
+                      >
+                        <MessageCircle size={20} />
+                      </button>
+                      <Link
+                        href={`/dashboard/exams?subjects=${result.course.subjects.map(s => NORM_MAP[s] || s).join(',')}`}
+                        className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3 bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 rounded-2xl text-xs font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl active:scale-95"
+                      >
+                        <PlayCircle size={16} /> Start Practice
+                      </Link>
+                    </div>
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/contexts/AuthContext";
@@ -11,9 +12,10 @@ import { PlayCircle, Clock, BookOpen, Loader2, ChevronRight, Compass, Lock } fro
 // Exam bodies
 const EXAM_BODIES = ["JAMB", "WAEC", "NECO", "NABTEB"];
 
-export default function ExamsPage() {
+function ExamsContent() {
   const { user, userDoc } = useAuth();
   const { config } = useAppConfig();
+  const searchParams = useSearchParams();
   
   const fallbackSubjects = [
     "English Language", "Mathematics", "Physics", "Chemistry", 
@@ -41,16 +43,24 @@ export default function ExamsPage() {
         const snap = await getDocs(q);
         const names = snap.docs.map((d) => d.data().name as string).filter(Boolean);
         
-        const fallbackSubjects = [
-          "English Language", "Mathematics", "Physics", "Chemistry", 
-          "Biology", "Government", "Economics", "Commerce", "Financial Accounting", 
-          "Literature in English", "Christian Religious Studies (CRS)", 
-          "Islamic Studies", "Geography", "Agricultural Science", 
-          "History", "French", "Computer Studies", "Civic Education", 
-          "Further Mathematics", "Data Processing", "Yoruba", "Igbo", "Hausa"
-        ];
-        
-        setSubjects(names.length > 0 ? names : fallbackSubjects);
+        const available = names.length > 0 ? names : fallbackSubjects;
+        setSubjects(available);
+
+        // Handle pre-selected subjects from URL
+        const preselected = searchParams.get('subjects');
+        if (preselected) {
+          const namesArr = preselected.split(',').map(s => s.trim());
+          const compulsory = getCompulsorySubjects("JAMB");
+          
+          // Filter to only valid available subjects + always include compulsory
+          const validSelected = available.filter(s => namesArr.includes(s));
+          
+          // Merge with compulsory
+          const uniqueSelected = Array.from(new Set([...compulsory, ...validSelected]));
+          
+          // Cap at 4 for JAMB
+          setSelectedSubjects(uniqueSelected.slice(0, 4));
+        }
       } catch {
         // Fallback already handled in state
       } finally {
@@ -58,7 +68,7 @@ export default function ExamsPage() {
       }
     }
     fetchSubjects();
-  }, []);
+  }, [searchParams]);
 
   const toggleSubject = (name: string) => {
     const compulsory = getCompulsorySubjects(selectedBody);
@@ -238,5 +248,16 @@ export default function ExamsPage() {
         </div>
       </div>
     </div>
+  );
+}
+export default function ExamsPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="animate-spin h-8 w-8 text-zinc-400" />
+      </div>
+    }>
+      <ExamsContent />
+    </Suspense>
   );
 }

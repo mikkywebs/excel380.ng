@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { collection, query, where, orderBy, limit, getDocs } from 'firebase/firestore';
+import { collection, query, where, orderBy, limit, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useAuth } from '@/contexts/AuthContext';
 import { useAppConfig } from '@/contexts/AppConfigContext';
+import combinationsData from '@/data/jamb-combinations.json';
 import {
   Clock,
   Trophy,
   BookOpen,
-  Target,
   PlayCircle,
   AlertTriangle,
   FileText,
@@ -18,8 +18,15 @@ import {
   ChevronRight,
   Award,
   Calendar,
-  TrendingUp
+  TrendingUp,
+  Sparkles,
+  BrainCircuit,
+  Zap,
+  Info,
+  Target,
+  Loader2
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { InstitutionJoinBanner } from '@/components/dashboard/InstitutionJoinBanner';
 
 interface TestSession {
@@ -68,6 +75,18 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [countdown, setCountdown] = useState("");
   const [nextExamTime, setNextExamTime] = useState<Date | null>(null);
+  const [savingGoal, setSavingGoal] = useState(false);
+  const [prediction, setPrediction] = useState<{
+    score: number;
+    trend: 'up' | 'down' | 'stable';
+    confidence: 'High' | 'Medium' | 'Low';
+    insights: string[];
+    sampleSize: number;
+  } | null>(null);
+
+  const allCourses = Array.from(new Set(
+    combinationsData.faculties.flatMap(f => f.courses.map(c => c.course))
+  )).sort();
 
   const displayName = userDoc?.displayName || user?.displayName || 'Student';
   const firstName = displayName.split(' ')[0];
@@ -87,7 +106,7 @@ export default function DashboardPage() {
           collection(db, 'test_sessions'),
           where('userId', '==', user.uid),
           orderBy('timestamp', 'desc'),
-          limit(5)
+          limit(20)
         );
 
         const snapshot = await getDocs(q);
@@ -118,6 +137,65 @@ export default function DashboardPage() {
           bestScore: Math.round(bestScore),
           subjectsStudied: subjects.size
         });
+
+        // AI PREDICTION ENGINE
+        const jambSessions = sessionData.filter(s => s.exam_body === "JAMB");
+        if (jambSessions.length >= 2) {
+          let weightedSum = 0;
+          let weightTotal = 0;
+          
+          const subjectScores: Record<string, { total: number, count: number }> = {};
+
+          jambSessions.forEach((s, idx) => {
+            // Weighting: 1-3 (1.0), 4-10 (0.6), 11+ (0.3)
+            const weight = idx < 3 ? 1.0 : (idx < 10 ? 0.6 : 0.3);
+            weightedSum += s.percentage * weight;
+            weightTotal += weight;
+
+            // Subject trends
+            s.subjects?.forEach(sub => {
+              if (!subjectScores[sub]) subjectScores[sub] = { total: 0, count: 0 };
+              subjectScores[sub].total += s.percentage;
+              subjectScores[sub].count += 1;
+            });
+          });
+
+          const avgPercentage = weightedSum / weightTotal;
+          const projectedScore = Math.round((avgPercentage / 100) * 400);
+          
+          // Trend analysis
+          let trend: 'up' | 'down' | 'stable' = 'stable';
+          if (jambSessions.length >= 3) {
+            const recent = jambSessions[0].percentage;
+            const older = jambSessions[jambSessions.length - 1].percentage;
+            if (recent > older + 5) trend = 'up';
+            else if (recent < older - 5) trend = 'down';
+          }
+
+          // Generate insights
+          const insights: string[] = [];
+          const subjectAvg = Object.entries(subjectScores)
+            .map(([name, data]) => ({ name, avg: data.total / data.count }))
+            .sort((a, b) => b.avg - a.avg);
+
+          if (subjectAvg.length > 0) {
+            insights.push(`Strongest Subject: ${subjectAvg[0].name} (${Math.round(subjectAvg[0].avg)}%)`);
+            if (subjectAvg.length > 1) {
+              const weakest = subjectAvg[subjectAvg.length - 1];
+              if (weakest.avg < 50) {
+                insights.push(`Recommended Focus: Improve ${weakest.name} scores`);
+              }
+            }
+          }
+
+          setPrediction({
+            score: projectedScore,
+            trend,
+            confidence: jambSessions.length > 8 ? 'High' : (jambSessions.length > 3 ? 'Medium' : 'Low'),
+            insights,
+            sampleSize: jambSessions.length
+          });
+        }
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
       } finally {
@@ -149,6 +227,20 @@ export default function DashboardPage() {
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, [lastExamTime, config?.pause_window_minutes]);
+
+  const handleUpdateGoal = async (course: string) => {
+    if (!user) return;
+    setSavingGoal(true);
+    try {
+      await updateDoc(doc(db, 'users', user.uid), {
+        target_course: course
+      });
+    } catch (err) {
+      console.error("Failed to update goal:", err);
+    } finally {
+      setSavingGoal(false);
+    }
+  };
 
   const isInPauseWindow = nextExamTime && nextExamTime.getTime() > new Date().getTime();
 
@@ -222,27 +314,120 @@ export default function DashboardPage() {
       )}
 
       {/* Welcome Card */}
-      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl p-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold mb-1">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-green-900/20 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] -mr-32 -mt-32 rounded-full" />
+          <div className="relative z-10">
+            <h1 className="text-2xl sm:text-3xl font-black mb-2 tracking-tighter">
               {getGreeting()}, {firstName}! 👋
             </h1>
-            <p className="text-green-100">Ready to practice? Let's crush your exam prep today.</p>
+            <p className="text-green-100 font-medium text-base sm:text-lg mb-8">Ready to practice? Let's crush your exam prep today.</p>
+            <Link
+              href="/dashboard/exams"
+              className={`inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 h-14 rounded-2xl font-black uppercase tracking-widest transition-all shadow-2xl ${isInPauseWindow
+                  ? 'bg-white/20 text-white/50 cursor-not-allowed backdrop-blur-md'
+                  : 'bg-white text-green-700 hover:bg-green-50 active:scale-95'
+                }`}
+              onClick={isInPauseWindow ? (e) => e.preventDefault() : undefined}
+            >
+              <PlayCircle className="h-6 w-6" />
+              {isInPauseWindow ? 'Please Wait' : 'Start New Exam'}
+            </Link>
           </div>
-          <Link
-            href="/dashboard/exams"
-            className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${isInPauseWindow
-                ? 'bg-gray-400 text-white cursor-not-allowed'
-                : 'bg-white text-green-600 hover:bg-green-50'
-              }`}
-            onClick={isInPauseWindow ? (e) => e.preventDefault() : undefined}
-          >
-            <PlayCircle className="h-5 w-5" />
-            {isInPauseWindow ? 'Please Wait' : 'Start New Exam'}
-          </Link>
+        </div>
+
+        {/* Academic Goal Widget */}
+        <div className="bg-white dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-900 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-zinc-200/50 dark:shadow-none flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <div className="h-12 w-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center shrink-0">
+                <Target size={24} />
+              </div>
+              {savingGoal && <Loader2 className="animate-spin text-zinc-400 h-5 w-5" />}
+            </div>
+            <h3 className="text-xl font-black tracking-tighter mb-1">My Academic Goal</h3>
+            <p className="text-sm text-zinc-500 font-medium mb-6">Set your target course for admission.</p>
+          </div>
+          
+          <div className="relative group">
+            <select 
+              value={userDoc?.target_course || ""}
+              onChange={(e) => handleUpdateGoal(e.target.value)}
+              disabled={savingGoal}
+              className="w-full h-14 pl-4 pr-10 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl font-bold text-sm text-zinc-900 dark:text-zinc-100 appearance-none focus:ring-2 focus:ring-amber-500 outline-none transition-all cursor-pointer truncate"
+            >
+              <option value="" disabled>Select Target Course...</option>
+              {allCourses.map(course => (
+                <option key={course} value={course}>{course}</option>
+              ))}
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400">
+              <ChevronRight size={18} className="rotate-90" />
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* AI Performance Predictor Row */}
+      {prediction && (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative bg-zinc-950 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 overflow-hidden shadow-2xl border border-zinc-800"
+        >
+          {/* Neon Background Effects */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/20 blur-[100px] -mr-48 -mt-48 animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 blur-[100px] -ml-48 -mb-48" />
+          
+          <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
+            <div className="flex-1 space-y-4 sm:space-y-6 w-full">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 bg-indigo-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/20 shrink-0">
+                  <BrainCircuit size={20} />
+                </div>
+                <div>
+                  <h2 className="text-lg sm:text-xl font-black text-white tracking-tighter flex items-center gap-2">
+                    AI Performance Predictor <Sparkles size={16} className="text-indigo-400" />
+                  </h2>
+                  <p className="text-zinc-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest">Powered by Predictive Mastery™ Engine</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {prediction.insights.map((insight, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-4 text-zinc-300">
+                    <div className={i === 0 ? "text-green-400" : "text-amber-400"} style={{ flexShrink: 0 }}>
+                      {i === 0 ? <Zap size={18} /> : <Info size={18} />}
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold truncate">{insight}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-8 bg-white/5 backdrop-blur-md rounded-[2rem] p-6 sm:p-8 border border-white/10 shrink-0 w-full lg:w-auto">
+               <div className="text-center">
+                  <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em] mb-2">Projected JAMB Score</p>
+                  <div className="flex items-end gap-2 justify-center">
+                    <span className="text-5xl sm:text-6xl font-black text-white leading-none tracking-tighter">{prediction.score}</span>
+                    <span className="text-lg sm:text-xl font-bold text-zinc-600 mb-1">/ 400</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-3 mt-4">
+                    <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
+                      prediction.trend === 'up' ? 'bg-green-500/10 text-green-500' : prediction.trend === 'down' ? 'bg-red-500/10 text-red-500' : 'bg-zinc-500/10 text-zinc-500'
+                    }`}>
+                      <TrendingUp size={12} className={prediction.trend === 'down' ? 'rotate-180' : ''} /> {prediction.trend} Trend
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                      <div className={`h-1.5 w-1.5 rounded-full ${prediction.confidence === 'High' ? 'bg-green-500' : prediction.confidence === 'Medium' ? 'bg-amber-500' : 'bg-red-500'}`} />
+                      {prediction.confidence} Confidence
+                    </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
