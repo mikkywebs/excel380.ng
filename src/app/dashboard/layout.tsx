@@ -19,11 +19,13 @@ import {
   LogOut,
   Building,
   WifiOff,
-  Zap
+  Zap,
+  Compass
 } from 'lucide-react';
 
 const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/dashboard/jamb-combinations', label: 'Combinations', icon: Compass },
   { href: '/dashboard/institutions', label: 'Cut-Offs', icon: Building },
   { href: '/dashboard/exams', label: 'Start Exam', icon: PlayCircle },
   { href: '/dashboard/results', label: 'My Results', icon: BarChart3 },

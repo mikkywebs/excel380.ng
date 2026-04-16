@@ -6,7 +6,7 @@ import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAppConfig } from "@/contexts/AppConfigContext";
-import { PlayCircle, Clock, BookOpen, Loader2, ChevronRight } from "lucide-react";
+import { PlayCircle, Clock, BookOpen, Loader2, ChevronRight, Compass } from "lucide-react";
 
 // Exam bodies
 const EXAM_BODIES = ["JAMB", "WAEC", "NECO", "NABTEB"];
@@ -92,9 +92,17 @@ export default function ExamsPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Start Exam</h1>
-        <p className="text-gray-600 mt-1">Choose your exam body and subjects to begin a timed practice session.</p>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Start Exam</h1>
+          <p className="text-gray-600 mt-1">Choose your exam body and subjects to begin a timed practice session.</p>
+        </div>
+        <Link 
+          href="/dashboard/jamb-combinations" 
+          className="flex items-center gap-2 bg-amber-50 text-amber-600 px-4 py-2 rounded-xl border border-amber-200 font-bold text-sm hover:bg-amber-100 transition-colors shrink-0 whitespace-nowrap shadow-sm"
+        >
+          <Compass size={16} /> Course Combinations Guide
+        </Link>
       </div>
 
       {/* Exam Body Selector */}

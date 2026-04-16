@@ -11,6 +11,7 @@ import { HowItWorks } from "@/components/landing/HowItWorks";
 import { SubjectsGrid } from "@/components/landing/SubjectsGrid";
 import { MockExamPreview } from "@/components/landing/MockExamPreview";
 import { CutoffsSearch } from "@/components/landing/CutoffsSearch";
+import { JambCombinationsCTA } from "@/components/landing/JambCombinationsCTA";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { DownloadSection } from "@/components/landing/DownloadSection";
 import { Testimonials } from "@/components/landing/Testimonials";
@@ -72,6 +73,16 @@ export default function Home() {
           variants={sectionVariants}
         >
           <CutoffsSearch />
+        </motion.div>
+
+        {/* JAMB Combinations CTA Section [NEW] */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+        >
+          <JambCombinationsCTA />
         </motion.div>
 
         {/* Subjects Preview Section */}

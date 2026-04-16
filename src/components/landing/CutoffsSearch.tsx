@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Search, AlertCircle, Building, Award } from "lucide-react";
-import institutionsData from "@/data/institutions.json";
+import React from "react";
+import { Search } from "lucide-react";
+import Link from "next/link";
 
 interface Institution {
   id: number;
@@ -12,183 +11,30 @@ interface Institution {
   category: string;
 }
 
+
 export function CutoffsSearch() {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Institution[]>([]);
-  const [hasSearched, setHasSearched] = useState(false);
-  const [searchCount, setSearchCount] = useState(0);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    const counts = localStorage.getItem("excel380_search_count");
-    if (counts) {
-      setSearchCount(parseInt(counts));
-    }
-  }, []);
-
-  // Compute dynamic dropdown suggestions (limit to 5)
-  const suggestions = React.useMemo(() => {
-    if (!query.trim()) return [];
-    return (institutionsData as Institution[])
-      .filter((inst) => inst.name.toLowerCase().includes(query.toLowerCase()))
-      .slice(0, 5);
-  }, [query]);
-
-  const executeSearch = (searchQuery: string) => {
-    if (!searchQuery.trim()) {
-      setResults([]);
-      setHasSearched(false);
-      return;
-    }
-
-    if (searchCount >= 3) {
-      router.push("/signup?reason=search_limit");
-      return;
-    }
-
-    const filtered = (institutionsData as Institution[]).filter((inst) =>
-      inst.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    
-    setResults(filtered.slice(0, 10)); // Show more results once fully searched
-    setHasSearched(true);
-    setShowDropdown(false);
-
-    const newCount = searchCount + 1;
-    setSearchCount(newCount);
-    localStorage.setItem("excel380_search_count", newCount.toString());
-  };
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    executeSearch(query);
-  };
-
-  const handleSuggestionClick = (inst: Institution) => {
-    setQuery(inst.name);
-    executeSearch(inst.name);
-  };
-
   return (
-    <section className="py-24 bg-zinc-50 dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-white sm:text-4xl">
+    <section className="py-24 bg-zinc-50 dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-800 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--brand)]/5 blur-[100px] rounded-full" />
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="bg-white dark:bg-zinc-950 rounded-[2.5rem] p-10 md:p-14 shadow-2xl border border-zinc-200 dark:border-zinc-800 text-center flex flex-col items-center">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-[var(--brand)]/10 text-[var(--brand)] mb-8">
+            <Search className="w-10 h-10" />
+          </div>
+          <h2 className="text-3xl font-black text-zinc-900 dark:text-white sm:text-5xl tracking-tighter mb-4">
             Check Your Institution's Cut-Off Mark
           </h2>
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl font-medium">
             Search our database of over 500 Nigerian universities, polytechnics, and colleges to verify the minimum JAMB score required.
           </p>
+          <Link 
+            href="/institutions"
+            className="group relative inline-flex items-center justify-center h-16 px-10 rounded-full bg-[var(--brand)] text-white font-black text-lg tracking-widest uppercase hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[var(--brand)]/20"
+          >
+            Start Searching
+            <span className="absolute -inset-2 rounded-full border-2 border-[var(--brand)]/50 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
+          </Link>
         </div>
-
-        <div className="relative max-w-2xl mx-auto mb-8">
-          <form onSubmit={handleSearch}>
-            <div className="relative flex items-center">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-zinc-400" />
-              </div>
-              <input
-                type="text"
-                className="block w-full pl-11 pr-32 py-4 border-2 border-zinc-200 dark:border-zinc-700 rounded-2xl bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:outline-none focus:border-[var(--brand)] focus:ring-1 focus:ring-[var(--brand)] transition-colors shadow-sm"
-                placeholder="E.g., University of Lagos..."
-                value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setShowDropdown(true);
-                  setHasSearched(false);
-                }}
-                onFocus={() => setShowDropdown(true)}
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-2 bottom-2 px-6 rounded-xl bg-[var(--brand)] text-white font-medium hover:opacity-90 transition-opacity"
-              >
-                Search
-              </button>
-            </div>
-          </form>
-
-          {/* Autocomplete Dropdown */}
-          {showDropdown && query.trim() && !hasSearched && (
-            <div className="absolute z-20 w-full mt-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-2xl overflow-hidden max-h-64 overflow-y-auto">
-              {suggestions.length > 0 ? (
-                <ul className="divide-y divide-zinc-100 dark:divide-zinc-700/50">
-                  {suggestions.map((inst) => (
-                    <li 
-                      key={inst.id}
-                      className="px-4 py-3 hover:bg-zinc-50 dark:hover:bg-zinc-700/50 cursor-pointer flex flex-col justify-center transition-colors"
-                      onClick={() => handleSuggestionClick(inst)}
-                    >
-                      <span className="font-semibold text-zinc-900 dark:text-zinc-50">{inst.name}</span>
-                      <span className="text-xs text-zinc-500">{inst.category}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className="px-4 py-4 text-center text-sm text-zinc-500">
-                  No institutions matching "{query}"
-                </div>
-              )}
-            </div>
-          )}
-
-          <div className="mt-4 text-sm text-center text-zinc-500 font-medium">
-            {searchCount > 0 && searchCount < 3 && (
-              <span className="text-amber-600 dark:text-amber-400">
-                You have {3 - searchCount} free search{3 - searchCount === 1 ? '' : 'es'} remaining today.
-              </span>
-            )}
-            {searchCount >= 3 && (
-              <span className="text-red-500 font-bold flex items-center justify-center gap-1 mt-2 p-2 bg-red-50 dark:bg-red-950/30 rounded-lg">
-                <AlertCircle className="w-4 h-4" /> Free search limit reached.
-              </span>
-            )}
-          </div>
-        </div>
-
-        {hasSearched && (
-          <div className="max-w-2xl mx-auto">
-            {results.length > 0 ? (
-              <div className="bg-white dark:bg-zinc-800 rounded-2xl border border-zinc-200 dark:border-zinc-700 overflow-hidden shadow-sm">
-                <ul className="divide-y divide-zinc-200 dark:divide-zinc-700">
-                  {results.map((inst) => (
-                    <li key={inst.id} className="p-4 hover:bg-zinc-50 dark:hover:bg-zinc-700/50 transition-colors">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-start gap-3">
-                          <div className="mt-1 flex-shrink-0">
-                            <Building className="w-5 h-5 text-zinc-400" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-zinc-900 dark:text-white lead-tight">{inst.name}</h4>
-                            <span className="inline-flex items-center mt-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-700 dark:text-zinc-300">
-                              {inst.category}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex flex-col items-end">
-                          <div className="flex items-center gap-1.5 bg-[var(--brand)]/10 text-[var(--brand)] px-3 py-1 rounded-lg">
-                            <Award className="w-4 h-4" />
-                            <span className="font-bold text-lg">{inst.score}</span>
-                          </div>
-                          <span className="text-[10px] uppercase tracking-wider text-zinc-500 mt-1 font-semibold">Min Score</span>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <div className="text-center py-10 px-4 bg-white dark:bg-zinc-800 rounded-2xl border border-zinc-200 dark:border-zinc-700">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-700 mb-4">
-                  <Search className="w-6 h-6 text-zinc-400" />
-                </div>
-                <h3 className="text-lg font-medium text-zinc-900 dark:text-white">No institutions found</h3>
-                <p className="mt-1 text-zinc-500">Try adjusting your search terms or checking for spelling errors.</p>
-              </div>
-            )}
-          </div>
-        )}
       </div>
     </section>
   );

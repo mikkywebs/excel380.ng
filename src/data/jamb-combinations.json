@@ -1,0 +1,178 @@
+{
+  "title": "JAMB UTME All Courses Subject Combinations",
+  "note": "Use of English (English Language) is compulsory for all courses and is included automatically.",
+  "faculties": [
+    {
+      "faculty": "Administration",
+      "courses": [
+        { "id": 1, "course": "Accountancy", "subjects": ["Use of English", "Mathematics", "Economics", "Any other Social Science subject"] },
+        { "id": 2, "course": "Banking and Finance", "subjects": ["Use of English", "Mathematics", "Economics", "Government or Geography"] },
+        { "id": 3, "course": "Business Administration", "subjects": ["Use of English", "Mathematics", "Economics", "Government or Geography"] },
+        { "id": 4, "course": "Business Management", "subjects": ["Use of English", "Mathematics", "Economics", "Government or Geography"] },
+        { "id": 5, "course": "Cooperative and Rural Development", "subjects": ["Use of English", "Mathematics", "Economics", "Any one other subject"] },
+        { "id": 6, "course": "Human Resources Management", "subjects": ["Use of English", "Economics", "Government", "Any other relevant subject"] },
+        { "id": 7, "course": "Industrial Relations", "subjects": ["Use of English", "Mathematics", "Economics", "Any one other relevant subject"] },
+        { "id": 8, "course": "Insurance", "subjects": ["Use of English", "Mathematics", "Economics", "Any one other subject"] },
+        { "id": 9, "course": "International Relations", "subjects": ["Use of English", "Economics", "Literature in English", "Geography or Government or History"] },
+        { "id": 10, "course": "Marketing", "subjects": ["Use of English", "Mathematics", "Economics", "Any one other relevant subject"] },
+        { "id": 11, "course": "Mass Communication", "subjects": ["Use of English", "Literature in English", "Economics", "Government"] },
+        { "id": 12, "course": "Tourism", "subjects": ["Use of English", "Mathematics", "Economics", "Any other subject"] }
+      ]
+    },
+    {
+      "faculty": "Agriculture",
+      "courses": [
+        { "id": 1, "course": "Agriculture", "subjects": ["Use of English", "Chemistry", "Biology or Agriculture", "Physics or Mathematics"] },
+        { "id": 2, "course": "Agricultural Economics", "subjects": ["Use of English", "Chemistry", "Biology or Agricultural Science", "Mathematics or Physics"] },
+        { "id": 3, "course": "Agricultural Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 4, "course": "Agricultural Extension", "subjects": ["Use of English", "Chemistry", "Biology or Agricultural Science", "Mathematics or Physics"] },
+        { "id": 5, "course": "Agronomy", "subjects": ["Use of English", "Chemistry", "Biology or Agriculture", "Physics or Mathematics"] },
+        { "id": 6, "course": "Animal Production and Science", "subjects": ["Use of English", "Chemistry", "Biology or Agric Science", "Physics or Mathematics"] },
+        { "id": 7, "course": "Crop Production and Science", "subjects": ["Use of English", "Chemistry", "Biology or Agriculture", "Mathematics or Physics"] },
+        { "id": 8, "course": "Fisheries", "subjects": ["Use of English", "Chemistry", "Biology or Agricultural Science", "Any other Science subject"] },
+        { "id": 9, "course": "Food Science and Technology", "subjects": ["Use of English", "Chemistry", "Mathematics or Physics", "Agricultural Science"] },
+        { "id": 10, "course": "Forestry", "subjects": ["Use of English", "Chemistry", "Biology or Agriculture", "Physics or Mathematics"] },
+        { "id": 11, "course": "Home Science", "subjects": ["Use of English", "Chemistry", "Biology or Agriculture", "Mathematics or Physics"] },
+        { "id": 12, "course": "Nutrition and Dietetics", "subjects": ["Use of English", "Chemistry", "Biology or Agriculture", "Mathematics or Physics"] },
+        { "id": 13, "course": "Soil Science", "subjects": ["Use of English", "Chemistry", "Biology or Agricultural Science", "Mathematics or Physics"] }
+      ]
+    },
+    {
+      "faculty": "Arts and Humanities",
+      "courses": [
+        { "id": 1, "course": "Christian Religious Studies", "subjects": ["Use of English", "Christian Religious Knowledge", "One other Arts subject", "Any other subject"] },
+        { "id": 2, "course": "English and Literary Studies", "subjects": ["Use of English", "Literature in English", "One other Arts subject", "Another Arts or Social Science subject"] },
+        { "id": 3, "course": "Fine and Applied Arts", "subjects": ["Use of English", "Fine Art", "Two other Arts subjects or Social Science subject"] },
+        { "id": 4, "course": "Islamic Studies", "subjects": ["Use of English", "Islamic Religious Studies", "Two other Arts subjects"] },
+        { "id": 5, "course": "Languages and Linguistics", "subjects": ["Use of English", "One Arts subject", "Two other subjects"] },
+        { "id": 6, "course": "Literature in English", "subjects": ["Use of English", "Literature in English", "One other Arts subject", "Another Arts or Social Science subject"] },
+        { "id": 7, "course": "French", "subjects": ["Use of English", "French", "Two other subjects from Arts and Social Sciences"] },
+        { "id": 8, "course": "Hausa", "subjects": ["Use of English", "Hausa", "Literature in English", "Economics or Government or History or Arabic"] },
+        { "id": 9, "course": "History", "subjects": ["Use of English", "History", "Two other subjects from Arts and Social Sciences"] },
+        { "id": 10, "course": "History and International Studies", "subjects": ["Use of English", "History or Government", "Two other subjects from Arts and Social Science"] },
+        { "id": 11, "course": "Igbo", "subjects": ["Use of English", "Igbo", "Two subjects from Arts and Social Sciences"] },
+        { "id": 12, "course": "Linguistics", "subjects": ["Use of English", "Any Language", "Two other subjects"] },
+        { "id": 13, "course": "Mass Communication", "subjects": ["Use of English", "Any three Arts and Social Science subjects"] },
+        { "id": 14, "course": "Music", "subjects": ["Use of English", "Music", "One other Arts subject", "Any other subject"] },
+        { "id": 15, "course": "Theatre Arts", "subjects": ["Use of English", "Literature in English", "Two other relevant subjects"] },
+        { "id": 16, "course": "Yoruba", "subjects": ["Use of English", "Yoruba", "Two other subjects in Arts or Social Sciences"] }
+      ]
+    },
+    {
+      "faculty": "Education",
+      "courses": [
+        { "id": 1, "course": "Adult Education", "subjects": ["Use of English", "Government or History", "One Social Science subject", "Any other subject"] },
+        { "id": 2, "course": "Agricultural Science and Education", "subjects": ["Use of English", "Any three subjects from Chemistry, Biology, Agriculture, Physics, Economics, Geography, Mathematics"] },
+        { "id": 3, "course": "Computer Education", "subjects": ["Use of English", "Mathematics", "Economics or Commerce", "Chemistry or Physics or Biology"] },
+        { "id": 4, "course": "Education and Accountancy", "subjects": ["Use of English", "Mathematics", "Economics", "Any Social Science subject"] },
+        { "id": 5, "course": "Education and Biology", "subjects": ["Use of English", "Biology", "Two other subjects from Chemistry, Mathematics and Physics"] },
+        { "id": 6, "course": "Education and Chemistry", "subjects": ["Use of English", "Chemistry", "Two other subjects from Physics, Biology and Mathematics"] },
+        { "id": 7, "course": "Education and Christian Religious Studies", "subjects": ["Use of English", "Christian Religious Studies", "One other Arts subject", "One other subject"] },
+        { "id": 8, "course": "Education and Computer Science", "subjects": ["Use of English", "Mathematics", "Physics", "Biology or Chemistry or Geography"] },
+        { "id": 9, "course": "Education and Economics", "subjects": ["Use of English", "Economics", "Mathematics", "Geography or Physics or History or Government or Lit. in English"] },
+        { "id": 10, "course": "Education and English Language", "subjects": ["Use of English", "Literature in English", "One Arts subject", "Any other subject"] },
+        { "id": 11, "course": "Education and Mathematics", "subjects": ["Use of English", "Mathematics", "Any two of Physics, Chemistry and Biology"] },
+        { "id": 12, "course": "Education and Physics", "subjects": ["Use of English", "Physics", "Mathematics or Chemistry", "One other subject"] },
+        { "id": 13, "course": "Education Arts", "subjects": ["Use of English", "Subject of specialization", "Any two Arts subjects"] },
+        { "id": 14, "course": "Guidance and Counseling", "subjects": ["Use of English", "Any three subjects"] },
+        { "id": 15, "course": "Health Education", "subjects": ["Use of English", "Three other relevant subjects"] },
+        { "id": 16, "course": "Human Kinetics", "subjects": ["Use of English", "Three other relevant subjects"] },
+        { "id": 17, "course": "Physical and Health Education", "subjects": ["Use of English", "Biology", "Any two relevant subjects"] },
+        { "id": 18, "course": "Vocational and Technical Education", "subjects": ["Use of English", "Technical Drawing", "Subject of specialization", "Mathematics or Physics"] }
+      ]
+    },
+    {
+      "faculty": "Engineering",
+      "courses": [
+        { "id": 1, "course": "Agricultural and Bio-Resources Engineering", "subjects": ["Use of English", "Mathematics", "Chemistry", "Physics"] },
+        { "id": 2, "course": "Civil Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 3, "course": "Chemical Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 4, "course": "Computer Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 5, "course": "Electrical Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 6, "course": "Electronic Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 7, "course": "Marine Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 8, "course": "Mechanical Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 9, "course": "Mechatronics Engineering", "subjects": ["Use of English", "Physics", "Chemistry", "Mathematics"] },
+        { "id": 10, "course": "Metallurgical and Materials Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 11, "course": "Petroleum and Gas Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 12, "course": "Production and Industrial Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 13, "course": "Structural Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] },
+        { "id": 14, "course": "Systems Engineering", "subjects": ["Use of English", "Mathematics", "Physics", "Chemistry"] }
+      ]
+    },
+    {
+      "faculty": "Environmental Sciences and Technology",
+      "courses": [
+        { "id": 1, "course": "Architecture", "subjects": ["Use of English", "Physics", "Mathematics", "Chemistry or Geography or Art or Biology or Economics"] },
+        { "id": 2, "course": "Building", "subjects": ["Use of English", "Physics", "Mathematics", "Chemistry"] },
+        { "id": 3, "course": "Estate Management", "subjects": ["Use of English", "Mathematics", "Economics", "One other subject"] },
+        { "id": 4, "course": "Quantity Surveying", "subjects": ["Use of English", "Physics", "Mathematics", "Chemistry or Geography or Art or Biology or Economics"] },
+        { "id": 5, "course": "Surveying and Geoinformatics", "subjects": ["Use of English", "Physics", "Mathematics", "Chemistry or Geography or Art or Biology or Economics"] },
+        { "id": 6, "course": "Urban and Regional Planning", "subjects": ["Use of English", "Mathematics", "Geography", "Economics or Physics or Chemistry"] }
+      ]
+    },
+    {
+      "faculty": "Law",
+      "courses": [
+        { "id": 1, "course": "Civil Law", "subjects": ["Use of English", "Any three Arts or Social Science subjects"] },
+        { "id": 2, "course": "Common Law", "subjects": ["Use of English", "Literature in English", "Any two other Arts or Social Science subjects"] },
+        { "id": 3, "course": "Criminology and Security Studies", "subjects": ["Use of English", "Any three subjects"] },
+        { "id": 4, "course": "Islamic / Sharia Law", "subjects": ["Use of English", "Any three Arts or Social Science subjects including Arabic or Islamic Studies"] },
+        { "id": 5, "course": "Law", "subjects": ["Use of English", "Any three Arts or Social Science subjects"] }
+      ]
+    },
+    {
+      "faculty": "Medical, Pharmaceutical and Health Sciences",
+      "courses": [
+        { "id": 1, "course": "Anatomy", "subjects": ["Use of English", "Mathematics", "Biology", "Chemistry or Physics"] },
+        { "id": 2, "course": "Dentistry", "subjects": ["Use of English", "Chemistry", "Biology", "One other Science subject"] },
+        { "id": 3, "course": "Medical Laboratory Science", "subjects": ["Use of English", "Physics", "Chemistry", "Biology"] },
+        { "id": 4, "course": "Medical Rehabilitation", "subjects": ["Use of English", "Physics", "Chemistry", "Biology"] },
+        { "id": 5, "course": "Medicine and Surgery", "subjects": ["Use of English", "Biology", "Physics", "Chemistry"] },
+        { "id": 6, "course": "Nursing", "subjects": ["Use of English", "Physics", "Biology", "Chemistry"] },
+        { "id": 7, "course": "Pharmacy", "subjects": ["Use of English", "Biology", "Physics", "Chemistry"] },
+        { "id": 8, "course": "Physiology", "subjects": ["Use of English", "Biology", "Physics", "Chemistry"] },
+        { "id": 9, "course": "Physiotherapy", "subjects": ["Use of English", "Biology", "Physics", "Chemistry"] },
+        { "id": 10, "course": "Radiography", "subjects": ["Use of English", "Biology", "Physics", "Chemistry"] },
+        { "id": 11, "course": "Veterinary Medicine", "subjects": ["Use of English", "Biology", "Physics", "Chemistry"] }
+      ]
+    },
+    {
+      "faculty": "Sciences",
+      "courses": [
+        { "id": 1, "course": "Biochemistry", "subjects": ["Use of English", "Biology", "Chemistry", "Physics or Mathematics"] },
+        { "id": 2, "course": "Biological Sciences", "subjects": ["Use of English", "Biology", "Chemistry", "Physics or Mathematics"] },
+        { "id": 3, "course": "Botany", "subjects": ["Use of English", "Biology", "Chemistry", "Any other Science subject"] },
+        { "id": 4, "course": "Chemistry", "subjects": ["Use of English", "Chemistry", "Two of Physics, Biology and Mathematics"] },
+        { "id": 5, "course": "Computer Science", "subjects": ["Use of English", "Mathematics", "Physics", "Biology or Chemistry or Agricultural Science or Economics or Geography"] },
+        { "id": 6, "course": "Geology", "subjects": ["Use of English", "Any three of Chemistry, Physics, Mathematics, Biology and Geography"] },
+        { "id": 7, "course": "Industrial Chemistry", "subjects": ["Use of English", "Chemistry", "Mathematics", "Physics or Biology or Agricultural Science"] },
+        { "id": 8, "course": "Industrial Mathematics", "subjects": ["Use of English", "Mathematics", "Any two of Physics, Chemistry, Economics, Biology and Agricultural Science"] },
+        { "id": 9, "course": "Mathematics", "subjects": ["Use of English", "Mathematics", "Any two of Physics, Chemistry and Economics or Geography"] },
+        { "id": 10, "course": "Microbiology", "subjects": ["Use of English", "Biology", "Chemistry", "Physics or Mathematics"] },
+        { "id": 11, "course": "Physics", "subjects": ["Use of English", "Physics", "Mathematics", "Chemistry or Biology"] },
+        { "id": 12, "course": "Plant Science and Biotechnology", "subjects": ["Use of English", "Biology", "Chemistry", "Any other Science subject"] },
+        { "id": 13, "course": "Pure and Applied Mathematics", "subjects": ["Use of English", "Mathematics", "Physics", "Biology or Agricultural Science or Chemistry or Geography"] },
+        { "id": 14, "course": "Statistics", "subjects": ["Use of English", "Mathematics", "Any two of Physics, Chemistry and Economics"] },
+        { "id": 15, "course": "Zoology", "subjects": ["Use of English", "Biology", "Any two of Physics, Chemistry and Mathematics"] }
+      ]
+    },
+    {
+      "faculty": "Social and Management Sciences",
+      "courses": [
+        { "id": 1, "course": "Demography and Social Statistics", "subjects": ["Use of English", "Mathematics", "Economics or Geography", "Any other subject"] },
+        { "id": 2, "course": "Economics", "subjects": ["Use of English", "Mathematics", "Economics", "Government or History or Geography or Literature in English or French or CRK/IRK"] },
+        { "id": 3, "course": "Geography", "subjects": ["Use of English", "Geography", "Two other Arts or Social Science subjects"] },
+        { "id": 4, "course": "Library Science", "subjects": ["Use of English", "Any three Arts or Social Science subjects"] },
+        { "id": 5, "course": "Mass Communication", "subjects": ["Use of English", "Any three Arts or Social Science subjects"] },
+        { "id": 6, "course": "Philosophy", "subjects": ["Use of English", "Government", "Any other two subjects"] },
+        { "id": 7, "course": "Political Science", "subjects": ["Use of English", "Government or History", "Two other Social Science or Arts subjects"] },
+        { "id": 8, "course": "Psychology", "subjects": ["Use of English", "Any three subjects from Arts or Social Science"] },
+        { "id": 9, "course": "Public Administration", "subjects": ["Use of English", "Mathematics", "Economics", "Any other subject"] },
+        { "id": 10, "course": "Religious Studies", "subjects": ["Use of English", "CRK or IRS", "Any two other subjects"] },
+        { "id": 11, "course": "Social Works", "subjects": ["Use of English", "Mathematics", "Economics or Geography", "Any other subject"] },
+        { "id": 12, "course": "Sociology and Anthropology", "subjects": ["Use of English", "Government or History", "Two other Social Science or Arts subjects"] }
+      ]
+    }
+  ]
+}
