@@ -211,9 +211,12 @@ function ExamsContent() {
                 <Link
                   href={`/dashboard/exams/session?body=${selectedBody}&subjects=${selectedSubjects.join(',')}&mode=demo`}
                   className="flex flex-1 items-center justify-center gap-2 px-6 h-14 rounded-2xl font-bold uppercase tracking-wider bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm transition-all shadow-xl shadow-black/5 active:scale-95 border border-white/20 whitespace-nowrap text-sm"
-                  title="Demo mode uses credits"
+                  title={userDoc?.subscription_tier === 'explorer' ? "Demo mode uses credits" : "Quick practice with fewer questions"}
                 >
-                  Start Demo (-{selectedBody === "JAMB" ? "5" : "2"}/Q)
+                  {userDoc?.subscription_tier === 'explorer' 
+                    ? `Start Demo (-${selectedBody === "JAMB" ? "5" : "2"}/Q)`
+                    : "Quick Practice (Free)"
+                  }
                 </Link>
 
                 <Link

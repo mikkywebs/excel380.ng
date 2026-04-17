@@ -89,11 +89,18 @@ export default function ExamSessionPage() {
           } as Question));
 
           // 1. Filter by body locally to bypass index limitation
-          // 2. Sanitize: Ignore questions that have empty options
+          // 2. Sanitize: Require exactly 4 non-empty options (A, B, C, and D)
           const sanitizedQs = rawSubQs.filter(q => {
             const matchesBody = q.body === body || String(q.body).toLowerCase() === String(body).toLowerCase();
-            const hasOptions = Object.values(q.options || {}).some(opt => opt && typeof opt === 'string' && opt.trim() !== '');
-            return matchesBody && hasOptions;
+            
+            const opt = q.options || {};
+            const hasFourOptions = 
+              opt.a?.trim() && 
+              opt.b?.trim() && 
+              opt.c?.trim() && 
+              opt.d?.trim();
+
+            return matchesBody && hasFourOptions;
           });
 
           // Shuffle the specific subject pool and slice to the target amount
@@ -217,8 +224,10 @@ export default function ExamSessionPage() {
       const percentage = total > 0 ? (score / total) * 100 : 0;
       const timeUsed = (questions.length * 60) - timeLeft; // adjust total time
 
+      const isPaid = userDoc?.subscription_tier && userDoc.subscription_tier !== "explorer";
       let cost = 0;
-      if (mode === "demo") {
+      
+      if (mode === "demo" && !isPaid) {
         const costPerQuestion = body === "JAMB" ? 5 : 2;
         cost = totalAttempted * costPerQuestion;
       }
